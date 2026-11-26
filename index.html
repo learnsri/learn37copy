@@ -1,1 +1,539 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LEARN37 | AGM & LEARN Awards 2026</title>
+
+    <meta name="description" content="LEARN37 - 17th Annual General Meeting and LEARN Awards 2026.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="#home" class="brand">
+                <img src="images/LEARN37_Logo.png" alt="LEARN37 Logo">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#awards">LEARN Awards</a></li>
+                <li><a href="#partners">Partners</a></li>
+                <li><a href="#venue">Venue</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <canvas id="networkCanvas" aria-hidden="true"></canvas>
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <div class="event-label">
+                30 NOVEMBER — 01 DECEMBER 2026
+            </div>
+
+            <h1 class="hero-title">
+                LEARN<span>37</span>
+            </h1>
+
+            <h2>
+                17th Annual General Meeting
+                <br>
+                & LEARN Awards 2026
+            </h2>
+
+            <div class="theme">
+                People <span>|</span>
+                Knowledge <span>|</span>
+                Networks
+            </div>
+
+            <p class="tagline">
+                For a Better Tomorrow
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#programme" class="btn btn-primary">
+                    Explore Programme →
+                </a>
+
+                <a href="#partners" class="btn btn-outline">
+                    Our Partners
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Animated Wave Pattern -->
+        <div class="hero-waves" aria-hidden="true">
+            <svg viewBox="0 0 1440 180"
+                 preserveAspectRatio="none">
+
+                <defs>
+                    <linearGradient id="waveGradient">
+                        <stop offset="0%" stop-color="#061B59"/>
+                        <stop offset="50%" stop-color="#0056B3"/>
+                        <stop offset="100%" stop-color="#00DCC8"/>
+                    </linearGradient>
+                </defs>
+
+                <path class="wave wave-pink"
+                      d="M0,70 C350,240 850,-50 1440,70 L1440,180 L0,180 Z"
+                      fill="#E50087"/>
+
+                <path class="wave wave-cyan"
+                      d="M0,90 C400,230 900,-20 1440,90 L1440,180 L0,180 Z"
+                      fill="#00CBE8"/>
+
+                <path class="wave wave-blue"
+                      d="M0,110 C450,240 950,10 1440,110 L1440,180 L0,180 Z"
+                      fill="url(#waveGradient)"/>
+
+                <path class="wave wave-white"
+                      d="M0,130 C450,250 950,40 1440,130 L1440,180 L0,180 Z"
+                      fill="#F4FAFF"/>
+
+            </svg>
+        </div>
+
+    </section>
+
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+
+        <p class="section-label" id="countdownLabel">
+            COUNTDOWN TO LEARN37
+        </p>
+
+        <div class="countdown">
+
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+
+        <div class="container reveal">
+
+            <p class="section-label">ABOUT THE EVENT</p>
+
+            <h2 class="section-title">
+                Connecting People.
+                <br>
+                <span>Connecting Possibilities.</span>
+            </h2>
+
+            <p class="section-description">
+                LEARN37 brings together Sri Lanka's research
+                and education community for the 17th Annual
+                General Meeting and LEARN Awards 2026,
+                fostering collaboration, knowledge sharing
+                and innovation.
+            </p>
+
+            <div class="stats-grid">
+
+                <div class="stat">
+                    <h3>37</h3>
+                    <p>LEARN37</p>
+                </div>
+
+                <div class="stat">
+                    <h3>17th</h3>
+                    <p>Annual General Meeting</p>
+                </div>
+
+                <div class="stat">
+                    <h3>02</h3>
+                    <p>Event Days</p>
+                </div>
+
+                <div class="stat">
+                    <h3>04</h3>
+                    <p>Event Partners</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Programme Section -->
+    <section class="section programme-section" id="programme">
+
+        <div class="container reveal">
+
+            <p class="section-label">EVENT SCHEDULE</p>
+
+            <h2 class="section-title">
+                Event Programme
+            </h2>
+
+            <div class="programme-tabs">
+
+                <button class="tab-button active"
+                        data-day="day1"
+                        aria-pressed="true">
+                    Day 01 — 30 November
+                </button>
+
+                <button class="tab-button"
+                        data-day="day2"
+                        aria-pressed="false">
+                    Day 02 — 1 December
+                </button>
+
+            </div>
+
+            <div class="programme-content active" id="day1">
+
+                <div class="programme-heading">
+                    <h3>30 November 2026</h3>
+                    <p>UCFM, University of Colombo</p>
+                </div>
+
+                <div class="timeline">
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Board Meeting</h3>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Solutions Team Presentation</h3>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>17th Annual General Meeting</h3>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>AI Working Group</h3>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Agro Working Group</h3>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="time">6.00 PM onwards</span>
+                            <h3>LEARN Awards 2026 & Cocktail Reception</h3>
+                            <p>Galle Face Hotel, Colombo</p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+            <div class="programme-content" id="day2" hidden>
+
+                <div class="programme-heading">
+                    <h3>1 December 2026</h3>
+                    <p>Programme details to be announced.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Awards Section -->
+    <section class="awards-section" id="awards">
+
+        <div class="awards-glow"></div>
+
+        <div class="container reveal">
+
+            <p class="section-label">CELEBRATING EXCELLENCE</p>
+
+            <h2 class="awards-title">
+                LEARN Awards
+                <span>2026</span>
+            </h2>
+
+            <p>
+                Celebrating excellence, innovation and
+                contributions to the research and
+                education community.
+            </p>
+
+            <div class="awards-details">
+
+                <div>
+                    <small>DATE</small>
+                    <h3>30 November 2026</h3>
+                </div>
+
+                <div>
+                    <small>TIME</small>
+                    <h3>6.00 PM onwards</h3>
+                </div>
+
+                <div>
+                    <small>VENUE</small>
+                    <h3>Galle Face Hotel</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Partners Section -->
+    <section class="section partners-section" id="partners">
+
+        <div class="container reveal">
+
+            <p class="section-label">COLLABORATION & INNOVATION</p>
+
+            <h2 class="section-title">Our Partners</h2>
+
+            <div class="technology-partner partner">
+
+                <p class="partner-category">
+                    Technology Partner
+                </p>
+
+                <img src="images/Huawei_Logo.png"
+                     alt="Huawei Technologies Lanka"
+                     loading="lazy">
+
+                <h3>Huawei Technologies Lanka</h3>
+
+            </div>
+
+            <div class="partners-grid">
+
+                <div class="partner">
+
+                    <p class="partner-category">
+                        Connectivity Partner
+                    </p>
+
+                    <img src="images/SLT_Logo.png"
+                         alt="Sri Lanka Telecom"
+                         loading="lazy">
+
+                    <h3>Sri Lanka Telecom (SLT)</h3>
+
+                </div>
+
+                <div class="partner">
+
+                    <p class="partner-category">
+                        Knowledge Partner
+                    </p>
+
+                    <img src="images/IEEE_GRSS_Sri_Lanka_Chapter_Logo.png"
+                         alt="IEEE-GRSS Sri Lanka Chapter"
+                         loading="lazy">
+
+                    <h3>IEEE-GRSS Sri Lanka Chapter</h3>
+
+                </div>
+
+            </div>
+
+            <div class="registration-partner partner">
+
+                <p class="partner-category">
+                    Registration System Partner
+                </p>
+
+                <img src="images/OneCode_Labs_Logo.png"
+                     alt="OneCode Labs"
+                     loading="lazy">
+
+                <h3>OneCode Labs</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Venue Section -->
+    <section class="section venue-section" id="venue">
+
+        <div class="container reveal">
+
+            <p class="section-label">EVENT LOCATIONS</p>
+
+            <h2 class="section-title">Event Venues</h2>
+
+            <div class="venue-grid">
+
+                <article class="venue-card">
+
+                    <div class="venue-image university-image"></div>
+
+                    <div class="venue-info">
+                        <span class="venue-label">DAY SESSIONS</span>
+                        <h3>University of Colombo</h3>
+                        <p>UCFM, Colombo, Sri Lanka</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=University+of+Colombo+Faculty+of+Medicine"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Location →
+                        </a>
+                    </div>
+
+                </article>
+
+                <article class="venue-card">
+
+                    <div class="venue-image hotel-image"></div>
+
+                    <div class="venue-info">
+                        <span class="venue-label">LEARN AWARDS 2026</span>
+                        <h3>Galle Face Hotel</h3>
+                        <p>Colombo, Sri Lanka</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Galle+Face+Hotel+Colombo"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Location →
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <img src="images/LEARN37_Logo.png"
+                     alt="LEARN37">
+
+                <h3>Lanka Education and Research Network</h3>
+
+                <p>
+                    People | Knowledge | Networks
+                    <br>
+                    For a Better Tomorrow
+                </p>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    No. 167, Vihara Mawatha,
+                    <br>
+                    Mulgampola, Kandy 20000,
+                    <br>
+                    Sri Lanka
+                </p>
+
+                <p>
+                    <a href="tel:+94812003030">
+                        +94 81 200 3030
+                    </a>
+                </p>
+
+                <a href="https://www.learn.ac.lk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    www.learn.ac.lk
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Lanka Education and Research Network.
+            All Rights Reserved.
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
