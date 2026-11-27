@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
-                threshold: 0.05
+                threshold: 0
             }
 
         );
@@ -327,11 +327,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navigationLinks.forEach(link => {
 
+            const isActive =
+                link.getAttribute("href") ===
+                "#" + currentSection;
+
             link.classList.toggle(
                 "active",
-                link.getAttribute("href") ===
-                    "#" + currentSection
+                isActive
             );
+
+            if (isActive) {
+
+                link.setAttribute(
+                    "aria-current",
+                    "location"
+                );
+
+            } else {
+
+                link.removeAttribute("aria-current");
+
+            }
 
         });
 
@@ -378,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let animationId = null;
 
 
-    /* Generate spherical network points */
+    /* GENERATE SPHERICAL NETWORK POINTS */
 
     for (let i = 0; i < particleCount; i++) {
 
@@ -405,7 +421,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Generate background particles */
+    /* GENERATE BACKGROUND PARTICLES */
 
     for (let i = 0; i < 75; i++) {
 
@@ -892,7 +908,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* Pause when browser tab is inactive */
+    /* PAUSE WHEN BROWSER TAB IS INACTIVE */
 
     document.addEventListener(
         "visibilitychange",
@@ -920,7 +936,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* Handle window resizing */
+    /* HANDLE WINDOW RESIZING */
 
     window.addEventListener(
         "resize",
