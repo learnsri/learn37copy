@@ -1,1000 +1,1184 @@
 
+/* ==================================================
+   LEARN37 — COMPLETE WEBSITE JAVASCRIPT
+   ================================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    "use strict";
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-    const reducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
 
+  /* ==================================================
+     MOBILE NAVIGATION
+     ================================================== */
 
-    /* ======================================
-       MOBILE NAVIGATION
-       ====================================== */
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+  function closeMenu() {
 
-    function closeMenu() {
+    if (!menuToggle || !navLinks) return;
 
-        if (!menuToggle || !navLinks) return;
+    navLinks.classList.remove("active");
 
-        navLinks.classList.remove("active");
+    menuToggle.textContent = "☰";
 
-        menuToggle.textContent = "☰";
-
-        menuToggle.setAttribute("aria-expanded", "false");
-
-    }
-
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", function () {
-
-            const isOpen = navLinks.classList.toggle("active");
-
-            menuToggle.textContent = isOpen ? "✕" : "☰";
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-        });
-
-        navLinks.querySelectorAll("a").forEach(function (link) {
-
-            link.addEventListener("click", closeMenu);
-
-        });
-
-        document.addEventListener("keydown", function (event) {
-
-            if (event.key === "Escape") {
-
-                closeMenu();
-
-            }
-
-        });
-
-        document.addEventListener("click", function (event) {
-
-            if (
-                !navLinks.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-
-                closeMenu();
-
-            }
-
-        });
-
-        window.addEventListener("resize", function () {
-
-            if (window.innerWidth > 768) {
-
-                closeMenu();
-
-            }
-
-        });
-
-    }
-
-
-    /* ======================================
-       COUNTDOWN
-       ====================================== */
-
-    const eventStart = new Date(
-        "2026-11-30T08:30:00+05:30"
-    ).getTime();
-
-    const eventEnd = new Date(
-        "2026-12-02T00:00:00+05:30"
-    ).getTime();
-
-    const countdownLabel = document.getElementById("countdownLabel");
-
-    const countdown = document.querySelector(".countdown");
-
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
-
-    function formatNumber(number) {
-
-        return String(number).padStart(2, "0");
-
-    }
-
-    function updateCountdown() {
-
-        if (!countdownLabel || !countdown) return;
-
-        const now = Date.now();
-
-        const difference = eventStart - now;
-
-        if (now >= eventEnd) {
-
-            countdownLabel.textContent =
-                "THANK YOU FOR BEING PART OF LEARN37";
-
-            countdown.hidden = true;
-
-            return;
-
-        }
-
-        if (difference <= 0) {
-
-            countdownLabel.textContent = "WELCOME TO LEARN37";
-
-            countdown.hidden = true;
-
-            return;
-
-        }
-
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
-
-        const hours = Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
-
-        const minutes = Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-            (difference / 1000) % 60
-        );
-
-        if (daysElement) {
-
-            daysElement.textContent = formatNumber(days);
-
-        }
-
-        if (hoursElement) {
-
-            hoursElement.textContent = formatNumber(hours);
-
-        }
-
-        if (minutesElement) {
-
-            minutesElement.textContent = formatNumber(minutes);
-
-        }
-
-        if (secondsElement) {
-
-            secondsElement.textContent = formatNumber(seconds);
-
-        }
-
-    }
-
-    updateCountdown();
-
-    setInterval(updateCountdown, 1000);
-
-
-    /* ======================================
-       DAY 01 AND DAY 02 PROGRAMME TABS
-       ====================================== */
-
-    const tabButtons = document.querySelectorAll(".tab-button");
-
-    const programmeContents = document.querySelectorAll(
-        ".programme-content"
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
     );
 
-    tabButtons.forEach(function (button) {
+  }
 
-        button.addEventListener("click", function () {
+  if (menuToggle && navLinks) {
 
-            const selectedDay = button.dataset.day;
+    menuToggle.addEventListener("click", function () {
 
-            const selectedProgramme = document.getElementById(
-                selectedDay
-            );
+      const isOpen = navLinks.classList.toggle("active");
 
-            if (!selectedProgramme) return;
+      menuToggle.textContent = isOpen ? "✕" : "☰";
 
-            tabButtons.forEach(function (tab) {
-
-                tab.classList.remove("active");
-
-                tab.setAttribute("aria-pressed", "false");
-
-            });
-
-            programmeContents.forEach(function (content) {
-
-                content.classList.remove("active");
-
-                content.hidden = true;
-
-            });
-
-            button.classList.add("active");
-
-            button.setAttribute("aria-pressed", "true");
-
-            selectedProgramme.hidden = false;
-
-            selectedProgramme.classList.add("active");
-
-        });
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
 
     });
 
+    navLinks.querySelectorAll("a").forEach(function (link) {
 
-    /* ======================================
-       SCROLL REVEAL ANIMATION
-       ====================================== */
+      link.addEventListener("click", closeMenu);
 
-    const revealElements = document.querySelectorAll(".reveal");
+    });
 
-    if (
-        "IntersectionObserver" in window &&
-        !reducedMotion
-    ) {
+    document.addEventListener("keydown", function (event) {
 
-        document.body.classList.add("js-ready");
+      if (event.key === "Escape") {
 
-        const revealObserver = new IntersectionObserver(
+        closeMenu();
 
-            function (entries, observer) {
+      }
 
-                entries.forEach(function (entry) {
+    });
 
-                    if (entry.isIntersecting) {
+    document.addEventListener("click", function (event) {
 
-                        entry.target.classList.add("visible");
+      if (
+        !navLinks.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
 
-                        observer.unobserve(entry.target);
+        closeMenu();
 
-                    }
+      }
 
-                });
+    });
 
-            },
+    window.addEventListener("resize", function () {
 
-            {
-                threshold: 0.05
-            }
+      if (window.innerWidth > 768) {
 
+        closeMenu();
+
+      }
+
+    });
+
+  }
+
+
+  /* ==================================================
+     COUNTDOWN TIMER
+     ================================================== */
+
+  const eventStart = new Date(
+    "2026-11-30T08:30:00+05:30"
+  ).getTime();
+
+  const eventEnd = new Date(
+    "2026-12-02T00:00:00+05:30"
+  ).getTime();
+
+  const countdownLabel =
+    document.getElementById("countdownLabel");
+
+  const countdown =
+    document.querySelector(".countdown");
+
+  function updateCountdown() {
+
+    const now = Date.now();
+
+    const distance = eventStart - now;
+
+    if (distance <= 0) {
+
+      if (countdownLabel) {
+
+        countdownLabel.textContent =
+          now < eventEnd
+            ? "WELCOME TO LEARN37"
+            : "THANK YOU FOR JOINING LEARN37";
+
+      }
+
+      if (countdown) {
+
+        countdown.hidden = true;
+
+      }
+
+      return;
+
+    }
+
+    const days = Math.floor(
+      distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+      (distance / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+      (distance / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+      (distance / 1000) % 60
+    );
+
+    const values = {
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
+    };
+
+    Object.entries(values).forEach(function (entry) {
+
+      const element = document.getElementById(entry[0]);
+
+      if (element) {
+
+        element.textContent = String(entry[1]).padStart(
+          2,
+          "0"
         );
 
-        revealElements.forEach(function (element) {
+      }
 
-            revealObserver.observe(element);
+    });
+
+  }
+
+  updateCountdown();
+
+  setInterval(updateCountdown, 1000);
+
+
+  /* ==================================================
+     PROGRAMME DAY TABS
+     ================================================== */
+
+  const tabButtons =
+    document.querySelectorAll(".tab-button");
+
+  const programmeContents =
+    document.querySelectorAll(".programme-content");
+
+  tabButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const selectedDay = button.dataset.day;
+
+      const selectedContent =
+        document.getElementById(selectedDay);
+
+      if (!selectedContent) return;
+
+      tabButtons.forEach(function (tab) {
+
+        tab.classList.remove("active");
+
+        tab.setAttribute(
+          "aria-pressed",
+          "false"
+        );
+
+      });
+
+      programmeContents.forEach(function (content) {
+
+        content.classList.remove("active");
+
+        content.hidden = true;
+
+      });
+
+      button.classList.add("active");
+
+      button.setAttribute(
+        "aria-pressed",
+        "true"
+      );
+
+      selectedContent.hidden = false;
+
+      selectedContent.classList.add("active");
+
+    });
+
+  });
+
+
+  /* ==================================================
+     SCROLL REVEAL ANIMATIONS
+     ================================================== */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+  if (
+    !reducedMotion &&
+    "IntersectionObserver" in window
+  ) {
+
+    document.body.classList.add("js-ready");
+
+    const revealObserver = new IntersectionObserver(
+
+      function (entries, observer) {
+
+        entries.forEach(function (entry) {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
 
         });
+
+      },
+
+      {
+        threshold: 0.05,
+        rootMargin: "0px 0px 20px 0px"
+      }
+
+    );
+
+    revealElements.forEach(function (element) {
+
+      revealObserver.observe(element);
+
+    });
+
+    /* Staggered partner entrances */
+
+    document.querySelectorAll(".pn-row").forEach(
+
+      function (row, index) {
+
+        row.style.setProperty(
+          "--reveal-delay",
+          (index % 3) * 130 + "ms"
+        );
+
+      }
+
+    );
+
+  } else {
+
+    revealElements.forEach(function (element) {
+
+      element.classList.add("visible");
+
+    });
+
+  }
+
+
+  /* ==================================================
+     PARTNER NETWORK ANIMATION CONTROL
+     ================================================== */
+
+  const partnerSection =
+    document.getElementById("partners");
+
+  if (
+    partnerSection &&
+    !reducedMotion &&
+    "IntersectionObserver" in window
+  ) {
+
+    let partnerSectionVisible = false;
+
+    function updatePartnerAnimation() {
+
+      const shouldAnimate =
+        partnerSectionVisible && !document.hidden;
+
+      partnerSection.classList.toggle(
+        "animation-paused",
+        !shouldAnimate
+      );
+
+    }
+
+    const partnerObserver = new IntersectionObserver(
+
+      function (entries) {
+
+        entries.forEach(function (entry) {
+
+          partnerSectionVisible = entry.isIntersecting;
+
+          updatePartnerAnimation();
+
+        });
+
+      },
+
+      {
+        threshold: 0
+      }
+
+    );
+
+    partnerObserver.observe(partnerSection);
+
+    document.addEventListener(
+      "visibilitychange",
+      updatePartnerAnimation
+    );
+
+    updatePartnerAnimation();
+
+  }
+
+
+  /* ==================================================
+     ACTIVE NAVIGATION LINK
+     ================================================== */
+
+  const sections =
+    document.querySelectorAll("section[id]");
+
+  const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+  let scrollTicking = false;
+
+  function updateActiveNavigation() {
+
+    let currentSection = "home";
+
+    sections.forEach(function (section) {
+
+      const sectionTop =
+        section.getBoundingClientRect().top;
+
+      if (sectionTop <= 180) {
+
+        currentSection = section.id;
+
+      }
+
+    });
+
+    navigationLinks.forEach(function (link) {
+
+      const active =
+        link.getAttribute("href") === "#" + currentSection;
+
+      link.classList.toggle("active", active);
+
+      if (active) {
+
+        link.setAttribute(
+          "aria-current",
+          "location"
+        );
+
+      } else {
+
+        link.removeAttribute("aria-current");
+
+      }
+
+    });
+
+    scrollTicking = false;
+
+  }
+
+  window.addEventListener(
+
+    "scroll",
+
+    function () {
+
+      if (!scrollTicking) {
+
+        requestAnimationFrame(updateActiveNavigation);
+
+        scrollTicking = true;
+
+      }
+
+    },
+
+    { passive: true }
+
+  );
+
+  updateActiveNavigation();
+
+
+  /* ==================================================
+     ANIMATED NETWORK GLOBE
+     ================================================== */
+
+  const canvas =
+    document.getElementById("networkCanvas");
+
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) return;
+
+  let width = 0;
+  let height = 0;
+
+  let centerX = 0;
+  let centerY = 0;
+
+  let radius = 0;
+
+  let animationFrame = null;
+
+  let globeVisible = true;
+
+  let lastTimestamp = 0;
+
+  let rotationAngle = 0.5;
+
+
+  /* CREATE SPHERICAL NETWORK POINTS */
+
+  const pointCount = 160;
+
+  const points = [];
+
+  const goldenAngle =
+    Math.PI * (3 - Math.sqrt(5));
+
+  for (let i = 0; i < pointCount; i++) {
+
+    const y = 1 - (i / (pointCount - 1)) * 2;
+
+    const horizontalRadius =
+      Math.sqrt(Math.max(0, 1 - y * y));
+
+    const theta = goldenAngle * i;
+
+    points.push({
+
+      x: Math.cos(theta) * horizontalRadius,
+
+      y: y,
+
+      z: Math.sin(theta) * horizontalRadius
+
+    });
+
+  }
+
+
+  /* CREATE BACKGROUND PARTICLES */
+
+  const stars = Array.from(
+
+    { length: 75 },
+
+    function () {
+
+      return {
+
+        x: Math.random(),
+
+        y: Math.random(),
+
+        size: 0.3 + Math.random() * 1.7,
+
+        opacity: 0.1 + Math.random() * 0.6,
+
+        phase: Math.random() * Math.PI * 2
+
+      };
+
+    }
+
+  );
+
+
+  /* RESPONSIVE CANVAS SIZE */
+
+  function resizeCanvas() {
+
+    const dpr = Math.min(
+      window.devicePixelRatio || 1,
+      2
+    );
+
+    width = canvas.clientWidth;
+
+    height = canvas.clientHeight;
+
+    canvas.width = Math.round(width * dpr);
+
+    canvas.height = Math.round(height * dpr);
+
+    ctx.setTransform(
+      dpr, 0, 0, dpr, 0, 0
+    );
+
+    if (window.innerWidth <= 768) {
+
+      radius = Math.min(
+        width * 0.36,
+        170
+      );
+
+      centerX = width * 0.65;
+
+      centerY = height * 0.73;
 
     } else {
 
-        revealElements.forEach(function (element) {
+      radius = Math.min(
+        width * 0.24,
+        height * 0.34
+      );
 
-            element.classList.add("visible");
+      centerX = width * 0.76;
 
-        });
+      centerY = height * 0.46;
 
     }
 
+  }
 
-    /* ======================================
-       ACTIVE NAVIGATION LINK
-       ====================================== */
 
-    const sections = document.querySelectorAll("section[id]");
+  /* DRAW TWINKLING PARTICLES */
 
-    const navigationLinks = document.querySelectorAll(
-        ".nav-links a"
+  function drawStars(time) {
+
+    stars.forEach(function (star) {
+
+      const twinkle = reducedMotion
+
+        ? 1
+
+        : 0.7 + 0.3 * Math.sin(
+            time * 0.001 + star.phase
+          );
+
+      ctx.beginPath();
+
+      ctx.fillStyle =
+        "rgba(170,235,255," +
+        star.opacity * twinkle +
+        ")";
+
+      ctx.arc(
+
+        star.x * width,
+
+        star.y * height,
+
+        star.size,
+
+        0,
+
+        Math.PI * 2
+
+      );
+
+      ctx.fill();
+
+    });
+
+  }
+
+
+  /* PROJECT 3D POINTS TO 2D */
+
+  function projectPoints(angle) {
+
+    const cosAngle = Math.cos(angle);
+
+    const sinAngle = Math.sin(angle);
+
+    const tilt = 0.2;
+
+    const cosTilt = Math.cos(tilt);
+
+    const sinTilt = Math.sin(tilt);
+
+    return points.map(function (point) {
+
+      const rotatedX =
+        point.x * cosAngle -
+        point.z * sinAngle;
+
+      const rotatedZ =
+        point.x * sinAngle +
+        point.z * cosAngle;
+
+      const tiltedY =
+        point.y * cosTilt -
+        rotatedZ * sinTilt;
+
+      const tiltedZ =
+        point.y * sinTilt +
+        rotatedZ * cosTilt;
+
+      const perspective =
+        3 / (3 - tiltedZ);
+
+      return {
+
+        x: centerX +
+          rotatedX * radius * perspective,
+
+        y: centerY +
+          tiltedY * radius * perspective,
+
+        z: tiltedZ,
+
+        scale: perspective
+
+      };
+
+    });
+
+  }
+
+
+  /* DRAW GLOBE GLOW */
+
+  function drawGlobeGlow() {
+
+    const gradient = ctx.createRadialGradient(
+
+      centerX,
+
+      centerY,
+
+      radius * 0.15,
+
+      centerX,
+
+      centerY,
+
+      radius * 1.6
+
     );
 
-    let scrollScheduled = false;
+    gradient.addColorStop(
+      0,
+      "rgba(0,187,199,0.12)"
+    );
 
-    function updateActiveNavigation() {
+    gradient.addColorStop(
+      0.5,
+      "rgba(0,149,202,0.08)"
+    );
 
-        let currentSection = "home";
+    gradient.addColorStop(
+      1,
+      "rgba(0,187,199,0)"
+    );
 
-        sections.forEach(function (section) {
+    ctx.fillStyle = gradient;
 
-            if (section.getBoundingClientRect().top <= 180) {
+    ctx.beginPath();
 
-                currentSection = section.id;
+    ctx.arc(
 
-            }
+      centerX,
 
-        });
+      centerY,
 
-        navigationLinks.forEach(function (link) {
+      radius * 1.6,
 
-            const isActive =
-                link.getAttribute("href") === "#" + currentSection;
+      0,
 
-            link.classList.toggle("active", isActive);
-
-            if (isActive) {
-
-                link.setAttribute("aria-current", "location");
-
-            } else {
-
-                link.removeAttribute("aria-current");
-
-            }
-
-        });
-
-        scrollScheduled = false;
-
-    }
-
-    window.addEventListener(
-
-        "scroll",
-
-        function () {
-
-            if (!scrollScheduled) {
-
-                requestAnimationFrame(updateActiveNavigation);
-
-                scrollScheduled = true;
-
-            }
-
-        },
-
-        {
-            passive: true
-        }
+      Math.PI * 2
 
     );
 
-    updateActiveNavigation();
+    ctx.fill();
+
+  }
 
 
-    /* ======================================
-       ANIMATED NETWORK GLOBE
-       ====================================== */
+  /* DRAW NETWORK CONNECTIONS */
 
-    const canvas = document.getElementById("networkCanvas");
+  function drawConnections(projectedPoints) {
 
-    if (!canvas) return;
+    const maxDistance = radius * 0.32;
 
-    const ctx = canvas.getContext("2d");
+    for (
+      let i = 0;
+      i < projectedPoints.length;
+      i++
+    ) {
 
-    if (!ctx) return;
+      const pointA = projectedPoints[i];
 
-    let width = 0;
-    let height = 0;
+      if (pointA.z < -0.25) continue;
 
-    let centerX = 0;
-    let centerY = 0;
+      for (
+        let j = i + 1;
+        j < projectedPoints.length;
+        j++
+      ) {
 
-    let radius = 0;
+        const pointB = projectedPoints[j];
 
-    let animationFrame = null;
+        if (pointB.z < -0.25) continue;
 
-    let canvasVisible = true;
+        const dx = pointA.x - pointB.x;
 
-    const pointCount = 160;
+        const dy = pointA.y - pointB.y;
 
-    const points = [];
-
-    const stars = [];
-
-    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-
-
-    /* Create evenly distributed sphere points */
-
-    for (let i = 0; i < pointCount; i++) {
-
-        const y = 1 - (i / (pointCount - 1)) * 2;
-
-        const sphereRadius = Math.sqrt(1 - y * y);
-
-        const theta = goldenAngle * i;
-
-        points.push({
-
-            x: Math.cos(theta) * sphereRadius,
-
-            y: y,
-
-            z: Math.sin(theta) * sphereRadius
-
-        });
-
-    }
-
-
-    /* Create background stars */
-
-    for (let i = 0; i < 75; i++) {
-
-        stars.push({
-
-            x: Math.random(),
-
-            y: Math.random(),
-
-            size: 0.3 + Math.random() * 1.7,
-
-            opacity: 0.1 + Math.random() * 0.6,
-
-            phase: Math.random() * Math.PI * 2
-
-        });
-
-    }
-
-
-    /* Resize canvas */
-
-    function resizeCanvas() {
-
-        const rect = canvas.getBoundingClientRect();
-
-        const dpr = Math.min(
-            window.devicePixelRatio || 1,
-            2
+        const distance = Math.sqrt(
+          dx * dx + dy * dy
         );
 
-        width = rect.width;
+        if (distance < maxDistance) {
 
-        height = rect.height;
+          const opacity =
 
-        canvas.width = Math.round(width * dpr);
+            0.5 * (1 - distance / maxDistance);
 
-        canvas.height = Math.round(height * dpr);
+          ctx.strokeStyle =
 
-        ctx.setTransform(
-            dpr,
-            0,
-            0,
-            dpr,
-            0,
-            0
-        );
+            "rgba(0,220,255," + opacity + ")";
 
-        if (window.innerWidth <= 768) {
+          ctx.lineWidth = 0.8;
 
-            radius = Math.min(width * 0.36, 170);
+          ctx.beginPath();
 
-            centerX = width * 0.65;
+          ctx.moveTo(pointA.x, pointA.y);
 
-            centerY = height * 0.73;
+          ctx.lineTo(pointB.x, pointB.y);
 
-        } else {
-
-            radius = Math.min(
-                width * 0.24,
-                height * 0.34
-            );
-
-            centerX = width * 0.76;
-
-            centerY = height * 0.46;
+          ctx.stroke();
 
         }
 
-        if (reducedMotion || !canvasVisible) {
+      }
 
-            drawScene(0);
+    }
+
+  }
+
+
+  /* DRAW GLOWING NETWORK NODES */
+
+  function drawNodes(projectedPoints) {
+
+    const sortedPoints =
+
+      projectedPoints.slice().sort(
+
+        function (a, b) {
+
+          return a.z - b.z;
 
         }
 
-    }
+      );
 
+    sortedPoints.forEach(function (point) {
 
-    /* Background stars */
+      const opacity =
 
-    function drawStars(time) {
+        0.2 + 0.8 * ((point.z + 1) / 2);
 
-        stars.forEach(function (star) {
+      const nodeSize =
 
-            const pulse = reducedMotion
+        1.5 * point.scale;
 
-                ? 1
+      ctx.beginPath();
 
-                : 0.7 + 0.3 * Math.sin(
-                    time * 0.001 + star.phase
-                );
+      ctx.fillStyle =
 
-            ctx.beginPath();
+        "rgba(160,255,255," + opacity + ")";
 
-            ctx.arc(
+      ctx.arc(
 
-                star.x * width,
+        point.x,
 
-                star.y * height,
+        point.y,
 
-                star.size,
+        nodeSize,
 
-                0,
+        0,
 
-                Math.PI * 2
+        Math.PI * 2
 
-            );
+      );
 
-            ctx.fillStyle =
-                "rgba(180,235,255," +
-                star.opacity * pulse +
-                ")";
+      ctx.fill();
 
-            ctx.fill();
-
-        });
-
-    }
-
-
-    /* Globe glow */
-
-    function drawGlobeGlow() {
-
-        if (radius <= 0) return;
-
-        const gradient = ctx.createRadialGradient(
-
-            centerX,
-
-            centerY,
-
-            radius * 0.2,
-
-            centerX,
-
-            centerY,
-
-            radius * 1.5
-
-        );
-
-        gradient.addColorStop(
-            0,
-            "rgba(0,190,255,0.10)"
-        );
-
-        gradient.addColorStop(
-            0.5,
-            "rgba(0,190,255,0.07)"
-        );
-
-        gradient.addColorStop(
-            1,
-            "rgba(0,190,255,0)"
-        );
-
-        ctx.fillStyle = gradient;
-
-        ctx.fillRect(0, 0, width, height);
-
-    }
-
-
-    /* Rotate and project sphere points */
-
-    function projectPoints(rotation) {
-
-        const cos = Math.cos(rotation);
-
-        const sin = Math.sin(rotation);
-
-        const tilt = 0.2;
-
-        const cosTilt = Math.cos(tilt);
-
-        const sinTilt = Math.sin(tilt);
-
-        return points.map(function (point) {
-
-            const x = point.x * cos - point.z * sin;
-
-            const rotatedZ =
-                point.x * sin + point.z * cos;
-
-            const y =
-                point.y * cosTilt - rotatedZ * sinTilt;
-
-            const z =
-                point.y * sinTilt + rotatedZ * cosTilt;
-
-            const perspective = 3 / (3 - z);
-
-            return {
-
-                x: centerX + x * radius * perspective,
-
-                y: centerY + y * radius * perspective,
-
-                z: z,
-
-                scale: perspective
-
-            };
-
-        });
-
-    }
-
-
-    /* Draw network connections */
-
-    function drawConnections(projected) {
-
-        const maxDistance = radius * 0.32;
-
-        for (let i = 0; i < projected.length; i++) {
-
-            for (let j = i + 1; j < projected.length; j++) {
-
-                const a = projected[i];
-
-                const b = projected[j];
-
-                if (a.z < -0.25 || b.z < -0.25) {
-
-                    continue;
-
-                }
-
-                const dx = a.x - b.x;
-
-                const dy = a.y - b.y;
-
-                const distance = Math.sqrt(
-                    dx * dx + dy * dy
-                );
-
-                if (distance < maxDistance) {
-
-                    const opacity =
-                        (1 - distance / maxDistance) * 0.5;
-
-                    ctx.beginPath();
-
-                    ctx.moveTo(a.x, a.y);
-
-                    ctx.lineTo(b.x, b.y);
-
-                    ctx.strokeStyle =
-                        "rgba(0,220,255," +
-                        opacity +
-                        ")";
-
-                    ctx.lineWidth = 0.8;
-
-                    ctx.stroke();
-
-                }
-
-            }
-
-        }
-
-    }
-
-
-    /* Draw network nodes */
-
-    function drawNodes(projected) {
-
-        const sortedPoints = projected.slice().sort(
-
-            function (a, b) {
-
-                return a.z - b.z;
-
-            }
-
-        );
-
-        sortedPoints.forEach(function (point) {
-
-            const opacity =
-                0.2 + 0.8 * ((point.z + 1) / 2);
-
-            const size = 1.5 * point.scale;
-
-            ctx.beginPath();
-
-            ctx.arc(
-
-                point.x,
-
-                point.y,
-
-                size,
-
-                0,
-
-                Math.PI * 2
-
-            );
-
-            ctx.fillStyle =
-                "rgba(135,245,255," +
-                opacity +
-                ")";
-
-            ctx.fill();
-
-            if (point.z > 0.75) {
-
-                ctx.beginPath();
-
-                ctx.arc(
-
-                    point.x,
-
-                    point.y,
-
-                    size * 2.5,
-
-                    0,
-
-                    Math.PI * 2
-
-                );
-
-                ctx.fillStyle = "rgba(0,224,191,0.08)";
-
-                ctx.fill();
-
-            }
-
-        });
-
-    }
-
-
-    /* Draw orbital rings */
-
-    function drawOrbitalRings() {
-
-        if (radius <= 0) return;
-
-        ctx.save();
-
-        ctx.translate(centerX, centerY);
-
-        ctx.rotate(-0.35);
+      if (point.z > 0.75) {
 
         ctx.beginPath();
 
-        ctx.ellipse(
+        ctx.fillStyle =
 
-            0,
+          "rgba(0,224,191,0.12)";
 
-            0,
+        ctx.arc(
 
-            radius * 1.45,
+          point.x,
 
-            radius * 0.45,
+          point.y,
 
-            0,
+          nodeSize * 3,
 
-            0,
+          0,
 
-            Math.PI * 2
-
-        );
-
-        ctx.strokeStyle = "rgba(0,224,191,0.23)";
-
-        ctx.lineWidth = 1;
-
-        ctx.stroke();
-
-        ctx.restore();
-
-
-        ctx.save();
-
-        ctx.translate(centerX, centerY);
-
-        ctx.rotate(0.9);
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-
-            0,
-
-            0,
-
-            radius * 1.35,
-
-            radius * 0.55,
-
-            0,
-
-            0,
-
-            Math.PI * 2
+          Math.PI * 2
 
         );
 
-        ctx.strokeStyle = "rgba(229,0,135,0.17)";
+        ctx.fill();
 
-        ctx.lineWidth = 1;
+      }
 
-        ctx.stroke();
+    });
 
-        ctx.restore();
+  }
 
-    }
 
+  /* DRAW ANIMATED ORBITAL RINGS */
 
-    /* Draw entire scene */
+  function drawOrbits(time) {
 
-    function drawScene(time) {
+    const movement = reducedMotion
 
-        if (width <= 0 || height <= 0) return;
+      ? 0
 
-        ctx.clearRect(0, 0, width, height);
+      : Math.sin(time * 0.0003) * 0.12;
 
-        drawStars(time);
+    ctx.save();
 
-        drawGlobeGlow();
+    ctx.translate(centerX, centerY);
 
-        const rotation = reducedMotion
+    ctx.rotate(-0.35 + movement);
 
-            ? 0.5
+    ctx.beginPath();
 
-            : time * 0.00015;
+    ctx.ellipse(
 
-        const projected = projectPoints(rotation);
+      0,
 
-        drawConnections(projected);
+      0,
 
-        drawNodes(projected);
+      radius * 1.45,
 
-        drawOrbitalRings();
+      radius * 0.45,
 
-    }
+      0,
 
+      0,
 
-    /* Animation loop */
-
-    function animate(time) {
-
-        animationFrame = null;
-
-        if (
-            document.hidden ||
-            !canvasVisible ||
-            reducedMotion
-        ) {
-
-            return;
-
-        }
-
-        drawScene(time);
-
-        animationFrame = requestAnimationFrame(animate);
-
-    }
-
-
-    function startAnimation() {
-
-        if (reducedMotion) {
-
-            drawScene(0);
-
-            return;
-
-        }
-
-        if (
-            animationFrame === null &&
-            canvasVisible &&
-            !document.hidden
-        ) {
-
-            animationFrame = requestAnimationFrame(animate);
-
-        }
-
-    }
-
-
-    function stopAnimation() {
-
-        if (animationFrame !== null) {
-
-            cancelAnimationFrame(animationFrame);
-
-            animationFrame = null;
-
-        }
-
-    }
-
-
-    /* Pause globe when it is not visible */
-
-    if ("IntersectionObserver" in window) {
-
-        const canvasObserver = new IntersectionObserver(
-
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    canvasVisible = entry.isIntersecting;
-
-                    if (canvasVisible) {
-
-                        startAnimation();
-
-                    } else {
-
-                        stopAnimation();
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0
-            }
-
-        );
-
-        canvasObserver.observe(canvas);
-
-    }
-
-
-    /* Pause globe when browser tab is inactive */
-
-    document.addEventListener(
-
-        "visibilitychange",
-
-        function () {
-
-            if (document.hidden) {
-
-                stopAnimation();
-
-            } else {
-
-                startAnimation();
-
-            }
-
-        }
+      Math.PI * 2
 
     );
 
+    ctx.strokeStyle =
+      "rgba(0,224,191,0.25)";
 
-    /* Responsive canvas */
+    ctx.lineWidth = 1;
 
-    window.addEventListener("resize", resizeCanvas);
+    ctx.stroke();
 
-    resizeCanvas();
+    ctx.restore();
 
-    startAnimation();
+
+    ctx.save();
+
+    ctx.translate(centerX, centerY);
+
+    ctx.rotate(0.9 - movement);
+
+    ctx.beginPath();
+
+    ctx.ellipse(
+
+      0,
+
+      0,
+
+      radius * 1.35,
+
+      radius * 0.55,
+
+      0,
+
+      0,
+
+      Math.PI * 2
+
+    );
+
+    ctx.strokeStyle =
+      "rgba(229,0,135,0.18)";
+
+    ctx.lineWidth = 0.8;
+
+    ctx.stroke();
+
+    ctx.restore();
+
+  }
+
+
+  /* DRAW THE COMPLETE GLOBE SCENE */
+
+  function drawScene(time) {
+
+    if (!width || !height || !radius) return;
+
+    ctx.clearRect(
+
+      0,
+
+      0,
+
+      width,
+
+      height
+
+    );
+
+    drawStars(time);
+
+    drawGlobeGlow();
+
+    drawOrbits(time);
+
+    const projectedPoints =
+
+      projectPoints(rotationAngle);
+
+    drawConnections(projectedPoints);
+
+    drawNodes(projectedPoints);
+
+  }
+
+
+  /* ANIMATION LOOP */
+
+  function animateGlobe(timestamp) {
+
+    animationFrame = null;
+
+    if (
+      !globeVisible ||
+      document.hidden ||
+      reducedMotion
+    ) {
+
+      lastTimestamp = 0;
+
+      return;
+
+    }
+
+    const delta = lastTimestamp
+
+      ? Math.min(timestamp - lastTimestamp, 50)
+
+      : 0;
+
+    lastTimestamp = timestamp;
+
+    rotationAngle += delta * 0.00015;
+
+    drawScene(timestamp);
+
+    animationFrame =
+
+      requestAnimationFrame(animateGlobe);
+
+  }
+
+
+  /* START AND STOP ANIMATION */
+
+  function startGlobe() {
+
+    if (reducedMotion) {
+
+      drawScene(0);
+
+      return;
+
+    }
+
+    if (
+      animationFrame === null &&
+      globeVisible &&
+      !document.hidden
+    ) {
+
+      lastTimestamp = 0;
+
+      animationFrame =
+
+        requestAnimationFrame(animateGlobe);
+
+    }
+
+  }
+
+  function stopGlobe() {
+
+    if (animationFrame !== null) {
+
+      cancelAnimationFrame(animationFrame);
+
+      animationFrame = null;
+
+    }
+
+    lastTimestamp = 0;
+
+  }
+
+
+  /* PAUSE GLOBE WHEN OUTSIDE VIEWPORT */
+
+  if ("IntersectionObserver" in window) {
+
+    const globeObserver = new IntersectionObserver(
+
+      function (entries) {
+
+        entries.forEach(function (entry) {
+
+          globeVisible = entry.isIntersecting;
+
+          if (globeVisible) {
+
+            startGlobe();
+
+          } else {
+
+            stopGlobe();
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0
+      }
+
+    );
+
+    globeObserver.observe(canvas);
+
+  }
+
+
+  /* PAUSE GLOBE WHEN TAB IS INACTIVE */
+
+  document.addEventListener(
+
+    "visibilitychange",
+
+    function () {
+
+      if (document.hidden) {
+
+        stopGlobe();
+
+      } else {
+
+        startGlobe();
+
+      }
+
+    }
+
+  );
+
+
+  /* RESPONSIVE RESIZING */
+
+  let resizeFrame = null;
+
+  window.addEventListener(
+
+    "resize",
+
+    function () {
+
+      if (resizeFrame !== null) {
+
+        cancelAnimationFrame(resizeFrame);
+
+      }
+
+      resizeFrame = requestAnimationFrame(
+
+        function () {
+
+          resizeCanvas();
+
+          drawScene(performance.now());
+
+          resizeFrame = null;
+
+        }
+
+      );
+
+    }
+
+  );
+
+
+  /* INITIALIZE GLOBE */
+
+  resizeCanvas();
+
+  drawScene(0);
+
+  startGlobe();
 
 });
+
+/* ==================================================
+   END OF LEARN37 JAVASCRIPT
+   ================================================== */
