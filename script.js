@@ -180,6 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const selectedDay = button.dataset.day;
 
+            const selectedContent = document.getElementById(
+                selectedDay
+            );
+
+            if (!selectedContent) return;
+
             tabButtons.forEach(tab => {
 
                 tab.classList.remove("active");
@@ -206,17 +212,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 "true"
             );
 
-            const selectedContent = document.getElementById(
-                selectedDay
-            );
+            selectedContent.hidden = false;
 
-            if (selectedContent) {
-
-                selectedContent.hidden = false;
-
-                selectedContent.classList.add("active");
-
-            }
+            selectedContent.classList.add("active");
 
         });
 
