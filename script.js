@@ -10,17 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ).matches;
 
 
-    /* =====================================
-       MOBILE NAVIGATION
-       ===================================== */
+    /* MOBILE NAVIGATION */
 
-    const menuToggle = document.getElementById(
-        "menuToggle"
-    );
-
-    const navLinks = document.getElementById(
-        "navLinks"
-    );
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
     function closeMenu() {
 
@@ -41,12 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         menuToggle.addEventListener("click", () => {
 
-            const isOpen = navLinks.classList.toggle(
-                "active"
-            );
+            const isOpen = navLinks.classList.toggle("active");
 
-            menuToggle.textContent =
-                isOpen ? "✕" : "☰";
+            menuToggle.textContent = isOpen ? "✕" : "☰";
 
             menuToggle.setAttribute(
                 "aria-expanded",
@@ -57,19 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navLinks.querySelectorAll("a").forEach(link => {
 
-            link.addEventListener(
-                "click",
-                closeMenu
-            );
+            link.addEventListener("click", closeMenu);
 
         });
 
         document.addEventListener("keydown", event => {
 
             if (event.key === "Escape") {
-
                 closeMenu();
-
             }
 
         });
@@ -77,15 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", event => {
 
             if (
-
                 !navLinks.contains(event.target) &&
-
                 !menuToggle.contains(event.target)
-
             ) {
-
                 closeMenu();
-
             }
 
         });
@@ -93,9 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       COUNTDOWN TIMER
-       ===================================== */
+    /* COUNTDOWN TIMER */
 
     const eventStart = new Date(
         "2026-11-30T08:30:00+05:30"
@@ -131,12 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const values = {
-
             days,
             hours,
             minutes,
             seconds
-
         };
 
         Object.entries(values).forEach(([id, value]) => {
@@ -152,9 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        const label = document.getElementById(
-            "countdownLabel"
-        );
+        const label = document.getElementById("countdownLabel");
 
         if (label) {
 
@@ -177,9 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const countdown = document.querySelector(
-            ".countdown"
-        );
+        const countdown = document.querySelector(".countdown");
 
         if (countdown) {
 
@@ -191,19 +163,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCountdown();
 
-    setInterval(
-        updateCountdown,
-        1000
-    );
+    setInterval(updateCountdown, 1000);
 
 
-    /* =====================================
-       PROGRAMME DAY TABS
-       ===================================== */
+    /* PROGRAMME DAY TABS */
 
-    const tabButtons = document.querySelectorAll(
-        ".tab-button"
-    );
+    const tabButtons = document.querySelectorAll(".tab-button");
 
     const programmeContents = document.querySelectorAll(
         ".programme-content"
@@ -241,16 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 "true"
             );
 
-            const selectedContent =
-                document.getElementById(selectedDay);
+            const selectedContent = document.getElementById(
+                selectedDay
+            );
 
             if (selectedContent) {
 
                 selectedContent.hidden = false;
 
-                selectedContent.classList.add(
-                    "active"
-                );
+                selectedContent.classList.add("active");
 
             }
 
@@ -259,20 +223,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================
-       SCROLL REVEAL
-       ===================================== */
+    /* SCROLL REVEAL */
 
-    const revealElements = document.querySelectorAll(
-        ".reveal"
-    );
+    const revealElements = document.querySelectorAll(".reveal");
 
     if (
-
         "IntersectionObserver" in window &&
-
         !reducedMotion
-
     ) {
 
         document.body.classList.add("js-ready");
@@ -285,13 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (entry.isIntersecting) {
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+                        entry.target.classList.add("visible");
 
-                        revealObserver.unobserve(
-                            entry.target
-                        );
+                        revealObserver.unobserve(entry.target);
 
                     }
 
@@ -300,9 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
-
                 threshold: 0
-
             }
 
         );
@@ -324,17 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       ACTIVE NAVIGATION
-       ===================================== */
+    /* ACTIVE NAVIGATION */
 
-    const sections = document.querySelectorAll(
-        "section[id]"
-    );
+    const sections = document.querySelectorAll("section[id]");
 
-    const navigationLinks = document.querySelectorAll(
-        ".nav-links a"
-    );
+    const navigationLinks = document.querySelectorAll(".nav-links a");
 
     function updateActiveNavigation() {
 
@@ -343,9 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(section => {
 
             if (
-
                 section.getBoundingClientRect().top <= 180
-
             ) {
 
                 currentSection = section.id;
@@ -357,7 +300,6 @@ document.addEventListener("DOMContentLoaded", () => {
         navigationLinks.forEach(link => {
 
             const isActive =
-
                 link.getAttribute("href") ===
                 "#" + currentSection;
 
@@ -375,9 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } else {
 
-                link.removeAttribute(
-                    "aria-current"
-                );
+                link.removeAttribute("aria-current");
 
             }
 
@@ -386,25 +326,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener(
-
         "scroll",
-
         updateActiveNavigation,
-
         { passive: true }
-
     );
 
     updateActiveNavigation();
 
 
-    /* =====================================
-       DIGITAL NETWORK GLOBE
-       ===================================== */
+    /* DIGITAL NETWORK GLOBE */
 
-    const canvas = document.getElementById(
-        "networkCanvas"
-    );
+    const canvas = document.getElementById("networkCanvas");
 
     if (!canvas) return;
 
@@ -483,57 +415,38 @@ document.addEventListener("DOMContentLoaded", () => {
     function resizeCanvas() {
 
         const dpr = Math.min(
-
             window.devicePixelRatio || 1,
-
             2
-
         );
 
         width = canvas.clientWidth;
-
         height = canvas.clientHeight;
 
-        canvas.width = Math.round(
-            width * dpr
-        );
-
-        canvas.height = Math.round(
-            height * dpr
-        );
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
 
         ctx.setTransform(
-
             dpr, 0, 0, dpr, 0, 0
-
         );
 
         if (width <= 768) {
 
             radius = Math.min(
-
                 width * 0.36,
-
                 170
-
             );
 
             centerX = width * 0.65;
-
             centerY = height * 0.73;
 
         } else {
 
             radius = Math.min(
-
                 width * 0.24,
-
                 height * 0.34
-
             );
 
             centerX = width * 0.76;
-
             centerY = height * 0.46;
 
         }
@@ -553,38 +466,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 ? star.opacity
 
-                : star.opacity *
-
-                  (
+                : star.opacity * (
 
                     0.65 +
 
                     0.35 * Math.sin(
-
                         time * 0.001 + star.phase
-
                     )
 
-                  );
+                );
 
             ctx.beginPath();
 
             ctx.arc(
-
                 star.x * width,
-
                 star.y * height,
-
                 star.size,
-
                 0,
-
                 Math.PI * 2
-
             );
 
             ctx.fillStyle =
-
                 `rgba(160, 240, 255, ${opacity})`;
 
             ctx.fill();
@@ -599,57 +501,36 @@ document.addEventListener("DOMContentLoaded", () => {
     function drawGlow() {
 
         const gradient = ctx.createRadialGradient(
-
             centerX,
-
             centerY,
-
             0,
-
             centerX,
-
             centerY,
-
             radius * 1.5
-
         );
 
         gradient.addColorStop(
-
             0,
-
             "rgba(0, 203, 232, 0.12)"
-
         );
 
         gradient.addColorStop(
-
             0.6,
-
             "rgba(0, 125, 197, 0.08)"
-
         );
 
         gradient.addColorStop(
-
             1,
-
             "rgba(0, 203, 232, 0)"
-
         );
 
         ctx.fillStyle = gradient;
 
         ctx.fillRect(
-
             0,
-
             0,
-
             width,
-
             height
-
         );
 
     }
@@ -666,15 +547,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return particles.map(point => {
 
             const x =
-
                 point.x * cos +
-
                 point.z * sin;
 
             const z =
-
                 -point.x * sin +
-
                 point.z * cos;
 
             const perspective = 3 / (3 - z);
@@ -707,25 +584,17 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < points.length; i++) {
 
             for (
-
                 let j = i + 1;
-
                 j < points.length;
-
                 j++
-
             ) {
 
                 const a = points[i];
-
                 const b = points[j];
 
                 if (
-
                     a.z < -0.25 ||
-
                     b.z < -0.25
-
                 ) continue;
 
                 const dx = a.x - b.x;
@@ -733,43 +602,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dy = a.y - b.y;
 
                 const distance = Math.sqrt(
-
                     dx * dx + dy * dy
-
                 );
 
                 if (distance < maxDistance) {
 
                     const opacity =
-
-                        (
-
-                            1 -
-
-                            distance / maxDistance
-
-                        ) * 0.5;
+                        (1 - distance / maxDistance) * 0.5;
 
                     ctx.beginPath();
 
-                    ctx.moveTo(
+                    ctx.moveTo(a.x, a.y);
 
-                        a.x,
-
-                        a.y
-
-                    );
-
-                    ctx.lineTo(
-
-                        b.x,
-
-                        b.y
-
-                    );
+                    ctx.lineTo(b.x, b.y);
 
                     ctx.strokeStyle =
-
                         `rgba(0, 220, 255, ${opacity})`;
 
                     ctx.lineWidth = 0.8;
@@ -790,39 +637,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function drawNodes(points) {
 
         points.sort(
-
             (a, b) => a.z - b.z
-
         );
 
         points.forEach(point => {
 
             const opacity =
-
                 (point.z + 1) / 2;
 
             const size =
-
                 1.5 * point.scale;
 
             ctx.beginPath();
 
             ctx.arc(
-
                 point.x,
-
                 point.y,
-
                 size,
-
                 0,
-
                 Math.PI * 2
-
             );
 
             ctx.fillStyle =
-
                 `rgba(155, 250, 255, ${0.2 + opacity * 0.8})`;
 
             ctx.fill();
@@ -838,38 +674,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.save();
 
-        ctx.translate(
-
-            centerX,
-
-            centerY
-
-        );
+        ctx.translate(centerX, centerY);
 
         ctx.rotate(-0.35);
 
         ctx.beginPath();
 
         ctx.ellipse(
-
             0,
-
             0,
-
             radius * 1.45,
-
             radius * 0.45,
-
             0,
-
             0,
-
             Math.PI * 2
-
         );
 
         ctx.strokeStyle =
-
             "rgba(0, 203, 232, 0.16)";
 
         ctx.lineWidth = 1;
@@ -881,25 +702,16 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.beginPath();
 
         ctx.ellipse(
-
             0,
-
             0,
-
             radius * 1.35,
-
             radius * 0.55,
-
             0,
-
             0,
-
             Math.PI * 2
-
         );
 
         ctx.strokeStyle =
-
             "rgba(229, 0, 135, 0.13)";
 
         ctx.stroke();
@@ -916,21 +728,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!width || !height) return;
 
         ctx.clearRect(
-
             0,
-
             0,
-
             width,
-
             height
-
         );
 
         rotation = reducedMotion
-
             ? 0.5
-
             : time * 0.00015;
 
         drawStars(time);
@@ -954,27 +759,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         drawScene(time);
 
-        animationId = requestAnimationFrame(
-            animate
-        );
+        animationId = requestAnimationFrame(animate);
 
     }
 
     function startAnimation() {
 
         if (
-
             animationId === null &&
-
             !reducedMotion &&
-
             !document.hidden
-
         ) {
 
-            animationId = requestAnimationFrame(
-                animate
-            );
+            animationId = requestAnimationFrame(animate);
 
         }
 
@@ -984,9 +781,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (animationId !== null) {
 
-            cancelAnimationFrame(
-                animationId
-            );
+            cancelAnimationFrame(animationId);
 
             animationId = null;
 
@@ -1004,34 +799,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if ("IntersectionObserver" in window) {
 
-        const canvasObserver =
-            new IntersectionObserver(
+        const canvasObserver = new IntersectionObserver(
 
-                entries => {
+            entries => {
 
-                    entries.forEach(entry => {
+                entries.forEach(entry => {
 
-                        if (
+                    if (
+                        entry.isIntersecting &&
+                        !document.hidden
+                    ) {
 
-                            entry.isIntersecting &&
+                        startAnimation();
 
-                            !document.hidden
+                    } else {
 
-                        ) {
+                        stopAnimation();
 
-                            startAnimation();
+                    }
 
-                        } else {
+                });
 
-                            stopAnimation();
+            }
 
-                        }
-
-                    });
-
-                }
-
-            );
+        );
 
         canvasObserver.observe(canvas);
 
@@ -1045,9 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* PAUSE WHEN BROWSER TAB IS INACTIVE */
 
     document.addEventListener(
-
         "visibilitychange",
-
         () => {
 
             if (document.hidden) {
@@ -1068,18 +857,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
-
     );
 
 
     /* HANDLE WINDOW RESIZING */
 
     window.addEventListener(
-
         "resize",
-
         resizeCanvas
-
     );
 
 });
