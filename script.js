@@ -1,6 +1,6 @@
 
 /* =========================================
-   LEARN37 - WEBSITE INTERACTIONS
+   LEARN37 — COMPLETE WEBSITE JAVASCRIPT
    ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,8 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE NAVIGATION
        ===================================== */
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.getElementById(
+        "menuToggle"
+    );
+
+    const navLinks = document.getElementById(
+        "navLinks"
+    );
 
     function closeMenu() {
 
@@ -36,9 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         menuToggle.addEventListener("click", () => {
 
-            const isOpen = navLinks.classList.toggle("active");
+            const isOpen = navLinks.classList.toggle(
+                "active"
+            );
 
-            menuToggle.textContent = isOpen ? "✕" : "☰";
+            menuToggle.textContent =
+                isOpen ? "✕" : "☰";
 
             menuToggle.setAttribute(
                 "aria-expanded",
@@ -49,14 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navLinks.querySelectorAll("a").forEach(link => {
 
-            link.addEventListener("click", closeMenu);
+            link.addEventListener(
+                "click",
+                closeMenu
+            );
 
         });
 
         document.addEventListener("keydown", event => {
 
             if (event.key === "Escape") {
+
                 closeMenu();
+
             }
 
         });
@@ -64,10 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", event => {
 
             if (
+
                 !navLinks.contains(event.target) &&
+
                 !menuToggle.contains(event.target)
+
             ) {
+
                 closeMenu();
+
             }
 
         });
@@ -76,8 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       LIVE EVENT COUNTDOWN
-       Sri Lanka Standard Time
+       COUNTDOWN TIMER
        ===================================== */
 
     const eventStart = new Date(
@@ -87,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const eventEnd = new Date(
         "2026-12-02T00:00:00+05:30"
     ).getTime();
-
 
     function updateCountdown() {
 
@@ -115,10 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const values = {
+
             days,
             hours,
             minutes,
             seconds
+
         };
 
         Object.entries(values).forEach(([id, value]) => {
@@ -173,11 +191,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+    setInterval(
+        updateCountdown,
+        1000
+    );
 
 
     /* =====================================
-       INTERACTIVE PROGRAMME TABS
+       PROGRAMME DAY TABS
        ===================================== */
 
     const tabButtons = document.querySelectorAll(
@@ -220,15 +241,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 "true"
             );
 
-            const selectedContent = document.getElementById(
-                selectedDay
-            );
+            const selectedContent =
+                document.getElementById(selectedDay);
 
             if (selectedContent) {
 
                 selectedContent.hidden = false;
 
-                selectedContent.classList.add("active");
+                selectedContent.classList.add(
+                    "active"
+                );
 
             }
 
@@ -238,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       SCROLL REVEAL ANIMATIONS
+       SCROLL REVEAL
        ===================================== */
 
     const revealElements = document.querySelectorAll(
@@ -246,8 +268,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (
+
         "IntersectionObserver" in window &&
+
         !reducedMotion
+
     ) {
 
         document.body.classList.add("js-ready");
@@ -275,7 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
+
                 threshold: 0
+
             }
 
         );
@@ -298,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================
-       ACTIVE NAVIGATION ON SCROLL
+       ACTIVE NAVIGATION
        ===================================== */
 
     const sections = document.querySelectorAll(
@@ -316,7 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(section => {
 
             if (
+
                 section.getBoundingClientRect().top <= 180
+
             ) {
 
                 currentSection = section.id;
@@ -328,6 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navigationLinks.forEach(link => {
 
             const isActive =
+
                 link.getAttribute("href") ===
                 "#" + currentSection;
 
@@ -345,7 +375,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } else {
 
-                link.removeAttribute("aria-current");
+                link.removeAttribute(
+                    "aria-current"
+                );
 
             }
 
@@ -354,16 +386,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener(
+
         "scroll",
+
         updateActiveNavigation,
+
         { passive: true }
+
     );
 
     updateActiveNavigation();
 
 
     /* =====================================
-       ANIMATED DIGITAL NETWORK GLOBE
+       DIGITAL NETWORK GLOBE
        ===================================== */
 
     const canvas = document.getElementById(
@@ -376,7 +412,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!ctx) return;
 
-
     let width = 0;
     let height = 0;
 
@@ -385,16 +420,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let centerX = 0;
     let centerY = 0;
 
+    let rotation = 0;
+
+    let animationId = null;
+
     const particles = [];
     const stars = [];
 
     const particleCount = 160;
 
-    let rotation = 0;
-    let animationId = null;
 
-
-    /* GENERATE SPHERICAL NETWORK POINTS */
+    /* GENERATE SPHERICAL POINTS */
 
     for (let i = 0; i < particleCount; i++) {
 
@@ -421,7 +457,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* GENERATE BACKGROUND PARTICLES */
+    /* GENERATE BACKGROUND STARS */
 
     for (let i = 0; i < 75; i++) {
 
@@ -442,32 +478,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       RESPONSIVE CANVAS
-       ===================================== */
+    /* RESPONSIVE CANVAS */
 
     function resizeCanvas() {
 
         const dpr = Math.min(
+
             window.devicePixelRatio || 1,
+
             2
+
         );
 
         width = canvas.clientWidth;
+
         height = canvas.clientHeight;
 
-        canvas.width = Math.round(width * dpr);
-        canvas.height = Math.round(height * dpr);
+        canvas.width = Math.round(
+            width * dpr
+        );
+
+        canvas.height = Math.round(
+            height * dpr
+        );
 
         ctx.setTransform(
+
             dpr, 0, 0, dpr, 0, 0
+
         );
 
         if (width <= 768) {
 
             radius = Math.min(
+
                 width * 0.36,
+
                 170
+
             );
 
             centerX = width * 0.65;
@@ -477,8 +525,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
 
             radius = Math.min(
+
                 width * 0.24,
+
                 height * 0.34
+
             );
 
             centerX = width * 0.76;
@@ -487,44 +538,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        if (reducedMotion) {
-
-            drawScene(0);
-
-        }
+        drawScene(performance.now());
 
     }
 
 
-    /* =====================================
-       BACKGROUND GLOWING PARTICLES
-       ===================================== */
+    /* DRAW STARS */
 
     function drawStars(time) {
 
         stars.forEach(star => {
 
             const opacity = reducedMotion
+
                 ? star.opacity
+
                 : star.opacity *
+
                   (
+
                     0.65 +
+
                     0.35 * Math.sin(
+
                         time * 0.001 + star.phase
+
                     )
+
                   );
 
             ctx.beginPath();
 
             ctx.arc(
+
                 star.x * width,
+
                 star.y * height,
+
                 star.size,
+
                 0,
+
                 Math.PI * 2
+
             );
 
             ctx.fillStyle =
+
                 `rgba(160, 240, 255, ${opacity})`;
 
             ctx.fill();
@@ -534,54 +594,68 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       GLOBE GLOW
-       ===================================== */
+    /* DRAW GLOBE GLOW */
 
     function drawGlow() {
 
         const gradient = ctx.createRadialGradient(
 
             centerX,
+
             centerY,
+
             0,
 
             centerX,
+
             centerY,
+
             radius * 1.5
 
         );
 
         gradient.addColorStop(
+
             0,
+
             "rgba(0, 203, 232, 0.12)"
+
         );
 
         gradient.addColorStop(
+
             0.6,
+
             "rgba(0, 125, 197, 0.08)"
+
         );
 
         gradient.addColorStop(
+
             1,
+
             "rgba(0, 203, 232, 0)"
+
         );
 
         ctx.fillStyle = gradient;
 
         ctx.fillRect(
+
             0,
+
             0,
+
             width,
+
             height
+
         );
 
     }
 
 
-    /* =====================================
-       PROJECT 3D POINTS INTO 2D
-       ===================================== */
+    /* PROJECT 3D SPHERE */
 
     function projectPoints() {
 
@@ -592,11 +666,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return particles.map(point => {
 
             const x =
+
                 point.x * cos +
+
                 point.z * sin;
 
             const z =
+
                 -point.x * sin +
+
                 point.z * cos;
 
             const perspective = 3 / (3 - z);
@@ -620,9 +698,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       NETWORK CONNECTIONS
-       ===================================== */
+    /* DRAW NETWORK CONNECTIONS */
 
     function drawConnections(points) {
 
@@ -631,9 +707,13 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < points.length; i++) {
 
             for (
+
                 let j = i + 1;
+
                 j < points.length;
+
                 j++
+
             ) {
 
                 const a = points[i];
@@ -641,8 +721,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const b = points[j];
 
                 if (
+
                     a.z < -0.25 ||
+
                     b.z < -0.25
+
                 ) continue;
 
                 const dx = a.x - b.x;
@@ -650,30 +733,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dy = a.y - b.y;
 
                 const distance = Math.sqrt(
+
                     dx * dx + dy * dy
+
                 );
 
                 if (distance < maxDistance) {
 
                     const opacity =
+
                         (
+
                             1 -
+
                             distance / maxDistance
+
                         ) * 0.5;
 
                     ctx.beginPath();
 
                     ctx.moveTo(
+
                         a.x,
+
                         a.y
+
                     );
 
                     ctx.lineTo(
+
                         b.x,
+
                         b.y
+
                     );
 
                     ctx.strokeStyle =
+
                         `rgba(0, 220, 255, ${opacity})`;
 
                     ctx.lineWidth = 0.8;
@@ -689,35 +785,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       GLOWING NETWORK NODES
-       ===================================== */
+    /* DRAW GLOWING NODES */
 
     function drawNodes(points) {
 
         points.sort(
+
             (a, b) => a.z - b.z
+
         );
 
         points.forEach(point => {
 
             const opacity =
+
                 (point.z + 1) / 2;
 
             const size =
+
                 1.5 * point.scale;
 
             ctx.beginPath();
 
             ctx.arc(
+
                 point.x,
+
                 point.y,
+
                 size,
+
                 0,
+
                 Math.PI * 2
+
             );
 
             ctx.fillStyle =
+
                 `rgba(155, 250, 255, ${0.2 + opacity * 0.8})`;
 
             ctx.fill();
@@ -727,17 +832,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       DECORATIVE ORBITAL RINGS
-       ===================================== */
+    /* DRAW ORBITAL RINGS */
 
     function drawOrbitRings() {
 
         ctx.save();
 
         ctx.translate(
+
             centerX,
+
             centerY
+
         );
 
         ctx.rotate(-0.35);
@@ -745,38 +851,55 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.beginPath();
 
         ctx.ellipse(
+
             0,
+
             0,
+
             radius * 1.45,
+
             radius * 0.45,
+
             0,
+
             0,
+
             Math.PI * 2
+
         );
 
         ctx.strokeStyle =
+
             "rgba(0, 203, 232, 0.16)";
 
         ctx.lineWidth = 1;
 
         ctx.stroke();
 
-
         ctx.rotate(0.9);
 
         ctx.beginPath();
 
         ctx.ellipse(
+
             0,
+
             0,
+
             radius * 1.35,
+
             radius * 0.55,
+
             0,
+
             0,
+
             Math.PI * 2
+
         );
 
         ctx.strokeStyle =
+
             "rgba(229, 0, 135, 0.13)";
 
         ctx.stroke();
@@ -786,23 +909,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       RENDER THE GLOBE
-       ===================================== */
+    /* RENDER THE SCENE */
 
     function drawScene(time) {
 
         if (!width || !height) return;
 
         ctx.clearRect(
+
             0,
+
             0,
+
             width,
+
             height
+
         );
 
         rotation = reducedMotion
+
             ? 0.5
+
             : time * 0.00015;
 
         drawStars(time);
@@ -811,42 +939,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         drawOrbitRings();
 
-        const projectedPoints =
-            projectPoints();
+        const projectedPoints = projectPoints();
 
-        drawConnections(
-            projectedPoints
-        );
+        drawConnections(projectedPoints);
 
-        drawNodes(
-            projectedPoints
-        );
+        drawNodes(projectedPoints);
 
     }
 
 
-    /* =====================================
-       ANIMATION LOOP
-       ===================================== */
+    /* ANIMATION LOOP */
 
     function animate(time) {
 
         drawScene(time);
 
-        animationId =
-            requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(
+            animate
+        );
 
     }
 
     function startAnimation() {
 
         if (
+
             animationId === null &&
-            !reducedMotion
+
+            !reducedMotion &&
+
+            !document.hidden
+
         ) {
 
-            animationId =
-                requestAnimationFrame(animate);
+            animationId = requestAnimationFrame(
+                animate
+            );
 
         }
 
@@ -867,9 +995,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =====================================
-       PAUSE ANIMATION WHEN NOT VISIBLE
-       ===================================== */
+    /* INITIALISE CANVAS */
+
+    resizeCanvas();
+
+
+    /* PAUSE WHEN HERO IS NOT VISIBLE */
 
     if ("IntersectionObserver" in window) {
 
@@ -881,8 +1012,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     entries.forEach(entry => {
 
                         if (
+
                             entry.isIntersecting &&
+
                             !document.hidden
+
                         ) {
 
                             startAnimation();
@@ -911,7 +1045,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* PAUSE WHEN BROWSER TAB IS INACTIVE */
 
     document.addEventListener(
+
         "visibilitychange",
+
         () => {
 
             if (document.hidden) {
@@ -939,16 +1075,11 @@ document.addEventListener("DOMContentLoaded", () => {
     /* HANDLE WINDOW RESIZING */
 
     window.addEventListener(
+
         "resize",
+
         resizeCanvas
+
     );
-
-    resizeCanvas();
-
-    if (reducedMotion) {
-
-        drawScene(0);
-
-    }
 
 });
