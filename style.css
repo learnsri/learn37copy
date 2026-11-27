@@ -4,7 +4,6 @@
    ========================================= */
 
 :root {
-
     --navy: #061B59;
     --deep-navy: #03143D;
     --royal-blue: #0056B3;
@@ -33,253 +32,179 @@
     );
 
     --shadow: 0 20px 60px rgba(6, 27, 89, 0.08);
-
 }
 
 
-/* =========================================
-   GLOBAL SETTINGS
-   ========================================= */
+/* GLOBAL SETTINGS */
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html {
-
     scroll-behavior: smooth;
     scroll-padding-top: 110px;
-
 }
 
 body {
-
     font-family: 'Outfit', Arial, sans-serif;
     background: #F4FAFF;
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
-
 }
 
 a {
-
     text-decoration: none;
     color: inherit;
-
 }
 
 button {
-
     font-family: inherit;
     cursor: pointer;
-
 }
 
 img {
-
     display: block;
     max-width: 100%;
-
 }
 
 [hidden] {
-
     display: none !important;
-
 }
 
 ::selection {
-
     background: #B7EFF8;
     color: var(--navy);
-
 }
 
 .container {
-
     width: min(1200px, 90%);
     margin: auto;
-
 }
 
 .section {
-
     padding: 110px 0;
-
 }
 
 .section-label {
-
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 3px;
     color: var(--ocean-blue);
     margin-bottom: 18px;
-
 }
 
 .section-title {
-
     font-size: clamp(36px, 5vw, 60px);
     line-height: 1.15;
     font-weight: 700;
     letter-spacing: -2px;
     color: var(--navy);
     margin-bottom: 30px;
-
 }
 
 
-/* =========================================
-   NAVIGATION
-   ========================================= */
+/* NAVIGATION */
 
 .header {
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-
     padding: 16px 4%;
-
 }
 
 .navbar {
-
     max-width: 1400px;
     min-height: 78px;
-
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 10px 32px;
-
     background: rgba(255, 255, 255, 0.94);
-
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 18px;
-
     box-shadow: 0 8px 35px rgba(0, 20, 70, 0.1);
-
 }
 
 .brand img {
-
     width: 165px;
     height: 60px;
     object-fit: contain;
-
 }
 
 .nav-links {
-
     display: flex;
     align-items: center;
     gap: 28px;
-
     list-style: none;
-
 }
 
 .nav-links a {
-
     position: relative;
-
     font-size: 14px;
     font-weight: 500;
     color: var(--navy);
-
     transition: color 0.3s ease;
-
 }
 
 .nav-links a::after {
-
     content: '';
-
     position: absolute;
-
     left: 0;
     bottom: -7px;
-
     width: 0;
     height: 2px;
-
     background: linear-gradient(
         90deg,
         var(--cyan),
         var(--pink)
     );
-
     transition: width 0.3s ease;
-
 }
 
 .nav-links a:hover {
-
     color: var(--ocean-blue);
-
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-
     width: 100%;
-
 }
 
 .menu-toggle {
-
     display: none;
-
     background: transparent;
     border: none;
-
     color: var(--navy);
     font-size: 26px;
-
 }
 
 
-/* =========================================
-   HERO SECTION
-   ========================================= */
+/* HERO SECTION */
 
 .hero {
-
     position: relative;
-
     min-height: 100vh;
     min-height: 100svh;
-
     display: flex;
     align-items: center;
-
     padding: 160px 8% 200px;
-
     overflow: hidden;
 
     background:
-
         radial-gradient(
             ellipse at 85% 40%,
             rgba(0, 174, 239, 0.55),
             transparent 45%
         ),
-
         linear-gradient(
             125deg,
             #03143D 0%,
@@ -288,474 +213,310 @@ img {
         );
 
     color: white;
-
 }
 
 #networkCanvas {
-
     position: absolute;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     z-index: 1;
-
     pointer-events: none;
-
 }
 
 .hero-glow {
-
     position: absolute;
-
     right: -10%;
     top: 5%;
-
     width: 700px;
     height: 700px;
-
     border-radius: 50%;
-
     background: radial-gradient(
         circle,
         rgba(0, 203, 232, 0.23),
         transparent 70%
     );
-
     filter: blur(35px);
-
     animation: glowPulse 7s ease-in-out infinite;
-
     pointer-events: none;
-
 }
 
 .hero-content {
-
     position: relative;
     z-index: 3;
-
     width: 100%;
     max-width: 850px;
-
 }
 
 .event-label {
-
     display: inline-block;
-
     padding: 10px 22px;
-
     border: 1px solid rgba(0, 203, 232, 0.5);
     border-radius: 50px;
-
     background: rgba(0, 203, 232, 0.08);
-
     color: #A5F4FF;
-
     font-size: 13px;
     letter-spacing: 2px;
-
     margin-bottom: 28px;
-
     animation: fadeUp 0.9s ease both;
-
 }
 
 .hero-title {
-
     font-size: clamp(70px, 12vw, 165px);
     font-weight: 800;
-
     line-height: 0.95;
     letter-spacing: -7px;
-
     margin-bottom: 25px;
-
     animation: fadeUp 1s 0.15s ease both;
-
 }
 
 .hero-title span {
-
     background: linear-gradient(
         120deg,
         #00CBE8,
         #7DFFEB
     );
-
     -webkit-background-clip: text;
     background-clip: text;
-
     color: transparent;
-
 }
 
 .hero h2 {
-
     font-size: clamp(23px, 3vw, 40px);
     font-weight: 400;
     line-height: 1.4;
-
     animation: fadeUp 1s 0.3s ease both;
-
 }
 
 .theme {
-
     margin-top: 35px;
-
     font-size: clamp(17px, 2vw, 24px);
     font-weight: 500;
     letter-spacing: 1px;
-
     animation: fadeUp 1s 0.45s ease both;
-
 }
 
 .theme span {
-
     color: var(--cyan);
     padding: 0 8px;
-
 }
 
 .tagline {
-
     font-size: 20px;
     font-weight: 300;
-
     color: #BDEBFF;
-
     margin-top: 5px;
-
     animation: fadeUp 1s 0.5s ease both;
-
 }
 
 .hero-buttons {
-
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-
     margin-top: 35px;
-
     animation: fadeUp 1s 0.65s ease both;
-
 }
 
 .btn {
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 15px 30px;
-
     border-radius: 50px;
-
     font-size: 15px;
     font-weight: 500;
-
     transition: all 0.35s ease;
-
 }
 
 .btn-primary {
-
     background: linear-gradient(
         110deg,
         #49C9EF,
         #00DCC8
     );
-
     color: var(--deep-navy);
-
     box-shadow: 0 8px 35px rgba(0, 203, 232, 0.25);
-
 }
 
 .btn-primary:hover {
-
     transform: translateY(-5px);
-
     box-shadow: 0 15px 45px rgba(0, 203, 232, 0.45);
-
 }
 
 .btn-outline {
-
     border: 1px solid rgba(255, 255, 255, 0.5);
-
     background: rgba(255, 255, 255, 0.05);
-
     color: white;
-
     backdrop-filter: blur(10px);
-
 }
 
 .btn-outline:hover {
-
     background: white;
     color: var(--navy);
-
     transform: translateY(-5px);
-
 }
 
 
-/* =========================================
-   ANIMATED HERO WAVES
-   ========================================= */
+/* ANIMATED HERO WAVES */
 
 .hero-waves {
-
     position: absolute;
-
     bottom: -2px;
     left: 0;
-
     width: 100%;
     height: 150px;
-
     z-index: 4;
-
     overflow: hidden;
-
     pointer-events: none;
-
 }
 
 .hero-waves svg {
-
     width: 100%;
     height: 100%;
-
     display: block;
-
 }
 
 .wave {
-
     transform-origin: center bottom;
-
 }
 
 .wave-pink {
-
     animation: waveFlow 8s ease-in-out infinite alternate;
-
 }
 
 .wave-cyan {
-
     animation: waveFlow 11s ease-in-out infinite alternate-reverse;
-
 }
 
 .wave-blue {
-
     animation: waveFlow 14s ease-in-out infinite alternate;
-
 }
 
 
-/* =========================================
-   COUNTDOWN
-   ========================================= */
+/* COUNTDOWN */
 
 .countdown-section {
-
     text-align: center;
-
     padding: 35px 5% 65px;
-
     background: #F4FAFF;
-
 }
 
 .countdown {
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: clamp(15px, 5vw, 65px);
-
 }
 
 .countdown-item {
-
     position: relative;
-
     min-width: 95px;
-
 }
 
 .countdown-item span {
-
     display: block;
-
     font-size: clamp(42px, 6vw, 76px);
     font-weight: 600;
     line-height: 1.2;
-
     font-variant-numeric: tabular-nums;
-
     background: var(--gradient);
-
     -webkit-background-clip: text;
     background-clip: text;
-
     color: transparent;
-
 }
 
 .countdown-item small {
-
     color: var(--muted);
-
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
-
 }
 
 .countdown-item:not(:last-child)::after {
-
     content: ':';
-
     position: absolute;
-
     top: 10%;
     right: -25px;
-
     font-size: 35px;
-
     color: var(--cyan);
-
 }
 
 
-/* =========================================
-   LEARN37 EXPERIENCE
-   ========================================= */
+/* LEARN37 EXPERIENCE */
 
 .experience-section {
-
     position: relative;
-
     overflow: hidden;
-
     margin-top: 0;
     padding: 60px 0 85px;
-
     background: #F4FAFF;
-
 }
 
 .experience-heading {
-
     position: relative;
     z-index: 2;
-
 }
 
 .experience-heading h2 {
-
     font-size: clamp(38px, 5vw, 72px);
     font-weight: 600;
-
     line-height: 1.12;
     letter-spacing: -2.5px;
-
     color: var(--navy);
-
     margin-bottom: 25px;
-
 }
 
 .experience-heading h2 span {
-
     background: linear-gradient(
         100deg,
         #0056B3,
         #009DBB
     );
-
     -webkit-background-clip: text;
     background-clip: text;
-
     color: transparent;
-
 }
 
 .experience-heading > p:last-child {
-
     max-width: 650px;
-
     font-size: 17px;
     line-height: 1.8;
-
     color: var(--muted);
-
 }
 
 .experience-orbit {
-
     position: absolute;
-
     width: 480px;
     height: 480px;
-
     top: -240px;
     right: -80px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(0, 125, 197, 0.12);
 
     box-shadow:
-
         0 0 0 35px rgba(0, 125, 197, 0.025),
         0 0 0 70px rgba(0, 125, 197, 0.025),
         0 0 0 105px rgba(0, 125, 197, 0.025);
 
     animation: experienceFloat 8s ease-in-out infinite alternate;
-
     pointer-events: none;
-
 }
 
 .experience-grid {
-
     position: relative;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 45px;
-
     margin-top: 75px;
-
 }
 
 .experience-grid::before {
-
     content: '';
-
     position: absolute;
-
     top: 6px;
     left: 6px;
     right: 6px;
-
     height: 1px;
-
     background: linear-gradient(
         90deg,
         #0056B3,
@@ -763,263 +524,175 @@ img {
         #00DCC8,
         #E50087
     );
-
 }
 
 .experience-item {
-
     position: relative;
-
     padding-top: 45px;
-
     transition: transform 0.4s ease;
-
 }
 
 .experience-item:hover {
-
     transform: translateY(-5px);
-
 }
 
 .experience-node {
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 13px;
     height: 13px;
-
     border-radius: 50%;
-
     background: #00B9DC;
-
     box-shadow: 0 0 0 6px rgba(0, 203, 232, 0.12);
-
     animation: experiencePulse 3s ease-in-out infinite;
-
 }
 
 .experience-item:nth-child(2) .experience-node {
-
     animation-delay: 0.5s;
-
 }
 
 .experience-item:nth-child(3) .experience-node {
-
     animation-delay: 1s;
-
 }
 
 .experience-item:nth-child(4) .experience-node {
-
     background: #E50087;
-
     animation-delay: 1.5s;
-
 }
 
 .experience-item svg {
-
     width: 52px;
     height: 52px;
-
     stroke: #007DC5;
     stroke-width: 1.3;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
     margin-bottom: 20px;
-
     transition: transform 0.4s ease;
-
 }
 
 .experience-item:hover svg {
-
     transform: scale(1.12);
-
 }
 
 .experience-item h3 {
-
     font-size: 27px;
     font-weight: 500;
-
     color: var(--navy);
-
     letter-spacing: -0.7px;
-
     margin-bottom: 12px;
-
 }
 
 .experience-item p {
-
     max-width: 240px;
-
     font-size: 15px;
     line-height: 1.7;
-
     color: var(--muted);
-
 }
 
 
-/* =========================================
-   APPROVED PARALLEL AGENDA DESIGN
-   ========================================= */
+/* PARALLEL AGENDA */
 
 .programme-section {
-
     background: linear-gradient(
         180deg,
         #FFFFFF,
         #F4FAFF
     );
-
 }
 
 .programme-section .section-title {
-
     margin-bottom: 16px;
-
 }
 
 .programme-intro {
-
     max-width: 650px;
-
     font-size: 17px;
     line-height: 1.8;
-
     color: var(--muted);
-
 }
 
 
 /* DAY SELECTOR */
 
 .programme-tabs {
-
     display: flex;
     gap: 16px;
-
     margin: 35px 0;
-
 }
 
 .tab-button {
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     gap: 5px;
-
     min-width: 200px;
-
     padding: 18px 28px;
-
     background: #FFFFFF;
-
     border: 1px solid #DCE8F5;
     border-radius: 12px;
-
     color: var(--palette-1);
-
     text-align: left;
-
     transition: all 0.3s ease;
-
 }
 
 .tab-day {
-
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
-
     color: var(--palette-3);
-
 }
 
 .tab-date {
-
     font-size: 20px;
     font-weight: 500;
-
 }
 
 .tab-button.active {
-
     background: linear-gradient(
         120deg,
         #070E75,
         #0042A5
     );
-
     color: #FFFFFF;
-
     border-color: transparent;
-
     box-shadow: 0 10px 30px rgba(7, 14, 117, 0.15);
-
 }
 
 .tab-button.active .tab-day {
-
     color: #7DF4F0;
-
 }
 
 .tab-button:hover {
-
     transform: translateY(-3px);
-
 }
 
 .tab-button:hover:not(.active) {
-
     background: #EAF7FC;
     border-color: #00BBC7;
-
 }
 
 .programme-content {
-
     display: none;
-
 }
 
 .programme-content.active {
-
     display: block;
-
     animation: fadeUp 0.5s ease both;
-
 }
 
 
 /* DATE HEADER */
 
 .agenda-date-header {
-
     position: relative;
     overflow: hidden;
-
     min-height: 150px;
-
     display: flex;
     align-items: center;
-
     padding: 30px 38px;
-
     border-radius: 16px;
 
     background: linear-gradient(
@@ -1030,697 +703,493 @@ img {
     );
 
     color: #FFFFFF;
-
     margin-bottom: 24px;
-
 }
 
 .agenda-date-content {
-
     position: relative;
     z-index: 3;
-
 }
 
 .agenda-eyebrow {
-
     display: block;
-
     color: #80F4EC;
-
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 2.5px;
-
     margin-bottom: 10px;
-
 }
 
 .agenda-date-content h3 {
-
     font-size: clamp(26px, 4vw, 42px);
     font-weight: 500;
-
     line-height: 1.25;
     letter-spacing: -1px;
-
     margin-bottom: 8px;
-
 }
 
 .agenda-date-content p {
-
     font-size: 15px;
-
     color: #C4E7FF;
-
 }
 
 .agenda-date-number {
-
     position: absolute;
-
     right: 35px;
     top: 50%;
-
     transform: translateY(-50%);
-
     font-size: 160px;
     font-weight: 700;
     line-height: 1;
-
     color: rgba(255, 255, 255, 0.08);
-
     pointer-events: none;
-
 }
 
 .agenda-header-pattern {
-
     position: absolute;
-
     width: 450px;
     height: 450px;
-
     right: -100px;
     top: -240px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(0, 224, 191, 0.25);
 
     box-shadow:
-
         0 0 0 30px rgba(0, 224, 191, 0.04),
         0 0 0 60px rgba(0, 224, 191, 0.04),
         0 0 0 90px rgba(0, 224, 191, 0.04),
         0 0 0 120px rgba(0, 224, 191, 0.04);
 
     pointer-events: none;
-
 }
 
 
-/* AGENDA CONTAINER */
+/* AGENDA TABLE */
 
 .agenda-scroll {
-
     overflow-x: auto;
-
     padding: 12px;
-
     border: 1px solid #E1EDF6;
     border-radius: 18px;
-
     background: #F4FAFF;
-
     scrollbar-width: thin;
     scrollbar-color: #0095CA #E1EDF6;
-
     -webkit-overflow-scrolling: touch;
-
 }
 
 .agenda-scroll-hint {
-
     display: none;
-
 }
 
 .agenda-table {
-
     width: 100%;
     min-width: 820px;
-
     border-collapse: separate;
     border-spacing: 10px;
-
     table-layout: fixed;
-
 }
 
 .time-column {
-
     width: 12%;
-
 }
 
 .governance-column {
-
     width: 34%;
-
 }
 
 .working-column {
-
     width: 27%;
-
 }
 
-
-/* TIME COLUMN HEADING */
-
 .agenda-time-heading {
-
     padding: 10px 5px;
-
     color: #070E75;
-
     text-align: left;
-
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2px;
-
 }
 
 .agenda-time-heading small {
-
     display: block;
-
     font-size: 10px;
     font-weight: 400;
-    letter-spacing: 1px;
-
+    letter-spacing: 0;
     color: var(--muted);
-
     margin-top: 5px;
-
 }
 
 
-/* GRADIENT TRACK HEADERS */
+/* TRACK HEADERS */
 
 .agenda-track {
-
     position: relative;
     overflow: hidden;
-
     height: 125px;
-
     padding: 20px;
-
     border-radius: 10px;
-
     text-align: left;
-
     color: #FFFFFF;
-
 }
 
 .agenda-track::after {
-
     content: '';
-
     position: absolute;
-
     width: 120px;
     height: 120px;
-
     right: -55px;
     bottom: -70px;
-
     border: 1px solid rgba(255, 255, 255, 0.2);
-
     border-radius: 50%;
 
     box-shadow:
-
         0 0 0 15px rgba(255, 255, 255, 0.04),
         0 0 0 30px rgba(255, 255, 255, 0.04);
 
     pointer-events: none;
-
 }
 
 .track-one {
-
     background: linear-gradient(
         125deg,
         #070E75,
         #0042A5
     );
-
 }
 
 .track-two {
-
     background: linear-gradient(
         125deg,
         #006DC1,
         #0095CA
     );
-
 }
 
 .track-three {
-
     background: linear-gradient(
         125deg,
         #00BBC7,
         #00E0BF
     );
-
     color: #073E50;
-
 }
 
 .track-number {
-
     display: block;
-
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.8px;
-
     opacity: 0.9;
-
     margin-bottom: 7px;
-
 }
 
 .agenda-track h3 {
-
     font-size: 21px;
     font-weight: 500;
-
     line-height: 1.3;
-
     margin-bottom: 12px;
-
 }
 
 .track-location {
-
     display: flex;
     align-items: flex-start;
-
     gap: 7px;
-
     font-size: 12px;
     font-weight: 400;
-
     line-height: 1.5;
-
 }
 
 .track-location svg {
-
     flex-shrink: 0;
-
     width: 16px;
     height: 16px;
-
     stroke: currentColor;
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
 }
 
 
 /* CONNECTED TIME AXIS */
 
 .agenda-time {
-
     position: relative;
-
     padding: 12px 15px 12px 5px;
-
     text-align: left;
     vertical-align: middle;
-
     font-variant-numeric: tabular-nums;
-
 }
 
 .agenda-time strong {
-
     display: block;
-
     font-size: 13px;
     font-weight: 600;
-
     color: #070E75;
-
     white-space: nowrap;
-
 }
 
 .agenda-time span {
-
     display: block;
-
     font-size: 12px;
     font-weight: 400;
-
     color: var(--muted);
-
     margin-top: 3px;
-
     white-space: nowrap;
-
 }
 
 .agenda-time::before {
-
     content: '';
-
     position: absolute;
-
     top: 50%;
     right: 0;
-
     width: 9px;
     height: 9px;
-
     border-radius: 50%;
-
     background: #0095CA;
-
     border: 2px solid #F4FAFF;
-
     box-shadow: 0 0 0 2px #A7DDEB;
-
     transform: translate(50%, -50%);
-
     z-index: 2;
-
 }
 
 .agenda-time::after {
-
     content: '';
-
     position: absolute;
-
     top: 0;
     bottom: -10px;
     right: -1px;
-
     width: 2px;
-
     background: #C6E6F2;
-
 }
 
 .agenda-time.first-time::after {
-
     top: 50%;
-
 }
 
 .agenda-time.last-time::after {
-
     bottom: 50%;
-
 }
 
 
 /* COMMON SESSIONS */
 
 .break-row {
-
     height: 65px;
-
 }
 
 .agenda-common {
-
     padding: 15px 20px;
-
     border-radius: 9px;
-
     background: linear-gradient(
         100deg,
         #E4EFF8,
         #EDF7FC
     );
-
     color: #0042A5;
-
     text-align: center;
-
     font-size: 15px;
     font-weight: 500;
-
 }
 
 .common-content {
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
-
 }
 
 .common-content svg {
-
     width: 21px;
     height: 21px;
-
     flex-shrink: 0;
-
     stroke: #006DC1;
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
 }
 
 
-/* INDIVIDUAL SESSION BLOCKS */
+/* SESSION BLOCKS */
 
 .session-row {
-
     height: 100px;
-
 }
 
 .agenda-session {
-
     position: relative;
-
     padding: 22px;
-
     border-radius: 10px;
-
     vertical-align: middle;
-
     transition:
-
         background 0.3s ease,
         box-shadow 0.3s ease;
-
 }
 
 .agenda-session h4 {
-
     position: relative;
     z-index: 2;
-
     font-size: 17px;
     font-weight: 500;
     line-height: 1.5;
-
 }
 
 .agenda-session:hover {
-
     box-shadow: 0 8px 24px rgba(7, 14, 117, 0.07);
-
 }
 
 
 /* PROGRAMME 01 */
 
 .governance-session {
-
     padding-left: 25px;
-
     background: linear-gradient(
         120deg,
         #E4EBFC,
         #EDF3FF
     );
-
     color: #070E75;
-
 }
 
 .governance-session::before {
-
     content: '';
-
     position: absolute;
-
     left: 0;
     top: 15px;
     bottom: 15px;
-
     width: 4px;
-
     border-radius: 0 4px 4px 0;
-
     background: #0042A5;
+}
 
+
+/* CLOSED SESSION LABEL — NEW */
+
+.closed-session-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    background: rgba(7, 14, 117, 0.06);
+    border: 1px solid rgba(7, 14, 117, 0.12);
+    color: #52638B;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.closed-session-label svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
 }
 
 
 /* PROGRAMME 02 */
 
 .ai-session {
-
     text-align: center;
-
     background: linear-gradient(
         145deg,
         #DDF2FC,
         #E9F8FD
     );
-
     color: #005CA8;
-
     border: 1px solid rgba(0, 149, 202, 0.08);
-
 }
 
 
-/* PROGRAMME 03 */
+/* PROGRAMME 03 — AGRITEC */
 
 .agro-session {
-
     text-align: center;
-
     background: linear-gradient(
         145deg,
         #D9F8F2,
         #E8FCF7
     );
-
     color: #006B68;
-
     border: 1px solid rgba(0, 187, 199, 0.08);
-
 }
 
 
 /* MERGED WORKING GROUPS */
 
 .merged-session {
-
     overflow: hidden;
-
 }
 
 .merged-session::before {
-
     content: '';
-
     position: absolute;
-
     left: 12px;
     top: 20px;
     bottom: 20px;
-
     width: 2px;
-
     border-radius: 3px;
-
     background: currentColor;
-
     opacity: 0.15;
-
 }
 
 .wg-session-content {
-
     position: relative;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .wg-icon {
-
     width: 42px;
     height: 42px;
-
     margin-bottom: 16px;
-
     stroke: currentColor;
     stroke-width: 1.2;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
     opacity: 0.85;
-
     transition: transform 0.3s ease;
-
 }
 
 .merged-session:hover .wg-icon {
-
     transform: scale(1.1);
-
 }
 
 .wg-session-content h4 {
-
     font-size: 21px;
     font-weight: 500;
-
 }
 
 .wg-session-content p {
-
     font-size: 11px;
     font-weight: 400;
-
     margin-top: 8px;
-
     opacity: 0.8;
-
 }
-
-
-/* EMPTY SESSION */
 
 .agenda-empty {
-
     text-align: center;
-
     color: #A0B1C2;
-
     font-size: 20px;
-
     border: 1px dashed #DCE8F1;
-
     border-radius: 10px;
-
 }
 
 
-/* =========================================
-   EVENING PROGRAMME
-   ========================================= */
+/* EVENING PROGRAMME */
 
 .agenda-evening {
-
     position: relative;
     overflow: hidden;
-
     display: grid;
 
     grid-template-columns:
@@ -1729,708 +1198,531 @@ img {
         55px;
 
     align-items: center;
-
     gap: 30px;
-
     margin-top: 25px;
     padding: 35px 40px;
-
     border-radius: 16px;
-
     color: #FFFFFF;
 
     background:
-
         radial-gradient(
             ellipse at 95% 0%,
             rgba(0, 187, 199, 0.2),
             transparent 50%
         ),
-
         linear-gradient(
             120deg,
             #070E75,
             #0042A5
         );
-
 }
 
 .evening-time-block {
-
     position: relative;
     z-index: 2;
-
     padding-right: 25px;
-
     border-right: 1px solid rgba(255, 255, 255, 0.2);
-
 }
 
 .evening-label {
-
     display: block;
-
     color: #7DF4F0;
-
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 1.8px;
+    margin-bottom: 18px;
+}
 
-    margin-bottom: 15px;
 
+/* UPDATED RECEPTION AND AWARDS TIMES */
+
+.evening-time-item + .evening-time-item {
+    margin-top: 17px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .evening-time-block h3 {
-
-    font-size: clamp(28px, 4vw, 40px);
+    font-size: clamp(26px, 3vw, 34px);
     font-weight: 500;
-
     line-height: 1.2;
-    letter-spacing: -1px;
-
+    letter-spacing: -0.7px;
+    font-variant-numeric: tabular-nums;
 }
 
 .evening-time-block p {
-
     color: #B7DDF7;
-
     font-size: 14px;
-
-    margin-top: 5px;
-
+    margin-top: 4px;
 }
 
 .evening-main {
-
     position: relative;
     z-index: 2;
-
 }
 
 .evening-main h3 {
-
     font-size: clamp(25px, 3vw, 35px);
     font-weight: 500;
-
     line-height: 1.3;
     letter-spacing: -0.6px;
-
 }
 
 .evening-main h4 {
-
     color: #80F4EC;
-
     font-size: 20px;
     font-weight: 400;
-
     margin-top: 6px;
-
 }
 
 .evening-main p {
-
     color: #D0E8FF;
-
     font-size: 15px;
-
     margin-top: 5px;
-
 }
 
 .evening-location {
-
     display: flex;
     align-items: center;
-
     gap: 9px;
-
     color: #FFFFFF;
-
     font-size: 13px;
-
     margin-top: 18px;
-
 }
 
 .evening-location svg {
-
     width: 18px;
     height: 18px;
-
     flex-shrink: 0;
-
     stroke: #00E0BF;
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
 }
 
 .evening-arrow {
-
     position: relative;
     z-index: 2;
-
     width: 48px;
     height: 48px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     border: 1px solid rgba(255, 255, 255, 0.35);
-
     background: rgba(255, 255, 255, 0.05);
-
     color: white;
-
     font-size: 24px;
-
     transition: all 0.3s ease;
-
 }
 
 .evening-arrow:hover {
-
     background: #00E0BF;
-
     border-color: #00E0BF;
-
     color: #070E75;
-
     transform: translateX(4px);
-
 }
 
 .evening-pattern {
-
     position: absolute;
-
     width: 340px;
     height: 340px;
-
     top: -160px;
     right: -80px;
-
     border-radius: 50%;
-
     border: 1px solid rgba(0, 224, 191, 0.2);
 
     box-shadow:
-
         0 0 0 25px rgba(0, 224, 191, 0.035),
         0 0 0 50px rgba(0, 224, 191, 0.035),
         0 0 0 75px rgba(0, 224, 191, 0.035),
         0 0 0 100px rgba(0, 224, 191, 0.035);
 
     pointer-events: none;
-
 }
 
 
-/* DAY TWO PLACEHOLDER */
+/* DAY TWO */
 
 .agenda-coming-soon {
-
     text-align: center;
-
     padding: 75px 25px;
-
     background: #F4FAFF;
-
     border: 1px solid #E1EDF6;
-
     border-radius: 16px;
-
 }
 
 .agenda-coming-soon svg {
-
     width: 60px;
     height: 60px;
-
     margin-bottom: 25px;
-
     stroke: #0095CA;
     stroke-width: 1.2;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     fill: none;
-
 }
 
 .agenda-coming-soon h3 {
-
     color: #070E75;
-
     font-size: 25px;
     font-weight: 500;
-
 }
 
 .agenda-coming-soon p {
-
     color: var(--muted);
-
     font-size: 15px;
-
     margin-top: 12px;
-
 }
 
 
-/* =========================================
-   LEARN AWARDS SECTION
-   ========================================= */
+/* LEARN AWARDS SECTION */
 
 .awards-section {
-
     position: relative;
     overflow: hidden;
-
     padding: 120px 0;
-
     text-align: center;
-
     color: white;
 
     background:
-
         radial-gradient(
             ellipse at 80% 20%,
             rgba(0, 203, 232, 0.22),
             transparent 50%
         ),
-
         linear-gradient(
             130deg,
             #03143D,
             #061B59,
             #004B91
         );
-
 }
 
 .awards-section .container {
-
     position: relative;
     z-index: 2;
-
 }
 
 .awards-section .section-label {
-
     color: #7DEBFF;
-
 }
 
 .awards-title {
-
     font-size: clamp(45px, 7vw, 90px);
     font-weight: 600;
-
     letter-spacing: -3px;
     line-height: 1.15;
-
     margin-bottom: 25px;
-
 }
 
 .awards-title span {
-
     display: block;
-
     color: #75E8FF;
-
     font-weight: 300;
-
 }
 
 .awards-theme {
-
     font-size: clamp(22px, 3vw, 32px);
     font-weight: 400;
-
     color: #FFFFFF;
-
     margin-bottom: 20px;
-
 }
 
 .awards-section p {
-
-    max-width: 700px;
-
+    max-width: 780px;
     margin-left: auto;
     margin-right: auto;
-
     color: #D0E7FA;
-
     font-size: 18px;
-
 }
 
 .awards-section p.section-label {
-
     font-size: 12px;
+}
 
+.awards-description {
+    font-weight: 300;
+    line-height: 1.9;
 }
 
 .awards-glow {
-
     position: absolute;
-
     width: 500px;
     height: 500px;
-
     top: -250px;
     left: -150px;
-
     background: rgba(229, 0, 135, 0.2);
-
     filter: blur(100px);
-
     border-radius: 50%;
-
     animation: glowPulse 8s infinite;
-
 }
 
-.awards-details {
 
+/* AI FOR ALL IMPACT — NEW */
+
+.awards-impact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 45px auto 15px;
+    padding: 15px 20px;
+}
+
+.impact-number {
+    font-size: clamp(60px, 9vw, 110px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -4px;
+
+    background: linear-gradient(
+        110deg,
+        #FFFFFF,
+        #75E8FF,
+        #00E0BF
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.impact-label {
+    color: #BCE9F9;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    margin-top: 12px;
+}
+
+
+/* AWARDS EVENT DETAILS */
+
+.awards-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     gap: 30px;
-
     margin-top: 55px;
-
 }
 
 .awards-details > div {
-
     padding: 25px 15px;
-
     border-top: 1px solid rgba(0, 203, 232, 0.4);
-
 }
 
 .awards-details small {
-
     color: #8BEAFF;
-
     font-size: 11px;
     letter-spacing: 3px;
-
 }
 
 .awards-details h3 {
-
     font-size: 22px;
     font-weight: 400;
-
     margin-top: 12px;
+}
 
+.awards-time h3 {
+    font-variant-numeric: tabular-nums;
+    font-size: 21px;
+    margin-top: 10px;
+}
+
+.awards-time h3 span {
+    display: inline-block;
+    color: #BCE9F9;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 7px;
 }
 
 
-/* =========================================
-   EVENT PARTNERS
-   ========================================= */
+/* PARTNERS */
 
 .partners-section {
-
     text-align: center;
-
     background: #FFFFFF;
-
 }
 
 .partner {
-
     padding: 35px;
-
     background: linear-gradient(
         145deg,
         #FFFFFF,
         #F5F9FE
     );
-
     border: 1px solid #E3EDF5;
-
     border-radius: 20px;
-
     transition: all 0.4s ease;
-
 }
 
 .partner:hover {
-
     transform: translateY(-8px);
-
     border-color: #9BE7F4;
-
     box-shadow: var(--shadow);
-
 }
 
 .partner-category {
-
     text-transform: uppercase;
-
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
-
     color: var(--ocean-blue);
-
     margin-bottom: 25px;
-
 }
 
 .partner img {
-
     width: 100%;
     max-width: 240px;
-
     height: 110px;
-
     object-fit: contain;
-
     margin: 0 auto 25px;
-
     transition: transform 0.4s ease;
-
 }
 
 .partner:hover img {
-
     transform: scale(1.05);
-
 }
 
 .partner h3 {
-
     color: var(--navy);
-
     font-size: 17px;
     font-weight: 500;
-
 }
 
 .technology-partner {
-
     max-width: 750px;
-
     margin: 50px auto 25px;
-
     padding: 45px;
-
 }
 
 .technology-partner img {
-
     max-width: 280px;
-
     height: 150px;
-
 }
 
 .partners-grid {
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
-
     max-width: 900px;
-
     margin: auto;
-
 }
 
 .registration-partner {
-
     max-width: 480px;
-
     margin: 25px auto 0;
-
 }
 
 .registration-partner img {
-
     height: 75px;
-
 }
 
 
-/* =========================================
-   EVENT VENUES
-   ========================================= */
+/* EVENT VENUES */
 
 .venue-section {
-
     background: linear-gradient(
         135deg,
         #F4FAFF,
         #D9EFFC
     );
-
 }
 
 .venue-grid {
-
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 25px;
-
     margin-top: 45px;
-
 }
 
 .venue-card {
-
     display: flex;
     flex-direction: column;
-
     background: #FFFFFF;
-
     border-radius: 20px;
-
     overflow: hidden;
-
     box-shadow: var(--shadow);
-
     transition: transform 0.4s ease;
-
 }
 
 .venue-card:hover {
-
     transform: translateY(-8px);
-
 }
 
 .venue-image {
-
     height: 240px;
-
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     background-color: #B8DFF5;
-
 }
 
 .university-image {
-
     background-image: url('images/Uni_colombo.jpg');
-
 }
 
 .ramada-image {
-
     background-image: url('images/Ramada_Hotel.jpg');
-
 }
 
 .hotel-image {
-
     background-image: url('images/Galleface%20Hotel.jpeg');
-
 }
 
 .venue-info {
-
     display: flex;
     flex-direction: column;
-
     flex: 1;
-
     padding: 27px;
-
 }
 
 .venue-label {
-
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 1.5px;
-
     color: var(--ocean-blue);
-
 }
 
 .venue-info h3 {
-
     font-size: 24px;
     font-weight: 500;
-
     color: var(--navy);
-
     line-height: 1.3;
-
     margin: 10px 0;
-
 }
 
 .venue-info p {
-
     color: var(--muted);
-
     font-size: 14px;
-
     margin-bottom: 12px;
-
 }
 
 .venue-description {
-
     border-top: 1px solid #E3EDF5;
-
     padding-top: 15px;
-
     margin-top: 5px;
-
     margin-bottom: 25px !important;
-
 }
 
 .venue-info a {
-
     color: var(--royal-blue);
-
     font-weight: 500;
-
     margin-top: auto;
-
 }
 
 .venue-info a:hover {
-
     text-decoration: underline;
-
 }
 
 
-/* =========================================
-   FOOTER
-   ========================================= */
+/* FOOTER */
 
 .footer {
-
     position: relative;
     overflow: hidden;
-
     padding-top: 130px;
 
     background: linear-gradient(
@@ -2441,18 +1733,13 @@ img {
     );
 
     color: #FFFFFF;
-
 }
 
 .footer::before {
-
     content: '';
-
     position: absolute;
-
     top: -65px;
     left: -10%;
-
     width: 120%;
     height: 125px;
 
@@ -2465,95 +1752,62 @@ img {
     );
 
     border-radius: 0 0 50% 45%;
-
     transform: rotate(-3deg);
-
 }
 
 .footer-content {
-
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-
     gap: 70px;
-
     padding-bottom: 65px;
-
 }
 
 .footer-brand img {
-
     width: 200px;
-
     padding: 12px;
-
     border-radius: 10px;
-
     background: white;
-
     margin-bottom: 25px;
-
 }
 
 .footer h3 {
-
     font-size: 20px;
     font-weight: 500;
-
     margin-bottom: 18px;
-
 }
 
 .footer p,
 .footer a {
-
     color: #C3DDF4;
-
     font-size: 15px;
-
     line-height: 1.9;
-
 }
 
 .footer a:hover {
-
     color: var(--cyan);
-
 }
 
 .footer-bottom {
-
     text-align: center;
-
     padding: 25px 5%;
-
     border-top: 1px solid rgba(255, 255, 255, 0.12);
-
     color: #B5CDE5;
-
     font-size: 13px;
-
 }
 
 
-/* =========================================
-   ANIMATIONS
-   ========================================= */
+/* ANIMATIONS */
 
 @keyframes fadeUp {
 
     from {
-
         opacity: 0;
         transform: translateY(30px);
-
     }
 
     to {
-
         opacity: 1;
         transform: translateY(0);
-
     }
 
 }
@@ -2561,17 +1815,13 @@ img {
 @keyframes glowPulse {
 
     0%, 100% {
-
         opacity: 0.6;
         transform: scale(1);
-
     }
 
     50% {
-
         opacity: 1;
         transform: scale(1.15);
-
     }
 
 }
@@ -2579,15 +1829,11 @@ img {
 @keyframes waveFlow {
 
     from {
-
         transform: scaleX(1.03) translateY(0);
-
     }
 
     to {
-
         transform: scaleX(1.12) translateY(12px);
-
     }
 
 }
@@ -2595,15 +1841,11 @@ img {
 @keyframes experiencePulse {
 
     0%, 100% {
-
         box-shadow: 0 0 0 5px rgba(0, 203, 232, 0.15);
-
     }
 
     50% {
-
         box-shadow: 0 0 0 12px rgba(0, 203, 232, 0.02);
-
     }
 
 }
@@ -2611,15 +1853,11 @@ img {
 @keyframes experienceFloat {
 
     from {
-
         transform: translate(0, 0);
-
     }
 
     to {
-
         transform: translate(-25px, 35px);
-
     }
 
 }
@@ -2628,24 +1866,16 @@ img {
 /* SCROLL REVEAL */
 
 .js-ready .reveal {
-
     opacity: 0;
-
     transform: translateY(35px);
-
     transition:
-
         opacity 0.85s ease,
         transform 0.85s ease;
-
 }
 
 .js-ready .reveal.visible {
-
     opacity: 1;
-
     transform: translateY(0);
-
 }
 
 
@@ -2654,739 +1884,542 @@ img {
 a:focus-visible,
 button:focus-visible,
 .agenda-scroll:focus-visible {
-
     outline: 3px solid var(--cyan);
-
     outline-offset: 4px;
-
 }
 
 
-/* =========================================
-   TABLET RESPONSIVE DESIGN
-   ========================================= */
+/* TABLET RESPONSIVE DESIGN */
 
 @media (max-width: 1024px) {
 
     .section {
-
         padding: 80px 0;
-
     }
 
     .navbar {
-
         padding: 10px 20px;
-
     }
 
     .nav-links {
-
         gap: 16px;
-
     }
 
     .nav-links a {
-
         font-size: 12px;
-
     }
 
     .experience-grid {
-
         gap: 25px;
-
     }
 
     .experience-item h3 {
-
         font-size: 24px;
-
     }
 
     .agenda-scroll-hint {
-
         display: block;
-
         color: var(--muted);
-
         font-size: 12px;
-
         margin: 12px 0;
-
     }
 
     .agenda-track {
-
         padding: 18px 16px;
-
     }
 
     .agenda-track h3 {
-
         font-size: 19px;
-
     }
 
     .agenda-session {
-
         padding: 18px;
-
     }
 
     .agenda-session h4 {
-
         font-size: 16px;
-
     }
 
     .venue-grid {
-
         gap: 18px;
-
     }
 
     .venue-image {
-
         height: 200px;
-
     }
 
     .venue-info {
-
         padding: 20px;
-
     }
 
     .venue-info h3 {
-
         font-size: 21px;
-
     }
 
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE DESIGN
-   ========================================= */
+/* MOBILE RESPONSIVE DESIGN */
 
 @media (max-width: 768px) {
 
     html {
-
         scroll-padding-top: 90px;
-
     }
 
     .header {
-
         padding: 10px 4%;
-
     }
 
     .navbar {
-
         min-height: 65px;
-
         border-radius: 12px;
-
     }
 
     .brand img {
-
         width: 135px;
         height: 45px;
-
     }
 
     .menu-toggle {
-
         display: block;
-
     }
 
     .nav-links {
-
         display: none;
-
         position: absolute;
-
         top: 90px;
         left: 4%;
         right: 4%;
-
         flex-direction: column;
         align-items: stretch;
-
         gap: 0;
-
         background: white;
-
         border-radius: 15px;
-
         padding: 15px 25px;
-
         box-shadow: var(--shadow);
-
     }
 
     .nav-links.active {
-
         display: flex;
-
     }
 
     .nav-links li {
-
         padding: 13px 0;
-
         border-bottom: 1px solid #EAF0F6;
-
     }
 
     .nav-links a {
-
         display: block;
-
         font-size: 15px;
-
     }
 
 
-    /* HERO */
+    /* MOBILE HERO */
 
     .hero {
-
         min-height: 850px;
-
         padding: 145px 6% 180px;
-
         align-items: flex-start;
-
     }
 
     .hero-title {
-
         font-size: clamp(60px, 15vw, 100px);
-
         letter-spacing: -4px;
-
     }
 
     .hero h2 {
-
         font-size: 25px;
-
     }
 
     .event-label {
-
         font-size: 10px;
-
         letter-spacing: 1px;
-
         padding: 10px 15px;
-
     }
 
     .theme {
-
         font-size: 16px;
-
         letter-spacing: 0;
-
     }
 
     .theme span {
-
         padding: 0 4px;
-
     }
 
     .tagline {
-
         font-size: 17px;
-
     }
 
     .hero-buttons {
-
         gap: 12px;
-
     }
 
     .btn {
-
         padding: 12px 22px;
-
         font-size: 13px;
-
     }
 
     .hero-waves {
-
         height: 95px;
-
     }
 
 
-    /* COUNTDOWN */
+    /* MOBILE COUNTDOWN */
 
     .countdown {
-
         gap: 18px;
-
     }
 
     .countdown-item {
-
         min-width: 55px;
-
     }
 
     .countdown-item span {
-
         font-size: 42px;
-
     }
 
     .countdown-item small {
-
         font-size: 9px;
-
         letter-spacing: 1px;
-
     }
 
     .countdown-item:not(:last-child)::after {
-
         right: -12px;
-
         font-size: 22px;
-
     }
 
 
-    /* GLOBAL SECTIONS */
+    /* MOBILE SECTIONS */
 
     .section {
-
         padding: 65px 0;
-
     }
 
     .section-title {
-
         letter-spacing: -1px;
-
     }
 
-
-    /* EXPERIENCE */
-
     .experience-section {
-
         padding: 45px 0 65px;
-
     }
 
     .experience-heading h2 {
-
         font-size: 38px;
-
         letter-spacing: -1.5px;
-
     }
 
     .experience-heading > p:last-child {
-
         font-size: 15px;
-
     }
 
     .experience-grid {
-
         grid-template-columns: repeat(2, 1fr);
-
         gap: 35px 25px;
-
         margin-top: 45px;
-
     }
 
     .experience-grid::before {
-
         display: none;
-
     }
 
     .experience-item {
-
         border-top: 1px solid #B5DEEF;
-
         padding-top: 30px;
-
     }
 
     .experience-node {
-
         top: -6px;
-
     }
 
     .experience-item h3 {
-
         font-size: 23px;
-
     }
 
     .experience-item p {
-
         font-size: 13px;
-
     }
 
     .experience-item svg {
-
         width: 42px;
         height: 42px;
-
     }
 
 
     /* MOBILE AGENDA */
 
     .programme-intro {
-
         font-size: 15px;
-
     }
 
     .programme-tabs {
-
         gap: 10px;
-
         margin: 25px 0;
-
     }
 
     .tab-button {
-
         flex: 1;
-
         min-width: 0;
-
         padding: 15px 18px;
-
     }
 
     .tab-day {
-
         font-size: 10px;
-
     }
 
     .tab-date {
-
         font-size: 17px;
-
     }
 
     .agenda-date-header {
-
         min-height: 140px;
-
         padding: 25px;
-
         border-radius: 12px;
-
     }
 
     .agenda-eyebrow {
-
         font-size: 9px;
-
         letter-spacing: 1.5px;
-
     }
 
     .agenda-date-content h3 {
-
         font-size: 26px;
-
     }
 
     .agenda-date-number {
-
         font-size: 120px;
-
         right: 10px;
-
     }
 
     .agenda-date-content p {
-
         font-size: 13px;
-
     }
 
     .agenda-scroll {
-
         padding: 5px;
-
         border-radius: 12px;
-
     }
 
     .agenda-table {
-
         min-width: 780px;
-
         border-spacing: 8px;
-
     }
 
     .agenda-track {
-
         padding: 16px;
-
     }
 
     .agenda-track h3 {
-
         font-size: 18px;
-
     }
 
     .agenda-time strong {
-
         font-size: 12px;
-
     }
 
     .agenda-time span {
-
         font-size: 11px;
-
     }
 
     .agenda-time::after {
-
         bottom: -8px;
-
     }
 
     .agenda-time.last-time::after {
-
         bottom: 50%;
-
     }
 
     .agenda-session h4 {
-
         font-size: 15px;
-
     }
 
     .agenda-common {
-
         font-size: 14px;
-
     }
 
+    .closed-session-label {
+        font-size: 10px;
+    }
+
+
+    /* MOBILE EVENING PROGRAMME */
+
     .agenda-evening {
-
         grid-template-columns: 1fr 45px;
-
         gap: 20px;
-
         padding: 28px;
-
     }
 
     .evening-time-block {
-
         grid-column: 1 / 3;
-
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
         border-right: none;
-
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
         padding-right: 0;
         padding-bottom: 20px;
+    }
 
+    .evening-label {
+        grid-column: 1 / 3;
+        margin-bottom: 0;
+    }
+
+    .evening-time-item + .evening-time-item {
+        margin-top: 0;
+        padding-top: 0;
+        padding-left: 15px;
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .evening-time-block h3 {
+        font-size: 25px;
     }
 
     .evening-main {
-
         grid-column: 1;
-
     }
 
     .evening-arrow {
-
         grid-column: 2;
-
         width: 40px;
         height: 40px;
-
     }
 
     .evening-main h3 {
-
         font-size: 26px;
-
     }
 
     .evening-main h4 {
-
         font-size: 18px;
-
     }
 
     .evening-main p {
-
         font-size: 13px;
-
     }
 
     .evening-location {
-
         font-size: 12px;
-
     }
 
     .agenda-coming-soon {
-
         padding: 50px 20px;
-
     }
 
     .agenda-coming-soon h3 {
-
         font-size: 21px;
-
     }
 
 
-    /* OTHER SECTIONS */
+    /* MOBILE AWARDS */
 
     .awards-section {
-
         padding: 80px 0;
+    }
 
+    .awards-section .awards-description {
+        font-size: 16px;
+    }
+
+    .awards-impact {
+        margin-top: 30px;
+    }
+
+    .impact-number {
+        font-size: 68px;
+        letter-spacing: -2px;
+    }
+
+    .impact-label {
+        font-size: 12px;
+        letter-spacing: 0.5px;
     }
 
     .awards-details,
     .partners-grid,
     .venue-grid,
     .footer-content {
-
         grid-template-columns: 1fr;
-
     }
 
     .partner {
-
         padding: 25px;
-
     }
 
     .technology-partner {
-
         padding: 30px;
-
     }
 
     .venue-image {
-
         height: 240px;
-
     }
 
     .footer-content {
-
         gap: 35px;
-
     }
 
 }
 
 
-/* =========================================
-   SMALL MOBILE SCREENS
-   ========================================= */
+/* SMALL MOBILE SCREENS */
 
 @media (max-width: 360px) {
 
     .hero-title {
-
         font-size: 58px;
-
     }
 
     .experience-heading h2 {
-
         font-size: 32px;
-
     }
 
     .experience-item h3 {
-
         font-size: 20px;
-
     }
 
     .countdown {
-
         gap: 12px;
-
     }
 
     .countdown-item {
-
         min-width: 48px;
-
     }
 
     .countdown-item span {
-
         font-size: 34px;
+    }
 
+    .evening-time-block h3 {
+        font-size: 21px;
+    }
+
+    .impact-number {
+        font-size: 58px;
     }
 
 }
 
 
-/* =========================================
-   REDUCED MOTION ACCESSIBILITY
-   ========================================= */
+/* REDUCED MOTION ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
 
     html {
-
         scroll-behavior: auto;
-
     }
 
     *,
     *::before,
     *::after {
-
         animation: none !important;
-
         transition: none !important;
-
     }
 
     .js-ready .reveal {
-
         opacity: 1;
-
         transform: none;
-
     }
 
 }
