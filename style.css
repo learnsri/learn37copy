@@ -593,7 +593,7 @@ img {
 }
 
 
-/* PARALLEL AGENDA */
+/* EVENT PROGRAMME */
 
 .programme-section {
     background: linear-gradient(
@@ -764,7 +764,7 @@ img {
 }
 
 
-/* AGENDA TABLE */
+/* DAY 01 — PARALLEL AGENDA TABLE */
 
 .agenda-scroll {
     overflow-x: auto;
@@ -1064,7 +1064,7 @@ img {
 }
 
 
-/* CLOSED SESSION LABEL — NEW */
+/* CLOSED SESSION LABEL */
 
 .closed-session-label {
     display: inline-flex;
@@ -1121,7 +1121,7 @@ img {
 }
 
 
-/* MERGED WORKING GROUPS */
+/* MERGED WORKING GROUP SESSIONS */
 
 .merged-session {
     overflow: hidden;
@@ -1185,7 +1185,7 @@ img {
 }
 
 
-/* EVENING PROGRAMME */
+/* DAY 01 — EVENING PROGRAMME */
 
 .agenda-evening {
     position: relative;
@@ -1232,9 +1232,6 @@ img {
     letter-spacing: 1.8px;
     margin-bottom: 18px;
 }
-
-
-/* UPDATED RECEPTION AND AWARDS TIMES */
 
 .evening-time-item + .evening-time-item {
     margin-top: 17px;
@@ -1343,37 +1340,318 @@ img {
 }
 
 
-/* DAY TWO */
+/* =========================================
+   DAY 02 — NEW STRATEGIC PROGRAMME
+   ========================================= */
 
-.agenda-coming-soon {
-    text-align: center;
-    padding: 75px 25px;
+.day2-agenda {
+    position: relative;
+    padding: 25px 30px 30px;
     background: #F4FAFF;
     border: 1px solid #E1EDF6;
-    border-radius: 16px;
+    border-radius: 18px;
 }
 
-.agenda-coming-soon svg {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 25px;
-    stroke: #0095CA;
-    stroke-width: 1.2;
+.day2-agenda-heading {
+    display: grid;
+    grid-template-columns: 105px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 8px 0 20px;
+    margin-bottom: 5px;
+}
+
+.day2-agenda-heading > span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #070E75;
+}
+
+.day2-agenda-heading small {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.day2-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 30px;
+    padding: 6px 0;
+    align-items: stretch;
+}
+
+
+/* DAY TWO CONNECTED TIME AXIS */
+
+.day2-time {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.day2-time time {
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    color: #0042A5;
+    font-variant-numeric: tabular-nums;
+}
+
+.day2-time::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0095CA;
+    border: 2px solid #F4FAFF;
+    box-shadow: 0 0 0 2px #A7DDEB;
+    transform: translate(50%, -50%);
+    z-index: 2;
+}
+
+.day2-time::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    bottom: -6px;
+    right: -1px;
+    width: 2px;
+    background: #C6E6F2;
+}
+
+.day2-row:nth-child(2) .day2-time::after {
+    top: 50%;
+}
+
+.day2-row:last-child .day2-time::after {
+    bottom: 50%;
+}
+
+
+/* DAY TWO SESSION CARDS */
+
+.day2-session {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+    min-height: 82px;
+    padding: 23px 30px;
+    border: 1px solid #E1EBF4;
+    border-radius: 11px;
+    background: #FFFFFF;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.day2-session > div {
+    min-width: 0;
+}
+
+.day2-session:hover {
+    transform: translateX(4px);
+    border-color: #9BDDEB;
+    box-shadow: 0 8px 25px rgba(7, 14, 117, 0.05);
+}
+
+.day2-session h4 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #070E75;
+    line-height: 1.5;
+}
+
+.day2-speaker {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #61748B;
+    margin-top: 5px;
+}
+
+.day2-session-icon {
+    width: 23px;
+    height: 23px;
+    flex-shrink: 0;
+    stroke: #006DC1;
+    stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
 }
 
-.agenda-coming-soon h3 {
-    color: #070E75;
-    font-size: 25px;
-    font-weight: 500;
+
+/* DAY TWO ARRIVAL AND LUNCH */
+
+.day2-break .day2-session {
+    min-height: 68px;
+    background: linear-gradient(
+        100deg,
+        #E4EFF8,
+        #EDF7FC
+    );
+    border-color: transparent;
 }
 
-.agenda-coming-soon p {
-    color: var(--muted);
+.day2-break .day2-session h4 {
+    font-size: 17px;
+    color: #0042A5;
+}
+
+
+/* MOU SIGNING CEREMONY */
+
+.day2-signing .day2-session {
+    position: relative;
+    overflow: hidden;
+    min-height: 145px;
+    padding: 30px;
+    gap: 25px;
+
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(0, 224, 191, 0.18),
+            transparent 60%
+        ),
+        linear-gradient(
+            115deg,
+            #070E75,
+            #0042A5,
+            #006DC1
+        );
+
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(7, 14, 117, 0.1);
+}
+
+.day2-signing .day2-time time {
+    color: #0042A5;
+    font-weight: 600;
+}
+
+.day2-signing .day2-time::before {
+    background: #00BBC7;
+    box-shadow: 0 0 0 4px rgba(0, 187, 199, 0.15);
+}
+
+.signing-icon {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(128, 244, 236, 0.3);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.signing-icon svg {
+    width: 38px;
+    height: 38px;
+    stroke: #80F4EC;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.signing-content {
+    position: relative;
+    z-index: 2;
+}
+
+.signing-label {
+    display: block;
+    color: #80F4EC;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.day2-signing .day2-session h4 {
+    font-size: clamp(19px, 2.5vw, 27px);
+    font-weight: 500;
+    line-height: 1.4;
+    color: #FFFFFF;
+}
+
+.signing-pattern {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: -140px;
+    right: -80px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 224, 191, 0.2);
+
+    box-shadow:
+        0 0 0 25px rgba(0, 224, 191, 0.04),
+        0 0 0 50px rgba(0, 224, 191, 0.04),
+        0 0 0 75px rgba(0, 224, 191, 0.04);
+
+    pointer-events: none;
+}
+
+
+/* DAY TWO TEA NOTE */
+
+.day2-note {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 22px;
+    padding: 22px 28px;
+    border: 1px solid #CBE8F2;
+    border-radius: 12px;
+    background: linear-gradient(
+        100deg,
+        #E4F4FB,
+        #EAFBF8
+    );
+}
+
+.day2-note-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background: #FFFFFF;
+    border-radius: 50%;
+}
+
+.day2-note-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: #006DC1;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.day2-note p {
     font-size: 15px;
-    margin-top: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #365674;
 }
 
 
@@ -1460,7 +1738,7 @@ img {
 }
 
 
-/* AI FOR ALL IMPACT — NEW */
+/* AI FOR ALL IMPACT */
 
 .awards-impact {
     position: relative;
@@ -1787,6 +2065,38 @@ img {
     color: var(--cyan);
 }
 
+
+/* UPDATED FOOTER CONTACT DETAILS */
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 17px;
+}
+
+.footer-contact-item svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin-top: 5px;
+    stroke: #75E8FF;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.footer-contact-item a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-item a:hover {
+    color: #80F4EC;
+}
+
 .footer-bottom {
     text-align: center;
     padding: 25px 5%;
@@ -1889,7 +2199,9 @@ button:focus-visible,
 }
 
 
-/* TABLET RESPONSIVE DESIGN */
+/* =========================================
+   TABLET RESPONSIVE DESIGN
+   ========================================= */
 
 @media (max-width: 1024px) {
 
@@ -1940,6 +2252,18 @@ button:focus-visible,
         font-size: 16px;
     }
 
+    .day2-agenda {
+        padding: 20px;
+    }
+
+    .day2-session {
+        padding: 22px 25px;
+    }
+
+    .day2-session h4 {
+        font-size: 18px;
+    }
+
     .venue-grid {
         gap: 18px;
     }
@@ -1959,7 +2283,9 @@ button:focus-visible,
 }
 
 
-/* MOBILE RESPONSIVE DESIGN */
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================= */
 
 @media (max-width: 768px) {
 
@@ -2146,7 +2472,7 @@ button:focus-visible,
     }
 
 
-    /* MOBILE AGENDA */
+    /* MOBILE DAY SELECTOR */
 
     .programme-intro {
         font-size: 15px;
@@ -2194,6 +2520,9 @@ button:focus-visible,
     .agenda-date-content p {
         font-size: 13px;
     }
+
+
+    /* MOBILE DAY ONE */
 
     .agenda-scroll {
         padding: 5px;
@@ -2304,12 +2633,133 @@ button:focus-visible,
         font-size: 12px;
     }
 
-    .agenda-coming-soon {
-        padding: 50px 20px;
+
+    /* MOBILE DAY TWO */
+
+    .day2-agenda {
+        padding: 12px;
+        border-radius: 12px;
     }
 
-    .agenda-coming-soon h3 {
-        font-size: 21px;
+    .day2-agenda-heading {
+        grid-template-columns: 53px minmax(0, 1fr);
+        gap: 18px;
+        padding: 8px 0 12px;
+    }
+
+    .day2-agenda-heading > span {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .day2-agenda-heading small {
+        grid-column: 2;
+        font-size: 10px;
+        margin-top: -14px;
+    }
+
+    .day2-row {
+        grid-template-columns: 53px minmax(0, 1fr);
+        gap: 18px;
+        padding: 5px 0;
+    }
+
+    .day2-time {
+        padding: 12px 0;
+    }
+
+    .day2-time time {
+        font-size: 17px;
+        letter-spacing: -0.5px;
+    }
+
+    .day2-time::before {
+        width: 8px;
+        height: 8px;
+    }
+
+    .day2-time::after {
+        top: -5px;
+        bottom: -5px;
+    }
+
+    .day2-session {
+        min-height: 65px;
+        padding: 17px 15px;
+        border-radius: 9px;
+        gap: 10px;
+    }
+
+    .day2-session h4 {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .day2-speaker {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 6px;
+    }
+
+    .day2-break .day2-session {
+        min-height: 60px;
+    }
+
+    .day2-break .day2-session h4 {
+        font-size: 14px;
+    }
+
+    .day2-session-icon {
+        width: 19px;
+        height: 19px;
+    }
+
+    .day2-signing .day2-session {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 20px 17px;
+    }
+
+    .signing-icon {
+        width: 43px;
+        height: 43px;
+        border-radius: 10px;
+    }
+
+    .signing-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .signing-label {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+        margin-bottom: 7px;
+    }
+
+    .day2-signing .day2-session h4 {
+        font-size: 17px;
+    }
+
+    .day2-note {
+        align-items: flex-start;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .day2-note-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .day2-note-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .day2-note p {
+        font-size: 13px;
     }
 
 
@@ -2356,8 +2806,21 @@ button:focus-visible,
         height: 240px;
     }
 
+
+    /* MOBILE FOOTER */
+
     .footer-content {
         gap: 35px;
+    }
+
+    .footer-contact-item {
+        gap: 11px;
+        margin-bottom: 15px;
+    }
+
+    .footer-contact-item a,
+    .footer-contact-item p {
+        font-size: 14px;
     }
 
 }
@@ -2397,6 +2860,23 @@ button:focus-visible,
 
     .impact-number {
         font-size: 58px;
+    }
+
+    .day2-row {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .day2-time time {
+        font-size: 15px;
+    }
+
+    .day2-session {
+        padding: 14px 12px;
+    }
+
+    .day2-session h4 {
+        font-size: 14px;
     }
 
 }
