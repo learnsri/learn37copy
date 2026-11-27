@@ -27,7 +27,8 @@
 
             <button class="menu-toggle" id="menuToggle"
                     aria-label="Toggle navigation"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                    aria-controls="navLinks">
                 ☰
             </button>
 
@@ -98,9 +99,9 @@
 
                 <defs>
                     <linearGradient id="waveGradient">
-                        <stop offset="0%" stop-color="#061B59"/>
-                        <stop offset="50%" stop-color="#0056B3"/>
-                        <stop offset="100%" stop-color="#00DCC8"/>
+                        <stop offset="0%" stop-color="#070E75"/>
+                        <stop offset="50%" stop-color="#006DC1"/>
+                        <stop offset="100%" stop-color="#00E0BF"/>
                     </linearGradient>
                 </defs>
 
@@ -110,7 +111,7 @@
 
                 <path class="wave wave-cyan"
                       d="M0,90 C400,230 900,-20 1440,90 L1440,180 L0,180 Z"
-                      fill="#00CBE8"/>
+                      fill="#00BBC7"/>
 
                 <path class="wave wave-blue"
                       d="M0,110 C450,240 950,10 1440,110 L1440,180 L0,180 Z"
@@ -163,10 +164,8 @@
 
 
     <!-- LEARN37 EXPERIENCE -->
-    <!-- Unnecessary outer About section removed -->
 
-    <section class="experience-section" id="about"
-             style="margin-top:0; padding-top:60px; border-top:none;">
+    <section class="experience-section" id="about">
 
         <div class="container reveal">
 
@@ -193,8 +192,6 @@
 
             <div class="experience-grid">
 
-                <!-- CONNECT -->
-
                 <div class="experience-item">
 
                     <div class="experience-node"></div>
@@ -214,9 +211,6 @@
 
                 </div>
 
-
-                <!-- INNOVATE -->
-
                 <div class="experience-item">
 
                     <div class="experience-node"></div>
@@ -235,9 +229,6 @@
 
                 </div>
 
-
-                <!-- COLLABORATE -->
-
                 <div class="experience-item">
 
                     <div class="experience-node"></div>
@@ -255,9 +246,6 @@
                     </p>
 
                 </div>
-
-
-                <!-- CELEBRATE -->
 
                 <div class="experience-item">
 
@@ -299,13 +287,15 @@
                 <button class="tab-button active"
                         data-day="day1"
                         aria-pressed="true">
-                    Day 01 — 30 November
+                    <span class="tab-day">DAY 01</span>
+                    <span>30 November 2026</span>
                 </button>
 
                 <button class="tab-button"
                         data-day="day2"
                         aria-pressed="false">
-                    Day 02 — 1 December
+                    <span class="tab-day">DAY 02</span>
+                    <span>1 December 2026</span>
                 </button>
 
             </div>
@@ -317,83 +307,451 @@
 
                 <div class="programme-heading">
 
-                    <h3>30 November 2026</h3>
+                    <div>
+                        <p class="section-label">MONDAY</p>
+                        <h3>30 November 2026</h3>
+                        <p>Three parallel programmes</p>
+                    </div>
 
-                    <p>UCFM, University of Colombo</p>
+                    <div class="schedule-time">
+                        <span class="live-dot"></span>
+                        8.30 AM — 5.00 PM
+                    </div>
 
                 </div>
 
-                <div class="timeline">
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">8.30 AM – 9.30 AM</span>
-                            <h3>Registration &amp; Refreshments</h3>
+                <!-- PARALLEL PROGRAMME TABLE -->
+
+                <p class="mobile-scroll-hint">
+                    Swipe horizontally to view all programmes →
+                </p>
+
+                <div class="agenda-wrapper"
+                     role="region"
+                     aria-label="Day one parallel programme schedule"
+                     tabindex="0">
+
+                    <table class="agenda-table">
+
+                        <colgroup>
+                            <col class="time-column">
+                            <col class="main-column">
+                            <col class="wg-column">
+                            <col class="wg-column">
+                        </colgroup>
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="time-header" scope="col">
+                                    Time
+                                    <small>SLST</small>
+                                </th>
+
+                                <th class="track-one-header" scope="col">
+
+                                    <span class="track-number">
+                                        TRACK 01
+                                    </span>
+
+                                    <h4>Programme 1</h4>
+
+                                    <span class="track-venue">
+                                        UCFM, University of Colombo
+                                    </span>
+
+                                </th>
+
+                                <th class="track-two-header" scope="col">
+
+                                    <span class="track-number">
+                                        TRACK 02
+                                    </span>
+
+                                    <h4>Programme 2</h4>
+
+                                    <span class="track-venue">
+                                        Ramada Hotel Colombo
+                                    </span>
+
+                                </th>
+
+                                <th class="track-three-header" scope="col">
+
+                                    <span class="track-number">
+                                        TRACK 03
+                                    </span>
+
+                                    <h4>Programme 3</h4>
+
+                                    <span class="track-venue">
+                                        Ramada Hotel Colombo
+                                    </span>
+
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <!-- REGISTRATION -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    8.30 AM
+                                    <span>— 9.30 AM</span>
+                                </th>
+
+                                <td colspan="3" class="shared-session">
+
+                                    <div class="shared-content">
+
+                                        <svg viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="1.6"
+                                             aria-hidden="true">
+                                            <rect x="4" y="3" width="16" height="18" rx="3"/>
+                                            <path d="M8 8H16M8 12H16M8 16H12"/>
+                                        </svg>
+
+                                        Registration &amp; Refreshments
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- SESSION 01 -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    9.30 AM
+                                    <span>— 11.00 AM</span>
+                                </th>
+
+                                <td class="session-cell track-one">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            GOVERNANCE
+                                        </span>
+                                        <h4>Board Meeting</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-two">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>AI WG</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-three">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>Agro WG</h4>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- SESSION 02 -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    11.00 AM
+                                    <span>— 12.30 PM</span>
+                                </th>
+
+                                <td class="session-cell track-one">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            PRESENTATION
+                                        </span>
+                                        <h4>
+                                            Presentation by the Solutions
+                                            Team to the LEARN BoD
+                                        </h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-two">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>AI WG</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-three">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>Agro WG</h4>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- LUNCH -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    12.30 PM
+                                    <span>— 1.30 PM</span>
+                                </th>
+
+                                <td colspan="3" class="shared-session">
+
+                                    <div class="shared-content">
+
+                                        <svg viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="1.6"
+                                             aria-hidden="true">
+                                            <path d="M4 3V9C4 13 10 13 10 9V3M7 3V21M18 3C14 6 14 12 18 12V21M18 3V12"/>
+                                        </svg>
+
+                                        Lunch
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- SESSION 03 -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    1.30 PM
+                                    <span>— 3.00 PM</span>
+                                </th>
+
+                                <td class="session-cell track-one">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            GENERAL MEETING
+                                        </span>
+                                        <h4>Annual General Meeting</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-two">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>AI WG</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-three">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>Agro WG</h4>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- TEA -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    3.00 PM
+                                    <span>— 3.15 PM</span>
+                                </th>
+
+                                <td colspan="3" class="shared-session">
+
+                                    <div class="shared-content">
+
+                                        <svg viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="1.6"
+                                             aria-hidden="true">
+                                            <path d="M4 8H17V15A5 5 0 0 1 12 20H9A5 5 0 0 1 4 15Z"/>
+                                            <path d="M17 9H19A3 3 0 0 1 19 15H17M7 2V5M12 2V5M2 22H20"/>
+                                        </svg>
+
+                                        Tea
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- SESSION 04 -->
+
+                            <tr>
+
+                                <th class="agenda-time" scope="row">
+                                    3.15 PM
+                                    <span>— 5.00 PM</span>
+                                </th>
+
+                                <td class="session-cell empty-session">
+                                    <div class="session-card">
+                                        <h4>—</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-two">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>AI WG</h4>
+                                    </div>
+                                </td>
+
+                                <td class="session-cell track-three">
+                                    <div class="session-card">
+                                        <span class="session-type">
+                                            WORKING GROUP
+                                        </span>
+                                        <h4>Agro WG</h4>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- WORKING GROUP LEGEND -->
+
+                <div class="agenda-legend">
+
+                    <div>
+                        <span class="legend-dot ai-dot"></span>
+                        AI WG — AI Working Group
+                    </div>
+
+                    <div>
+                        <span class="legend-dot agro-dot"></span>
+                        Agro WG — Agro Working Group
+                    </div>
+
+                </div>
+
+
+                <!-- EVENING PROGRAMME -->
+
+                <div class="evening-programme">
+
+                    <div class="evening-orbit"></div>
+
+                    <div class="evening-time">
+
+                        <span>EVENING EVENT</span>
+
+                        <h3>6.00 PM</h3>
+
+                        <p>Onwards</p>
+
+                    </div>
+
+                    <div class="evening-content">
+
+                        <p class="evening-label">
+                            CELEBRATING EXCELLENCE
+                        </p>
+
+                        <h3>
+                            LEARN Awards 2026
+                        </h3>
+
+                        <h4>Celebrating AI for All</h4>
+
+                        <p>
+                            &amp; Evening Cocktail Reception
+                        </p>
+
+                        <div class="evening-location">
+
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.7"
+                                 aria-hidden="true">
+                                <path d="M20 10C20 16 12 22 12 22S4 16 4 10A8 8 0 1 1 20 10Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+
+                            Galle Face Hotel, Colombo
+
                         </div>
-                    </article>
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">9.30 AM – 11.00 AM</span>
-                            <h3>Board Meeting</h3>
-                            <p>Parallel sessions: AI Working Group and Agro Working Group</p>
+                    </div>
+
+                </div>
+
+
+                <!-- DAY SESSION VENUES -->
+
+                <div class="programme-venues">
+
+                    <div class="programme-venue">
+
+                        <span class="venue-indicator indicator-one">
+                            01
+                        </span>
+
+                        <div>
+                            <small>PROGRAMME 1</small>
+                            <h4>UCFM, University of Colombo</h4>
+                            <p>Board Meeting, Presentation and AGM</p>
                         </div>
-                    </article>
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">11.00 AM – 12.30 PM</span>
-                            <h3>Presentation by the Solutions Team to the LEARN BoD</h3>
-                            <p>Parallel sessions: AI Working Group and Agro Working Group</p>
-                        </div>
-                    </article>
+                    </div>
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">12.30 PM – 1.30 PM</span>
-                            <h3>Lunch</h3>
-                        </div>
-                    </article>
+                    <div class="programme-venue">
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">1.30 PM – 3.00 PM</span>
-                            <h3>Annual General Meeting</h3>
-                            <p>Parallel sessions: AI Working Group and Agro Working Group</p>
-                        </div>
-                    </article>
+                        <span class="venue-indicator indicator-two">
+                            02 / 03
+                        </span>
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">3.00 PM – 3.15 PM</span>
-                            <h3>Tea Break</h3>
-                        </div>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <span class="time">3.15 PM – 5.00 PM</span>
-                            <h3>Working Group Sessions</h3>
+                        <div>
+                            <small>PROGRAMMES 2 &amp; 3</small>
+                            <h4>Ramada Hotel Colombo</h4>
                             <p>AI Working Group and Agro Working Group</p>
                         </div>
-                    </article>
 
-                    <article class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content evening-event">
-                            <span class="time">6.00 PM onwards</span>
-                            <h3>LEARN Awards 2026: Celebrating AI for All</h3>
-                            <p>Evening Cocktail Reception</p>
-                            <p>Galle Face Hotel, Colombo</p>
-                        </div>
-                    </article>
+                    </div>
 
                 </div>
 
@@ -406,9 +764,25 @@
 
                 <div class="programme-heading">
 
-                    <h3>1 December 2026</h3>
+                    <div>
+                        <p class="section-label">TUESDAY</p>
+                        <h3>1 December 2026</h3>
+                    </div>
 
-                    <p>Programme details to be announced.</p>
+                </div>
+
+                <div class="coming-soon">
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="16" rx="3"/>
+                        <path d="M7 2V8M17 2V8M3 11H21M8 15H10M14 15H16"/>
+                    </svg>
+
+                    <h3>Programme details to be announced.</h3>
 
                 </div>
 
@@ -480,9 +854,6 @@
 
             <h2 class="section-title">Our Partners</h2>
 
-
-            <!-- TECHNOLOGY PARTNER -->
-
             <div class="technology-partner partner">
 
                 <p class="partner-category">
@@ -497,10 +868,7 @@
 
             </div>
 
-
             <div class="partners-grid">
-
-                <!-- CONNECTIVITY PARTNER -->
 
                 <div class="partner">
 
@@ -515,9 +883,6 @@
                     <h3>Sri Lanka Telecom (SLT)</h3>
 
                 </div>
-
-
-                <!-- KNOWLEDGE PARTNER -->
 
                 <div class="partner">
 
@@ -534,9 +899,6 @@
                 </div>
 
             </div>
-
-
-            <!-- REGISTRATION PARTNER -->
 
             <div class="registration-partner partner">
 
@@ -569,6 +931,7 @@
 
             <div class="venue-grid">
 
+
                 <!-- UNIVERSITY OF COLOMBO -->
 
                 <article class="venue-card">
@@ -580,13 +943,55 @@
 
                     <div class="venue-info">
 
-                        <span class="venue-label">DAY SESSIONS</span>
+                        <span class="venue-label">
+                            PROGRAMME 1
+                        </span>
 
                         <h3>University of Colombo</h3>
 
                         <p>UCFM, Colombo, Sri Lanka</p>
 
+                        <p class="venue-description">
+                            Board Meeting, Solutions Team
+                            Presentation and Annual General Meeting
+                        </p>
+
                         <a href="https://www.google.com/maps/search/?api=1&amp;query=University+of+Colombo+Faculty+of+Medicine"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View Location →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RAMADA HOTEL -->
+
+                <article class="venue-card">
+
+                    <div class="venue-image ramada-image"
+                         role="img"
+                         aria-label="Ramada Hotel Colombo">
+                    </div>
+
+                    <div class="venue-info">
+
+                        <span class="venue-label">
+                            PROGRAMMES 2 &amp; 3
+                        </span>
+
+                        <h3>Ramada Hotel Colombo</h3>
+
+                        <p>Colombo, Sri Lanka</p>
+
+                        <p class="venue-description">
+                            AI Working Group and
+                            Agro Working Group
+                        </p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Ramada+Hotel+Colombo"
                            target="_blank"
                            rel="noopener noreferrer">
                             View Location →
@@ -608,11 +1013,18 @@
 
                     <div class="venue-info">
 
-                        <span class="venue-label">LEARN AWARDS 2026</span>
+                        <span class="venue-label">
+                            LEARN AWARDS 2026
+                        </span>
 
                         <h3>Galle Face Hotel</h3>
 
                         <p>Colombo, Sri Lanka</p>
+
+                        <p class="venue-description">
+                            LEARN Awards 2026 and
+                            Evening Cocktail Reception
+                        </p>
 
                         <a href="https://www.google.com/maps/search/?api=1&amp;query=Galle+Face+Hotel+Colombo"
                            target="_blank"
