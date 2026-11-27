@@ -4,1166 +4,1034 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="LEARN37 - Annual General Meeting and LEARN Awards 2026">
+    <meta name="description" content="LEARN37 - Annual General Meeting and LEARN Awards 2026">
 
     <title>LEARN37 | AGM & LEARN Awards 2026</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css?v=20261127-5">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 
-    <header class="header">
-        <nav class="navbar">
+<header class="header">
+    <nav class="navbar">
 
-            <a href="#home" class="brand">
-                <img src="images/LEARN37_Logo.png" alt="LEARN37 Logo">
+        <a href="#home" class="brand">
+            <img src="images/LEARN37_Logo.png" alt="LEARN37 Logo">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#awards">LEARN Awards</a></li>
+            <li><a href="#partners">Partners</a></li>
+            <li><a href="#venue">Venue</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <canvas id="networkCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+        <div class="event-label">
+            30 NOVEMBER — 01 DECEMBER 2026
+        </div>
+
+        <h1 class="hero-title">LEARN<span>37</span></h1>
+
+        <h2>
+            Annual General Meeting<br>
+            &amp; LEARN Awards 2026
+        </h2>
+
+        <div class="theme">
+            People <span>|</span>
+            Knowledge <span>|</span>
+            Networks
+        </div>
+
+        <p class="tagline">For a Better Tomorrow</p>
+
+        <div class="hero-buttons">
+
+            <a href="#programme" class="btn btn-primary">
+                Explore Programme →
             </a>
 
-            <button class="menu-toggle"
-                    id="menuToggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                ☰
-            </button>
+            <a href="#partners" class="btn btn-outline">
+                Our Partners
+            </a>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#programme">Programme</a></li>
-                <li><a href="#awards">LEARN Awards</a></li>
-                <li><a href="#partners">Partners</a></li>
-                <li><a href="#venue">Venue</a></li>
-            </ul>
+        </div>
 
-        </nav>
-    </header>
+    </div>
+
+    <div class="hero-waves" aria-hidden="true">
+
+        <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
+
+            <defs>
+                <linearGradient id="waveGradient">
+                    <stop offset="0%" stop-color="#070E75"/>
+                    <stop offset="50%" stop-color="#006DC1"/>
+                    <stop offset="100%" stop-color="#00E0BF"/>
+                </linearGradient>
+            </defs>
+
+            <path class="wave wave-pink"
+                d="M0,70 C350,240 850,-50 1440,70 L1440,180 L0,180 Z"
+                fill="#E50087"/>
+
+            <path class="wave wave-cyan"
+                d="M0,90 C400,230 900,-20 1440,90 L1440,180 L0,180 Z"
+                fill="#00BBC7"/>
+
+            <path class="wave wave-blue"
+                d="M0,110 C450,240 950,10 1440,110 L1440,180 L0,180 Z"
+                fill="url(#waveGradient)"/>
+
+            <path class="wave wave-white"
+                d="M0,130 C450,250 950,40 1440,130 L1440,180 L0,180 Z"
+                fill="#F4FAFF"/>
+
+        </svg>
+
+    </div>
+
+</section>
 
 
-    <!-- HERO SECTION -->
+<!-- COUNTDOWN -->
 
-    <section class="hero" id="home">
+<section class="countdown-section">
 
-        <canvas id="networkCanvas" aria-hidden="true"></canvas>
+    <p class="section-label" id="countdownLabel">
+        COUNTDOWN TO LEARN37
+    </p>
 
-        <div class="hero-glow"></div>
+    <div class="countdown">
 
-        <div class="hero-content">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <small>Days</small>
+        </div>
 
-            <div class="event-label">
-                30 NOVEMBER — 01 DECEMBER 2026
-            </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <small>Hours</small>
+        </div>
 
-            <h1 class="hero-title">LEARN<span>37</span></h1>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+        </div>
+
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE SECTION -->
+
+<section class="experience-section" id="about">
+
+    <div class="container reveal">
+
+        <div class="experience-orbit" aria-hidden="true"></div>
+
+        <div class="experience-heading">
+
+            <p class="section-label">THE LEARN37 EXPERIENCE</p>
 
             <h2>
-                Annual General Meeting<br>
-                &amp; LEARN Awards 2026
+                Connected today.<br>
+                <span>Inspired for tomorrow.</span>
             </h2>
 
-            <div class="theme">
-                People <span>|</span>
-                Knowledge <span>|</span>
-                Networks
-            </div>
-
-            <p class="tagline">For a Better Tomorrow</p>
-
-            <div class="hero-buttons">
-
-                <a href="#programme" class="btn btn-primary">
-                    Explore Programme →
-                </a>
-
-                <a href="#partners" class="btn btn-outline">
-                    Our Partners
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-waves" aria-hidden="true">
-
-            <svg viewBox="0 0 1440 180" preserveAspectRatio="none">
-
-                <defs>
-                    <linearGradient id="waveGradient">
-                        <stop offset="0%" stop-color="#061B59"/>
-                        <stop offset="50%" stop-color="#0056B3"/>
-                        <stop offset="100%" stop-color="#00DCC8"/>
-                    </linearGradient>
-                </defs>
-
-                <path class="wave wave-pink"
-                      d="M0,70 C350,240 850,-50 1440,70 L1440,180 L0,180 Z"
-                      fill="#E50087"/>
-
-                <path class="wave wave-cyan"
-                      d="M0,90 C400,230 900,-20 1440,90 L1440,180 L0,180 Z"
-                      fill="#00CBE8"/>
-
-                <path class="wave wave-blue"
-                      d="M0,110 C450,240 950,10 1440,110 L1440,180 L0,180 Z"
-                      fill="url(#waveGradient)"/>
-
-                <path class="wave wave-white"
-                      d="M0,130 C450,250 950,40 1440,130 L1440,180 L0,180 Z"
-                      fill="#F4FAFF"/>
-
-            </svg>
-
-        </div>
-
-    </section>
-
-
-    <!-- COUNTDOWN -->
-
-    <section class="countdown-section">
-
-        <p class="section-label" id="countdownLabel">
-            COUNTDOWN TO LEARN37
-        </p>
-
-        <div class="countdown">
-
-            <div class="countdown-item">
-                <span id="days">00</span>
-                <small>Days</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="hours">00</span>
-                <small>Hours</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="minutes">00</span>
-                <small>Minutes</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="seconds">00</span>
-                <small>Seconds</small>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LEARN37 EXPERIENCE -->
-
-    <section class="experience-section" id="about">
-
-        <div class="container reveal">
-
-            <div class="experience-orbit" aria-hidden="true"></div>
-
-            <div class="experience-heading">
-
-                <p class="section-label">
-                    THE LEARN37 EXPERIENCE
-                </p>
-
-                <h2>
-                    Connected today.<br>
-                    <span>Inspired for tomorrow.</span>
-                </h2>
-
-                <p>
-                    A shared platform for ideas, collaboration,
-                    innovation and the future of research and education.
-                </p>
-
-            </div>
-
-            <div class="experience-grid">
-
-                <div class="experience-item">
-
-                    <div class="experience-node"></div>
-
-                    <svg viewBox="0 0 40 40"
-                         width="52" height="52"
-                         aria-hidden="true">
-
-                        <circle cx="20" cy="8" r="5"/>
-                        <circle cx="8" cy="29" r="5"/>
-                        <circle cx="32" cy="29" r="5"/>
-
-                        <path d="M17 13L10 24M23 13L30 24M13 29H27"/>
-
-                    </svg>
-
-                    <h3>Connect</h3>
-
-                    <p>Leadership and institutional collaboration.</p>
-
-                </div>
-
-                <div class="experience-item">
-
-                    <div class="experience-node"></div>
-
-                    <svg viewBox="0 0 40 40"
-                         width="52" height="52"
-                         aria-hidden="true">
-
-                        <rect x="10" y="10" width="20" height="20" rx="4"/>
-                        <rect x="16" y="16" width="8" height="8"/>
-
-                        <path d="M15 3V10M25 3V10M15 30V37M25 30V37M3 15H10M3 25H10M30 15H37M30 25H37"/>
-
-                    </svg>
-
-                    <h3>Innovate</h3>
-
-                    <p>Artificial intelligence and emerging technologies.</p>
-
-                </div>
-
-                <div class="experience-item">
-
-                    <div class="experience-node"></div>
-
-                    <svg viewBox="0 0 40 40"
-                         width="52" height="52"
-                         aria-hidden="true">
-
-                        <circle cx="20" cy="20" r="16"/>
-                        <ellipse cx="20" cy="20" rx="8" ry="16"/>
-
-                        <path d="M4 20H36M8 10H32M8 30H32"/>
-
-                    </svg>
-
-                    <h3>Collaborate</h3>
-
-                    <p>Knowledge exchange across institutions.</p>
-
-                </div>
-
-                <div class="experience-item">
-
-                    <div class="experience-node"></div>
-
-                    <svg viewBox="0 0 40 40"
-                         width="52" height="52"
-                         aria-hidden="true">
-
-                        <circle cx="20" cy="14" r="10"/>
-
-                        <path d="M13 22L9 36L20 30L31 36L27 22"/>
-
-                        <path d="M20 8L22 12L27 13L23 16L24 21L20 18L16 21L17 16L13 13L18 12Z"/>
-
-                    </svg>
-
-                    <h3>Celebrate</h3>
-
-                    <p>
-                        Recognising the trainers of AI for All
-                        at LEARN Awards 2026.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EVENT PROGRAMME -->
-
-    <section class="section programme-section" id="programme">
-
-        <div class="container reveal">
-
-            <p class="section-label">EVENT SCHEDULE</p>
-
-            <h2 class="section-title">Event Programme</h2>
-
-            <p class="programme-intro">
-                Two days of collaboration, innovation,
-                knowledge sharing and celebration.
+            <p>
+                A shared platform for ideas, collaboration,
+                innovation and the future of research and education.
             </p>
 
+        </div>
 
-            <!-- DAY SELECTOR -->
+        <div class="experience-grid">
 
-            <div class="programme-tabs">
+            <div class="experience-item">
 
-                <button class="tab-button active"
-                        data-day="day1"
-                        aria-controls="day1"
-                        aria-pressed="true">
+                <div class="experience-node"></div>
 
-                    <span class="tab-day">DAY 01</span>
-                    <span class="tab-date">30 November</span>
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <circle cx="20" cy="8" r="5"/>
+                    <circle cx="8" cy="29" r="5"/>
+                    <circle cx="32" cy="29" r="5"/>
+                    <path d="M17 13L10 24M23 13L30 24M13 29H27"/>
+                </svg>
 
-                </button>
+                <h3>Connect</h3>
 
-                <button class="tab-button"
-                        data-day="day2"
-                        aria-controls="day2"
-                        aria-pressed="false">
-
-                    <span class="tab-day">DAY 02</span>
-                    <span class="tab-date">01 December</span>
-
-                </button>
+                <p>Leadership and institutional collaboration.</p>
 
             </div>
 
+            <div class="experience-item">
 
-            <!-- =================================
-                 DAY 01 — 30 NOVEMBER
-                 ================================= -->
+                <div class="experience-node"></div>
 
-            <div class="programme-content active" id="day1">
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <rect x="10" y="10" width="20" height="20" rx="4"/>
+                    <rect x="16" y="16" width="8" height="8"/>
+                    <path d="M15 3V10M25 3V10M15 30V37M25 30V37M3 15H10M3 25H10M30 15H37M30 25H37"/>
+                </svg>
 
-                <div class="agenda-date-header">
+                <h3>Innovate</h3>
 
-                    <div class="agenda-date-content">
+                <p>Artificial intelligence and emerging technologies.</p>
 
-                        <span class="agenda-eyebrow">
-                            LEARN37 — EVENT PROGRAMME
-                        </span>
+            </div>
 
-                        <h3>Monday, 30 November</h3>
+            <div class="experience-item">
 
-                        <p>Day 01 / 2026</p>
+                <div class="experience-node"></div>
 
-                    </div>
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <circle cx="20" cy="20" r="16"/>
+                    <ellipse cx="20" cy="20" rx="8" ry="16"/>
+                    <path d="M4 20H36M8 10H32M8 30H32"/>
+                </svg>
 
-                    <div class="agenda-date-number" aria-hidden="true">
-                        01
-                    </div>
+                <h3>Collaborate</h3>
 
-                    <div class="agenda-header-pattern" aria-hidden="true"></div>
+                <p>Knowledge exchange across institutions.</p>
+
+            </div>
+
+            <div class="experience-item">
+
+                <div class="experience-node"></div>
+
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <circle cx="20" cy="14" r="10"/>
+                    <path d="M13 22L9 36L20 30L31 36L27 22"/>
+                    <path d="M20 8L22 12L27 13L23 16L24 21L20 18L16 21L17 16L13 13L18 12Z"/>
+                </svg>
+
+                <h3>Celebrate</h3>
+
+                <p>Recognising excellence at LEARN Awards 2026.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENT PROGRAMME -->
+
+<section class="section programme-section" id="programme">
+
+    <div class="container reveal">
+
+        <p class="section-label">EVENT SCHEDULE</p>
+
+        <h2 class="section-title">Event Programme</h2>
+
+        <p class="section-description">
+            Two days of collaboration, innovation,
+            knowledge sharing and celebration.
+        </p>
+
+        <!-- DAY SWITCHING TABS -->
+
+        <div class="programme-tabs">
+
+            <button class="tab-button active"
+                data-day="day1" aria-pressed="true">
+
+                <span>DAY 01</span>
+                <strong>30 November</strong>
+
+            </button>
+
+            <button class="tab-button"
+                data-day="day2" aria-pressed="false">
+
+                <span>DAY 02</span>
+                <strong>01 December</strong>
+
+            </button>
+
+        </div>
+
+
+        <!-- ======================================
+                     DAY 01 PROGRAMME
+        ======================================= -->
+
+        <div class="programme-content active" id="day1">
+
+            <div class="day-banner">
+
+                <div class="day-banner-content">
+
+                    <span class="day-eyebrow">
+                        LEARN37 — EVENT PROGRAMME
+                    </span>
+
+                    <h3>Monday, 30 November</h3>
+
+                    <p>Day 01 / 2026</p>
 
                 </div>
 
-                <p class="agenda-scroll-hint">
-                    Swipe horizontally to view all parallel programmes →
-                </p>
+                <div class="day-number" aria-hidden="true">01</div>
 
-                <div class="agenda-scroll"
-                     tabindex="0"
-                     role="region"
-                     aria-label="Day one programme schedule">
+            </div>
 
-                    <table class="agenda-table">
+            <p class="mobile-swipe">
+                Swipe horizontally to explore all parallel sessions →
+            </p>
 
-                        <colgroup>
-                            <col class="time-column">
-                            <col class="governance-column">
-                            <col class="working-column">
-                            <col class="working-column">
-                        </colgroup>
+            <div class="agenda-scroll">
 
-                        <thead>
+                <table class="agenda-table">
 
-                            <tr>
+                    <colgroup>
+                        <col class="time-column">
+                        <col class="track-column">
+                        <col class="track-column">
+                        <col class="track-column">
+                    </colgroup>
 
-                                <th scope="col" class="agenda-time-heading">
-                                    TIME
-                                    <small>SLST (UTC+5:30)</small>
-                                </th>
+                    <thead>
 
-                                <th scope="col" class="agenda-track track-one">
+                        <tr>
 
-                                    <span class="track-number">PROGRAMME 01</span>
+                            <th class="time-heading" scope="col">
 
-                                    <h3>Governance</h3>
+                                <span>TIME</span>
+                                <small>SLST (UTC+5:30)</small>
 
-                                    <div class="track-location">
+                            </th>
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="16" height="16"
-                                             aria-hidden="true">
+                            <th class="track-heading track-one" scope="col">
 
-                                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                                            <circle cx="12" cy="10" r="2.5"/>
+                                <span>PROGRAMME 01</span>
 
-                                        </svg>
+                                <h4>Governance</h4>
 
-                                        UCFM, University of Colombo
+                                <div class="track-location">
 
-                                    </div>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="2.5"/>
+                                    </svg>
 
-                                </th>
+                                    UCFM, University of Colombo
 
-                                <th scope="col" class="agenda-track track-two">
+                                </div>
 
-                                    <span class="track-number">PROGRAMME 02</span>
+                            </th>
 
-                                    <h3>AI Working Group</h3>
+                            <th class="track-heading track-two" scope="col">
 
-                                    <div class="track-location">
+                                <span>PROGRAMME 02</span>
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="16" height="16"
-                                             aria-hidden="true">
+                                <h4>AI Working Group</h4>
 
-                                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                                            <circle cx="12" cy="10" r="2.5"/>
+                                <div class="track-location">
 
-                                        </svg>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="2.5"/>
+                                    </svg>
 
-                                        Ramada Hotel Colombo
+                                    Ramada Hotel, Colombo
 
-                                    </div>
+                                </div>
 
-                                </th>
+                            </th>
 
-                                <th scope="col" class="agenda-track track-three">
+                            <th class="track-heading track-three" scope="col">
 
-                                    <span class="track-number">PROGRAMME 03</span>
+                                <span>PROGRAMME 03</span>
 
-                                    <h3>AgriTEC Working Group</h3>
+                                <h4>AgriTEC Working Group</h4>
 
-                                    <div class="track-location">
+                                <div class="track-location">
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="16" height="16"
-                                             aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                        <circle cx="12" cy="10" r="2.5"/>
+                                    </svg>
 
-                                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                                            <circle cx="12" cy="10" r="2.5"/>
+                                    Ramada Hotel, Colombo
 
-                                        </svg>
+                                </div>
 
-                                        Ramada Hotel Colombo
+                            </th>
 
-                                    </div>
+                        </tr>
 
-                                </th>
+                    </thead>
 
-                            </tr>
+                    <tbody>
 
-                        </thead>
+                        <!-- REGISTRATION -->
 
-                        <tbody>
+                        <tr>
 
+                            <td class="agenda-time">
+                                <strong>08:30</strong>
+                                <small>09:30</small>
+                            </td>
 
-                            <!-- REGISTRATION -->
+                            <td colspan="3">
 
-                            <tr class="break-row">
+                                <div class="shared-session">
 
-                                <th scope="row" class="agenda-time first-time">
-                                    <strong>08.30 AM</strong>
-                                    <span>09.30 AM</span>
-                                </th>
+                                    <svg viewBox="0 0 24 24">
+                                        <rect x="4" y="3" width="16" height="18" rx="2"/>
+                                        <path d="M8 8h8M8 12h8M8 16h5"/>
+                                    </svg>
 
-                                <td colspan="3" class="agenda-common">
+                                    <span>Registration &amp; Refreshments</span>
 
-                                    <div class="common-content">
+                                </div>
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="21" height="21"
-                                             aria-hidden="true">
+                            </td>
 
-                                            <rect x="4" y="3" width="16" height="18" rx="3"/>
-                                            <path d="M8 8H16M8 12H16M8 16H12"/>
-
-                                        </svg>
-
-                                        Registration &amp; Refreshments
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
+                        </tr>
 
 
-                            <!-- MORNING PARALLEL SESSIONS -->
+                        <!-- MORNING SESSION 01 -->
 
-                            <tr class="session-row">
+                        <tr>
 
-                                <th scope="row" class="agenda-time">
-                                    <strong>09.30 AM</strong>
-                                    <span>11.00 AM</span>
-                                </th>
+                            <td class="agenda-time">
+                                <strong>09:30</strong>
+                                <small>11:00</small>
+                            </td>
 
-                                <td class="agenda-session governance-session">
+                            <td>
+
+                                <div class="session-card governance-session">
 
                                     <h4>Board Meeting</h4>
 
-                                    <span class="closed-session-label">
+                                    <span class="closed-label">
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="13" height="13"
-                                             aria-hidden="true">
-
+                                        <svg viewBox="0 0 24 24">
                                             <rect x="5" y="10" width="14" height="11" rx="2"/>
                                             <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-                                            <path d="M12 14v3"/>
-
                                         </svg>
 
                                         Closed Session
 
                                     </span>
 
-                                </td>
+                                </div>
 
-                                <td rowspan="2"
-                                    class="agenda-session ai-session merged-session">
+                            </td>
 
-                                    <div class="wg-session-content">
+                            <td>
+                                <div class="session-card ai-session">
+                                    <h4>AI Working Group</h4>
+                                </div>
+                            </td>
 
-                                        <svg class="wg-icon"
-                                             viewBox="0 0 40 40"
-                                             width="42" height="42"
-                                             aria-hidden="true">
+                            <td>
+                                <div class="session-card agri-session">
+                                    <h4>AgriTEC Working Group</h4>
+                                </div>
+                            </td>
 
-                                            <rect x="10" y="10" width="20" height="20" rx="4"/>
-                                            <rect x="16" y="16" width="8" height="8" rx="1"/>
-
-                                            <path d="M15 3V10M25 3V10M15 30V37M25 30V37M3 15H10M3 25H10M30 15H37M30 25H37"/>
-
-                                        </svg>
-
-                                        <h4>AI WG</h4>
-
-                                        <p>09.30 AM – 12.30 PM</p>
-
-                                    </div>
-
-                                </td>
-
-                                <td rowspan="2"
-                                    class="agenda-session agro-session merged-session">
-
-                                    <div class="wg-session-content">
-
-                                        <svg class="wg-icon"
-                                             viewBox="0 0 40 40"
-                                             width="42" height="42"
-                                             aria-hidden="true">
-
-                                            <path d="M20 35V16M20 25C8 25 5 16 5 8C15 8 20 14 20 25Z"/>
-
-                                            <path d="M20 19C20 8 28 4 35 4C35 15 29 21 20 21Z"/>
-
-                                        </svg>
-
-                                        <h4>AgriTEC WG</h4>
-
-                                        <p>09.30 AM – 12.30 PM</p>
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
+                        </tr>
 
 
-                            <!-- SOLUTIONS TEAM PRESENTATION -->
+                        <!-- MORNING SESSION 02 -->
 
-                            <tr class="session-row">
+                        <tr>
 
-                                <th scope="row" class="agenda-time">
-                                    <strong>11.00 AM</strong>
-                                    <span>12.30 PM</span>
-                                </th>
+                            <td class="agenda-time">
+                                <strong>11:00</strong>
+                                <small>12:30</small>
+                            </td>
 
-                                <td class="agenda-session governance-session">
+                            <td>
+
+                                <div class="session-card governance-session">
 
                                     <h4>
                                         Presentation by the Solutions Team
                                         to the LEARN BoD
                                     </h4>
 
-                                    <span class="closed-session-label">
+                                    <span class="closed-label">
 
-                                        <svg viewBox="0 0 24 24"
-                                             width="13" height="13"
-                                             aria-hidden="true">
-
+                                        <svg viewBox="0 0 24 24">
                                             <rect x="5" y="10" width="14" height="11" rx="2"/>
                                             <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-                                            <path d="M12 14v3"/>
-
                                         </svg>
 
                                         Closed Session
 
                                     </span>
 
-                                </td>
+                                </div>
 
-                            </tr>
+                            </td>
 
+                            <td>
+                                <div class="session-card ai-session">
+                                    <h4>AI Working Group</h4>
+                                </div>
+                            </td>
 
-                            <!-- LUNCH -->
+                            <td>
+                                <div class="session-card agri-session">
+                                    <h4>AgriTEC Working Group</h4>
+                                </div>
+                            </td>
 
-                            <tr class="break-row">
-
-                                <th scope="row" class="agenda-time">
-                                    <strong>12.30 PM</strong>
-                                    <span>01.30 PM</span>
-                                </th>
-
-                                <td colspan="3" class="agenda-common">
-
-                                    <div class="common-content">
-
-                                        <svg viewBox="0 0 24 24"
-                                             width="21" height="21"
-                                             aria-hidden="true">
-
-                                            <path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v19M18 3c-3 4-4 8-4 12h5M19 3v19"/>
-
-                                        </svg>
-
-                                        Lunch
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
+                        </tr>
 
 
-                            <!-- AFTERNOON SESSIONS -->
+                        <!-- LUNCH -->
 
-                            <tr class="session-row">
+                        <tr>
 
-                                <th scope="row" class="agenda-time">
-                                    <strong>01.30 PM</strong>
-                                    <span>03.00 PM</span>
-                                </th>
+                            <td class="agenda-time">
+                                <strong>12:30</strong>
+                                <small>13:30</small>
+                            </td>
 
-                                <td class="agenda-session governance-session">
+                            <td colspan="3">
+
+                                <div class="shared-session">
+
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M4 3v6a3 3 0 0 0 6 0V3M7 3v18M17 3v18M17 3c-3 3-4 7-4 11h4"/>
+                                    </svg>
+
+                                    <span>Lunch</span>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- AFTERNOON SESSION -->
+
+                        <tr>
+
+                            <td class="agenda-time">
+                                <strong>13:30</strong>
+                                <small>15:00</small>
+                            </td>
+
+                            <td>
+                                <div class="session-card governance-session">
                                     <h4>Annual General Meeting</h4>
-                                </td>
+                                </div>
+                            </td>
 
-                                <td class="agenda-session ai-session">
-                                    <h4>AI WG</h4>
-                                </td>
+                            <td>
+                                <div class="session-card ai-session">
+                                    <h4>AI Working Group</h4>
+                                </div>
+                            </td>
 
-                                <td class="agenda-session agro-session">
-                                    <h4>AgriTEC WG</h4>
-                                </td>
+                            <td>
+                                <div class="session-card agri-session">
+                                    <h4>AgriTEC Working Group</h4>
+                                </div>
+                            </td>
 
-                            </tr>
-
-
-                            <!-- TEA -->
-
-                            <tr class="break-row">
-
-                                <th scope="row" class="agenda-time">
-                                    <strong>03.00 PM</strong>
-                                    <span>03.15 PM</span>
-                                </th>
-
-                                <td colspan="3" class="agenda-common">
-
-                                    <div class="common-content">
-
-                                        <svg viewBox="0 0 24 24"
-                                             width="21" height="21"
-                                             aria-hidden="true">
-
-                                            <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/>
-
-                                            <path d="M17 9h2a3 3 0 0 1 0 6h-2M7 3v2M12 3v2"/>
-
-                                        </svg>
-
-                                        Tea
-
-                                    </div>
-
-                                </td>
-
-                            </tr>
+                        </tr>
 
 
-                            <!-- FINAL DAYTIME SESSION -->
+                        <!-- TEA BREAK -->
 
-                            <tr class="session-row">
+                        <tr>
 
-                                <th scope="row" class="agenda-time last-time">
-                                    <strong>03.15 PM</strong>
-                                    <span>05.00 PM</span>
-                                </th>
+                            <td class="agenda-time">
+                                <strong>15:00</strong>
+                                <small>15:15</small>
+                            </td>
 
-                                <td class="agenda-empty">—</td>
+                            <td colspan="3">
 
-                                <td class="agenda-session ai-session">
-                                    <h4>AI WG</h4>
-                                </td>
+                                <div class="shared-session">
 
-                                <td class="agenda-session agro-session">
-                                    <h4>AgriTEC WG</h4>
-                                </td>
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8ZM17 9h2a3 3 0 0 1 0 6h-2M6 3v2M10 3v2M14 3v2M2 22h18"/>
+                                    </svg>
 
-                            </tr>
+                                    <span>Tea Break</span>
 
-                        </tbody>
+                                </div>
 
-                    </table>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- FINAL DAYTIME SESSION -->
+
+                        <tr>
+
+                            <td class="agenda-time">
+                                <strong>15:15</strong>
+                                <small>17:00</small>
+                            </td>
+
+                            <td>
+                                <div class="empty-session">—</div>
+                            </td>
+
+                            <td>
+                                <div class="session-card ai-session">
+                                    <h4>AI Working Group</h4>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="session-card agri-session">
+                                    <h4>AgriTEC Working Group</h4>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- DAY 01 EVENING PROGRAMME -->
+
+            <div class="evening-programme">
+
+                <div class="evening-decoration"></div>
+
+                <div class="evening-times">
+
+                    <div>
+                        <strong>6:30 PM</strong>
+                        <span>Reception</span>
+                    </div>
+
+                    <div>
+                        <strong>7:00 PM</strong>
+                        <span>Awards</span>
+                    </div>
 
                 </div>
 
+                <div class="evening-content">
 
-                <!-- EVENING PROGRAMME -->
+                    <span class="evening-label">
+                        EVENING PROGRAMME
+                    </span>
 
-                <div class="agenda-evening">
+                    <h3>LEARN Awards 2026</h3>
 
-                    <div class="evening-pattern" aria-hidden="true"></div>
+                    <h4>Celebrating AI for All</h4>
 
-                    <div class="evening-time-block">
+                    <p>Evening Cocktail Reception</p>
 
-                        <span class="evening-label">
-                            EVENING PROGRAMME
-                        </span>
+                    <div class="evening-location">
 
-                        <div class="evening-time-item">
-                            <h3>6:30 PM</h3>
-                            <p>Reception</p>
-                        </div>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
 
-                        <div class="evening-time-item">
-                            <h3>7:00 PM</h3>
-                            <p>Awards</p>
-                        </div>
+                        Galle Face Hotel, Colombo
 
                     </div>
-
-                    <div class="evening-main">
-
-                        <h3>LEARN Awards 2026</h3>
-
-                        <h4>Celebrating AI for All</h4>
-
-                        <p>&amp; Evening Cocktail Reception</p>
-
-                        <div class="evening-location">
-
-                            <svg viewBox="0 0 24 24"
-                                 width="18" height="18"
-                                 aria-hidden="true">
-
-                                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-
-                                <circle cx="12" cy="10" r="2.5"/>
-
-                            </svg>
-
-                            Galle Face Hotel, Colombo
-
-                        </div>
-
-                    </div>
-
-                    <a href="#awards"
-                       class="evening-arrow"
-                       aria-label="Explore LEARN Awards">
-                        →
-                    </a>
 
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- =================================
-                 DAY 02 — 01 DECEMBER
-                 COMPLETE NEW PROGRAMME
-                 ================================= -->
 
-            <div class="programme-content" id="day2" hidden>
+        <!-- ======================================
+                     DAY 02 PROGRAMME
+        ======================================= -->
 
-                <div class="agenda-date-header">
+        <div class="programme-content" id="day2" hidden>
 
-                    <div class="agenda-date-content">
+            <div class="day-banner">
 
-                        <span class="agenda-eyebrow">
-                            LEARN37 — EVENT PROGRAMME
-                        </span>
+                <div class="day-banner-content">
 
-                        <h3>Tuesday, 01 December</h3>
+                    <span class="day-eyebrow">
+                        LEARN37 — EVENT PROGRAMME
+                    </span>
 
-                        <p>Day 02 / 2026</p>
+                    <h3>Tuesday, 01 December</h3>
 
+                    <p>Day 02 / 2026</p>
+
+                </div>
+
+                <div class="day-number" aria-hidden="true">02</div>
+
+            </div>
+
+
+            <div class="day2-agenda">
+
+                <div class="day2-agenda-heading">
+                    <span>TIME</span>
+                    <span>PROGRAMME</span>
+                    <small>SLST (UTC+5:30)</small>
+                </div>
+
+
+                <!-- 08:30 -->
+
+                <div class="day2-row day2-break">
+
+                    <div class="day2-time">
+                        <time>08:30</time>
                     </div>
 
-                    <div class="agenda-date-number" aria-hidden="true">
-                        02
-                    </div>
+                    <div class="day2-session">
 
-                    <div class="agenda-header-pattern" aria-hidden="true"></div>
+                        <svg class="day2-session-icon" viewBox="0 0 24 24">
+                            <path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8ZM17 9h2a3 3 0 0 1 0 6h-2M6 3v2M10 3v2M14 3v2M2 22h18"/>
+                        </svg>
+
+                        <div>
+                            <h4>Arrival, greetings and coffee</h4>
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-                <!-- DAY TWO AGENDA -->
+                <!-- 09:00 -->
 
-                <div class="day2-agenda">
+                <div class="day2-row">
 
-                    <div class="day2-agenda-heading">
+                    <div class="day2-time">
+                        <time>09:00</time>
+                    </div>
 
-                        <span>TIME</span>
+                    <div class="day2-session">
 
-                        <span>PROGRAMME</span>
+                        <div>
 
-                        <small>SLST (UTC+5:30)</small>
+                            <h4>Welcome and strategic context</h4>
+
+                            <p class="day2-speaker">
+                                Prof. Roshan Ragel, LEARN
+                            </p>
+
+                        </div>
 
                     </div>
 
+                </div>
 
-                    <!-- 08:30 -->
 
-                    <article class="day2-row day2-break">
+                <!-- 09:10 -->
 
-                        <div class="day2-time">
-                            <time datetime="08:30">08:30</time>
-                        </div>
+                <div class="day2-row">
 
-                        <div class="day2-session">
+                    <div class="day2-time">
+                        <time>09:10</time>
+                    </div>
 
-                            <svg class="day2-session-icon"
-                                 viewBox="0 0 24 24"
-                                 width="23" height="23"
-                                 aria-hidden="true">
+                    <div class="day2-session">
 
-                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/>
-                                <path d="M17 9h2a3 3 0 0 1 0 6h-2M7 3v2M12 3v2"/>
+                        <div>
 
-                            </svg>
+                            <h4>Framing the opportunity</h4>
 
-                            <div>
-                                <h4>Arrival, greetings and coffee</h4>
-                            </div>
+                            <p class="day2-speaker">
+                                Dr. Asitha Bandaranayake, LEARN
+                            </p>
 
                         </div>
 
-                    </article>
+                    </div>
+
+                </div>
 
 
-                    <!-- 09:00 -->
+                <!-- 09:25 -->
 
-                    <article class="day2-row">
+                <div class="day2-row">
 
-                        <div class="day2-time">
-                            <time datetime="09:00">09:00</time>
-                        </div>
+                    <div class="day2-time">
+                        <time>09:25</time>
+                    </div>
 
-                        <div class="day2-session">
+                    <div class="day2-session">
 
-                            <div>
+                        <div>
 
-                                <h4>Welcome and strategic context</h4>
+                            <h4>
+                                International perspective:
+                                why neutral interconnection matters
+                            </h4>
 
-                                <p class="day2-speaker">
-                                    Prof. Roshan Ragel, LEARN
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 09:10 -->
-
-                    <article class="day2-row">
-
-                        <div class="day2-time">
-                            <time datetime="09:10">09:10</time>
-                        </div>
-
-                        <div class="day2-session">
-
-                            <div>
-
-                                <h4>Framing the opportunity</h4>
-
-                                <p class="day2-speaker">
-                                    Dr. Asitha Bandaranayake, LEARN
-                                </p>
-
-                            </div>
+                            <p class="day2-speaker">
+                                Alexander van den Hill, SURF (the Netherlands)
+                            </p>
 
                         </div>
 
-                    </article>
+                    </div>
+
+                </div>
 
 
-                    <!-- 09:25 -->
+                <!-- 09:50 -->
 
-                    <article class="day2-row">
+                <div class="day2-row">
 
-                        <div class="day2-time">
-                            <time datetime="09:25">09:25</time>
-                        </div>
+                    <div class="day2-time">
+                        <time>09:50</time>
+                    </div>
 
-                        <div class="day2-session">
+                    <div class="day2-session">
 
-                            <div>
+                        <div>
 
-                                <h4>
-                                    International perspective:
-                                    why neutral interconnection matters
-                                </h4>
+                            <h4>
+                                Sri Lanka’s international digital
+                                infrastructure and the regional opportunity
+                            </h4>
 
-                                <p class="day2-speaker">
-                                    Alexander van den Hill,
-                                    SURF (the Netherlands)
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 09:50 -->
-
-                    <article class="day2-row">
-
-                        <div class="day2-time">
-                            <time datetime="09:50">09:50</time>
-                        </div>
-
-                        <div class="day2-session">
-
-                            <div>
-
-                                <h4>
-                                    Sri Lanka’s international digital
-                                    infrastructure and the regional opportunity
-                                </h4>
-
-                                <p class="day2-speaker">
-                                    SLT-MOBITEL leadership
-                                </p>
-
-                            </div>
+                            <p class="day2-speaker">
+                                SLT-MOBITEL leadership
+                            </p>
 
                         </div>
 
-                    </article>
+                    </div>
+
+                </div>
 
 
-                    <!-- 10:10 -->
+                <!-- 10:10 -->
 
-                    <article class="day2-row">
+                <div class="day2-row">
 
-                        <div class="day2-time">
-                            <time datetime="10:10">10:10</time>
-                        </div>
+                    <div class="day2-time">
+                        <time>10:10</time>
+                    </div>
 
-                        <div class="day2-session">
+                    <div class="day2-session">
 
-                            <div>
+                        <div>
 
-                                <h4>Government strategic response</h4>
+                            <h4>Government strategic response</h4>
 
-                                <p class="day2-speaker">
-                                    Ministers and senior officials
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 10:25 -->
-
-                    <article class="day2-row">
-
-                        <div class="day2-time">
-                            <time datetime="10:25">10:25</time>
-                        </div>
-
-                        <div class="day2-session">
-
-                            <div>
-                                <h4>Moderated strategic panel</h4>
-                            </div>
+                            <p class="day2-speaker">
+                                Ministers and senior officials
+                            </p>
 
                         </div>
 
-                    </article>
+                    </div>
+
+                </div>
 
 
-                    <!-- 11:00 — CLOSED SESSION -->
+                <!-- 10:25 -->
 
-                    <article class="day2-row">
+                <div class="day2-row">
 
-                        <div class="day2-time">
-                            <time datetime="11:00">11:00</time>
+                    <div class="day2-time">
+                        <time>10:25</time>
+                    </div>
+
+                    <div class="day2-session">
+
+                        <div>
+                            <h4>Moderated strategic panel</h4>
                         </div>
 
-                        <div class="day2-session">
+                    </div>
 
-                            <div>
-
-                                <h4>Closed strategic roundtable</h4>
-
-                                <p class="day2-speaker">
-                                    All participants
-                                </p>
-
-                                <span class="closed-session-label">
-
-                                    <svg viewBox="0 0 24 24"
-                                         width="13" height="13"
-                                         aria-hidden="true">
-
-                                        <rect x="5" y="10" width="14" height="11" rx="2"/>
-                                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-                                        <path d="M12 14v3"/>
-
-                                    </svg>
-
-                                    Closed Session
-
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
+                </div>
 
 
-                    <!-- 11:40 -->
+                <!-- 11:00 -->
 
-                    <article class="day2-row">
+                <div class="day2-row">
 
-                        <div class="day2-time">
-                            <time datetime="11:40">11:40</time>
-                        </div>
+                    <div class="day2-time">
+                        <time>11:00</time>
+                    </div>
 
-                        <div class="day2-session">
+                    <div class="day2-session">
 
-                            <div>
-                                <h4>Agreement on next steps</h4>
-                            </div>
+                        <div>
 
-                        </div>
+                            <h4>Closed strategic roundtable</h4>
 
-                    </article>
+                            <p class="day2-speaker">
+                                All participants
+                            </p>
 
+                            <span class="closed-label">
 
-                    <!-- 11:45 — MOU SIGNING -->
-
-                    <article class="day2-row day2-signing">
-
-                        <div class="day2-time">
-                            <time datetime="11:45">11:45</time>
-                        </div>
-
-                        <div class="day2-session">
-
-                            <div class="signing-pattern" aria-hidden="true"></div>
-
-                            <div class="signing-icon">
-
-                                <svg viewBox="0 0 48 48"
-                                     width="38" height="38"
-                                     aria-hidden="true">
-
-                                    <rect x="8" y="5" width="27" height="36" rx="3"/>
-
-                                    <path d="M14 13H28M14 20H28M14 27H22"/>
-
-                                    <path d="M25 35L29 25L40 14L44 18L33 29L25 35Z"/>
-
-                                    <path d="M37 17L41 21"/>
-
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="5" y="10" width="14" height="11" rx="2"/>
+                                    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
                                 </svg>
 
-                            </div>
+                                Closed Session
 
-                            <div class="signing-content">
-
-                                <span class="signing-label">
-                                    MoU SIGNING CEREMONY
-                                </span>
-
-                                <h4>
-                                    Signing of the LEARN–SLT-MOBITEL
-                                    Memorandum of Understanding
-                                </h4>
-
-                            </div>
+                            </span>
 
                         </div>
 
-                    </article>
-
-
-                    <!-- 12:00 -->
-
-                    <article class="day2-row day2-break">
-
-                        <div class="day2-time">
-                            <time datetime="12:00">12:00</time>
-                        </div>
-
-                        <div class="day2-session">
-
-                            <svg class="day2-session-icon"
-                                 viewBox="0 0 24 24"
-                                 width="23" height="23"
-                                 aria-hidden="true">
-
-                                <path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v19M18 3c-3 4-4 8-4 12h5M19 3v19"/>
-
-                            </svg>
-
-                            <div>
-                                <h4>Lunch</h4>
-                            </div>
-
-                        </div>
-
-                    </article>
+                    </div>
 
                 </div>
 
 
-                <!-- TEA ARRANGEMENT NOTE -->
+                <!-- 11:40 -->
+
+                <div class="day2-row">
+
+                    <div class="day2-time">
+                        <time>11:40</time>
+                    </div>
+
+                    <div class="day2-session">
+
+                        <div>
+                            <h4>Agreement on next steps</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 11:45 — MOU SIGNING -->
+
+                <div class="day2-row day2-signing">
+
+                    <div class="day2-time">
+                        <time>11:45</time>
+                    </div>
+
+                    <div class="day2-session">
+
+                        <div class="signing-pattern"></div>
+
+                        <div class="signing-icon">
+
+                            <svg viewBox="0 0 40 40">
+
+                                <rect x="5" y="4" width="25" height="32" rx="3"/>
+
+                                <path d="M11 11h13M11 17h13M11 23h7"/>
+
+                                <path d="M19 31l3-8L34 11l5 5-12 12-8 3Z"/>
+
+                                <path d="M30 15l5 5"/>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="signing-content">
+
+                            <span class="signing-label">
+                                MoU SIGNING CEREMONY
+                            </span>
+
+                            <h4>
+                                Signing of the LEARN–SLT-MOBITEL
+                                Memorandum of Understanding
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 12:00 -->
+
+                <div class="day2-row day2-break last-row">
+
+                    <div class="day2-time">
+                        <time>12:00</time>
+                    </div>
+
+                    <div class="day2-session">
+
+                        <svg class="day2-session-icon" viewBox="0 0 24 24">
+                            <path d="M4 3v6a3 3 0 0 0 6 0V3M7 3v18M17 3v18M17 3c-3 3-4 7-4 11h4"/>
+                        </svg>
+
+                        <div>
+                            <h4>Lunch</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEA NOTE -->
 
                 <div class="day2-note">
 
                     <div class="day2-note-icon">
 
-                        <svg viewBox="0 0 24 24"
-                             width="26" height="26"
-                             aria-hidden="true">
-
-                            <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/>
-
-                            <path d="M17 9h2a3 3 0 0 1 0 6h-2M7 3v2M12 3v2"/>
-
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 8h14v6a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8ZM17 9h2a3 3 0 0 1 0 6h-2M6 3v2M10 3v2M14 3v2M2 22h18"/>
                         </svg>
 
                     </div>
@@ -1179,402 +1047,326 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- LEARN AWARDS -->
+<!-- ======================================
+             LEARN AWARDS 2026
+======================================= -->
 
-    <section class="awards-section" id="awards">
+<section class="awards-section" id="awards">
 
-        <div class="awards-glow"></div>
+    <div class="awards-glow"></div>
 
-        <div class="container reveal">
+    <div class="container reveal">
 
-            <p class="section-label">
-                CELEBRATING EXCELLENCE
-            </p>
+        <p class="section-label">CELEBRATING EXCELLENCE</p>
 
-            <h2 class="awards-title">
-                LEARN Awards
-                <span>2026</span>
-            </h2>
+        <h2 class="awards-title">
+            LEARN Awards <span>2026</span>
+        </h2>
 
-            <h3 class="awards-theme">
-                Celebrating AI for All
-            </h3>
+        <h3 class="awards-theme">Celebrating AI for All</h3>
 
-            <p class="awards-description">
+        <p class="awards-description">
 
-                LEARN Awards 2026 recognises the trainers of
-                AI for All, our national AI literacy programme,
-                which has reached over 13,500 learners.
-                The awards celebrate their dedication and contribution
-                to advancing AI literacy across Sri Lanka.
+            LEARN Awards 2026 recognises the trainers of AI for All,
+            our national AI literacy programme, which has reached
+            over 13,500 learners.
 
-            </p>
+        </p>
 
-            <div class="awards-impact">
+        <div class="awards-impact">
 
-                <span class="impact-number">13,500+</span>
+            <strong>13,500<span>+</span></strong>
 
-                <span class="impact-label">
-                    Learners Reached through AI for All
-                </span>
+            <p>Learners reached through AI for All</p>
+
+        </div>
+
+        <div class="awards-details">
+
+            <div>
+
+                <small>DATE</small>
+
+                <h3>30 November 2026</h3>
 
             </div>
 
-            <div class="awards-details">
+            <div>
 
-                <div>
+                <small>TIME</small>
 
-                    <small>DATE</small>
+                <h3>6:30 PM Reception</h3>
 
-                    <h3>30 November 2026</h3>
+                <h3>7:00 PM Awards</h3>
+
+            </div>
+
+            <div>
+
+                <small>VENUE</small>
+
+                <h3>Galle Face Hotel</h3>
+
+                <p>Colombo, Sri Lanka</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PARTNERS -->
+
+<section class="section partners-section" id="partners">
+
+    <div class="container reveal">
+
+        <p class="section-label">COLLABORATION &amp; INNOVATION</p>
+
+        <h2 class="section-title">Our Partners</h2>
+
+        <div class="technology-partner partner">
+
+            <p class="partner-category">Technology Partner</p>
+
+            <img src="images/Huawei_Logo.png"
+                alt="Huawei Technologies Lanka" loading="lazy">
+
+            <h3>Huawei Technologies Lanka</h3>
+
+        </div>
+
+        <div class="partners-grid">
+
+            <div class="partner">
+
+                <p class="partner-category">Connectivity Partner</p>
+
+                <img src="images/SLT_Logo.png"
+                    alt="Sri Lanka Telecom" loading="lazy">
+
+                <h3>Sri Lanka Telecom (SLT)</h3>
+
+            </div>
+
+            <div class="partner">
+
+                <p class="partner-category">Knowledge Partner</p>
+
+                <img src="images/IEEE_GRSS_Sri_Lanka_Chapter_Logo.png"
+                    alt="IEEE-GRSS Sri Lanka Chapter" loading="lazy">
+
+                <h3>IEEE-GRSS Sri Lanka Chapter</h3>
+
+            </div>
+
+        </div>
+
+        <div class="registration-partner partner">
+
+            <p class="partner-category">Registration System Partner</p>
+
+            <img src="images/OneCode_Labs_Logo.png"
+                alt="OneCode Labs" loading="lazy">
+
+            <h3>OneCode Labs</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VENUES -->
+
+<section class="section venue-section" id="venue">
+
+    <div class="container reveal">
+
+        <p class="section-label">EVENT LOCATIONS</p>
+
+        <h2 class="section-title">Event Venues</h2>
+
+        <div class="venue-grid">
+
+            <article class="venue-card">
+
+                <div class="venue-image university-image"
+                    role="img" aria-label="University of Colombo">
+                </div>
+
+                <div class="venue-info">
+
+                    <span class="venue-label">PROGRAMME 01</span>
+
+                    <h3>University of Colombo</h3>
+
+                    <p>UCFM, Colombo, Sri Lanka</p>
+
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=University+of+Colombo+Faculty+of+Medicine"
+                        target="_blank" rel="noopener noreferrer">
+
+                        View Location →
+
+                    </a>
 
                 </div>
 
-                <div>
+            </article>
 
-                    <small>TIME</small>
 
-                    <div class="awards-time">
+            <article class="venue-card">
 
-                        <h3>6:30 PM <span>Reception</span></h3>
+                <div class="venue-image ramada-image"
+                    role="img" aria-label="Ramada Hotel Colombo">
+                </div>
 
-                        <h3>7:00 PM <span>Awards</span></h3>
+                <div class="venue-info">
 
-                    </div>
+                    <span class="venue-label">PROGRAMMES 02 &amp; 03</span>
+
+                    <h3>Ramada Hotel</h3>
+
+                    <p>Colombo, Sri Lanka</p>
+
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Ramada+Hotel+Colombo"
+                        target="_blank" rel="noopener noreferrer">
+
+                        View Location →
+
+                    </a>
 
                 </div>
 
-                <div>
+            </article>
 
-                    <small>VENUE</small>
+
+            <article class="venue-card">
+
+                <div class="venue-image hotel-image"
+                    role="img" aria-label="Galle Face Hotel">
+                </div>
+
+                <div class="venue-info">
+
+                    <span class="venue-label">LEARN AWARDS 2026</span>
 
                     <h3>Galle Face Hotel</h3>
 
+                    <p>Colombo, Sri Lanka</p>
+
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Galle+Face+Hotel+Colombo"
+                        target="_blank" rel="noopener noreferrer">
+
+                        View Location →
+
+                    </a>
+
                 </div>
 
-            </div>
+            </article>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- PARTNERS -->
+<!-- FOOTER -->
 
-    <section class="section partners-section" id="partners">
+<footer class="footer">
 
-        <div class="container reveal">
+    <div class="container footer-content">
 
-            <p class="section-label">
-                COLLABORATION &amp; INNOVATION
+        <div class="footer-brand">
+
+            <img src="images/LEARN37_Logo.png" alt="LEARN37">
+
+            <h3>Lanka Education and Research Network</h3>
+
+            <p>
+                People | Knowledge | Networks<br>
+                For a Better Tomorrow
             </p>
 
-            <h2 class="section-title">Our Partners</h2>
+        </div>
 
-            <div class="technology-partner partner">
+        <div class="footer-contact">
 
-                <p class="partner-category">Technology Partner</p>
+            <h3>Contact Us</h3>
 
-                <img src="images/Huawei_Logo.png"
-                     alt="Huawei Technologies Lanka"
-                     loading="lazy">
+            <p>
+                No. 167, Vihara Mawatha,<br>
+                Mulgampola, Kandy 20000,<br>
+                Sri Lanka
+            </p>
 
-                <h3>Huawei Technologies Lanka</h3>
+            <div class="contact-link">
 
-            </div>
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 3h4l2 5-3 2c2 4 4 6 8 8l2-3 5 2v4c0 1-1 2-2 2C10 23 1 14 1 5c0-1 1-2 2-2h2Z"/>
+                </svg>
 
-            <div class="partners-grid">
-
-                <div class="partner">
-
-                    <p class="partner-category">Connectivity Partner</p>
-
-                    <img src="images/SLT_Logo.png"
-                         alt="Sri Lanka Telecom"
-                         loading="lazy">
-
-                    <h3>Sri Lanka Telecom (SLT)</h3>
-
-                </div>
-
-                <div class="partner">
-
-                    <p class="partner-category">Knowledge Partner</p>
-
-                    <img src="images/IEEE_GRSS_Sri_Lanka_Chapter_Logo.png"
-                         alt="IEEE-GRSS Sri Lanka Chapter"
-                         loading="lazy">
-
-                    <h3>IEEE-GRSS Sri Lanka Chapter</h3>
-
-                </div>
+                <a href="tel:+94812003030">
+                    +94 81 200 3030
+                </a>
 
             </div>
 
-            <div class="registration-partner partner">
+            <div class="contact-link">
 
-                <p class="partner-category">Registration System Partner</p>
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m2 6 10 7L22 6"/>
+                </svg>
 
-                <img src="images/OneCode_Labs_Logo.png"
-                     alt="OneCode Labs"
-                     loading="lazy">
+                <a href="mailto:consultant@ops.learn.ac.lk">
+                    consultant@ops.learn.ac.lk
+                </a>
 
-                <h3>OneCode Labs</h3>
+            </div>
+
+            <div class="contact-link">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <ellipse cx="12" cy="12" rx="4" ry="10"/>
+                    <path d="M2 12h20"/>
+                </svg>
+
+                <a href="https://www.learn.ac.lk"
+                    target="_blank" rel="noopener noreferrer">
+
+                    www.learn.ac.lk
+
+                </a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+    <div class="footer-bottom">
 
-    <!-- EVENT VENUES -->
+        © 2026 Lanka Education and Research Network.
+        All Rights Reserved.
 
-    <section class="section venue-section" id="venue">
+    </div>
 
-        <div class="container reveal">
+</footer>
 
-            <p class="section-label">EVENT LOCATIONS</p>
-
-            <h2 class="section-title">Event Venues</h2>
-
-            <div class="venue-grid">
-
-                <article class="venue-card">
-
-                    <div class="venue-image university-image"
-                         role="img"
-                         aria-label="University of Colombo">
-                    </div>
-
-                    <div class="venue-info">
-
-                        <span class="venue-label">PROGRAMME 01</span>
-
-                        <h3>University of Colombo</h3>
-
-                        <p>UCFM, Colombo, Sri Lanka</p>
-
-                        <p class="venue-description">
-
-                            Board Meeting, Solutions Team Presentation
-                            and Annual General Meeting.
-
-                        </p>
-
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=University+of+Colombo+Faculty+of+Medicine"
-                           target="_blank"
-                           rel="noopener noreferrer">
-
-                            View Location →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="venue-card">
-
-                    <div class="venue-image ramada-image"
-                         role="img"
-                         aria-label="Ramada Hotel Colombo">
-                    </div>
-
-                    <div class="venue-info">
-
-                        <span class="venue-label">PROGRAMMES 02 &amp; 03</span>
-
-                        <h3>Ramada Hotel Colombo</h3>
-
-                        <p>Colombo, Sri Lanka</p>
-
-                        <p class="venue-description">
-
-                            AI Working Group and AgriTEC Working Group.
-
-                        </p>
-
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Ramada+Hotel+Colombo"
-                           target="_blank"
-                           rel="noopener noreferrer">
-
-                            View Location →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="venue-card">
-
-                    <div class="venue-image hotel-image"
-                         role="img"
-                         aria-label="Galle Face Hotel">
-                    </div>
-
-                    <div class="venue-info">
-
-                        <span class="venue-label">LEARN AWARDS 2026</span>
-
-                        <h3>Galle Face Hotel</h3>
-
-                        <p>Colombo, Sri Lanka</p>
-
-                        <p class="venue-description">
-
-                            LEARN Awards 2026 and Evening Cocktail Reception.
-
-                        </p>
-
-                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Galle+Face+Hotel+Colombo"
-                           target="_blank"
-                           rel="noopener noreferrer">
-
-                            View Location →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER — UPDATED CONTACT DETAILS -->
-
-    <footer class="footer">
-
-        <div class="container footer-content">
-
-            <div class="footer-brand">
-
-                <img src="images/LEARN37_Logo.png" alt="LEARN37">
-
-                <h3>Lanka Education and Research Network</h3>
-
-                <p>
-                    People | Knowledge | Networks<br>
-                    For a Better Tomorrow
-                </p>
-
-            </div>
-
-            <div class="footer-contact">
-
-                <h3>Contact Us</h3>
-
-                <div class="footer-contact-item">
-
-                    <svg viewBox="0 0 24 24"
-                         width="19" height="19"
-                         aria-hidden="true">
-
-                        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
-                        <circle cx="12" cy="10" r="2.5"/>
-
-                    </svg>
-
-                    <p>
-                        No. 167, Vihara Mawatha,<br>
-                        Mulgampola, Kandy 20000,<br>
-                        Sri Lanka
-                    </p>
-
-                </div>
-
-                <div class="footer-contact-item">
-
-                    <svg viewBox="0 0 24 24"
-                         width="19" height="19"
-                         aria-hidden="true">
-
-                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2
-                        A19.8 19.8 0 0 1 3.1 5.2
-                        2 2 0 0 1 5.1 3h3
-                        a2 2 0 0 1 2 1.7l.6 3.1
-                        a2 2 0 0 1-.6 2.1L8.8 11.2
-                        a16 16 0 0 0 4 4l1.3-1.3
-                        a2 2 0 0 1 2.1-.6l3.1.6
-                        a2 2 0 0 1 2.7 3Z"/>
-
-                    </svg>
-
-                    <a href="tel:+94812003030">
-                        +94 81 200 3030
-                    </a>
-
-                </div>
-
-
-                <!-- NEW CONTACT EMAIL -->
-
-                <div class="footer-contact-item">
-
-                    <svg viewBox="0 0 24 24"
-                         width="19" height="19"
-                         aria-hidden="true">
-
-                        <rect x="3" y="5" width="18" height="14" rx="2"/>
-                        <path d="M3 7L12 13L21 7"/>
-
-                    </svg>
-
-                    <a href="mailto:consultant@ops.learn.ac.lk">
-                        consultant@ops.learn.ac.lk
-                    </a>
-
-                </div>
-
-
-                <div class="footer-contact-item">
-
-                    <svg viewBox="0 0 24 24"
-                         width="19" height="19"
-                         aria-hidden="true">
-
-                        <circle cx="12" cy="12" r="9"/>
-                        <ellipse cx="12" cy="12" rx="4" ry="9"/>
-                        <path d="M3 12H21"/>
-
-                    </svg>
-
-                    <a href="https://www.learn.ac.lk"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
-                        www.learn.ac.lk
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            © 2026 Lanka Education and Research Network.
-            All Rights Reserved.
-
-        </div>
-
-    </footer>
-
-    <script src="./script.js"></script>
+<script src="script.js?v=20261127-5"></script>
 
 </body>
-
 </html>
