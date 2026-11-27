@@ -1,24 +1,887 @@
 
 /* =========================================
-   LEARN37 — MODERN PARALLEL PROGRAMME
+   LEARN37 — COMPLETE WEBSITE STYLESHEET
+   ========================================= */
+
+:root {
+
+    --navy: #061B59;
+    --deep-navy: #03143D;
+    --royal-blue: #0056B3;
+    --ocean-blue: #007DC5;
+    --cyan: #00CBE8;
+    --turquoise: #00DCC8;
+    --pink: #E50087;
+    --crimson: #B50039;
+    --ice-blue: #D9EFFC;
+    --white: #FFFFFF;
+    --text: #172D4D;
+    --muted: #61748B;
+
+    --palette-1: #070E75;
+    --palette-2: #0042A5;
+    --palette-3: #006DC1;
+    --palette-4: #0095CA;
+    --palette-5: #00BBC7;
+    --palette-6: #00E0BF;
+
+    --gradient: linear-gradient(
+        120deg,
+        #061B59,
+        #0056B3,
+        #00CBE8
+    );
+
+    --shadow: 0 20px 60px rgba(6, 27, 89, 0.08);
+
+}
+
+
+/* =========================================
+   GLOBAL SETTINGS
+   ========================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+
+}
+
+body {
+
+    font-family: 'Outfit', Arial, sans-serif;
+    background: #F4FAFF;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+
+}
+
+button {
+
+    font-family: inherit;
+    cursor: pointer;
+
+}
+
+img {
+
+    display: block;
+    max-width: 100%;
+
+}
+
+[hidden] {
+
+    display: none !important;
+
+}
+
+::selection {
+
+    background: #B7EFF8;
+    color: var(--navy);
+
+}
+
+.container {
+
+    width: min(1200px, 90%);
+    margin: auto;
+
+}
+
+.section {
+
+    padding: 110px 0;
+
+}
+
+.section-label {
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--ocean-blue);
+    margin-bottom: 18px;
+
+}
+
+.section-title {
+
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--navy);
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 16px 4%;
+
+}
+
+.navbar {
+
+    max-width: 1400px;
+    min-height: 78px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 32px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 35px rgba(0, 20, 70, 0.1);
+
+}
+
+.brand img {
+
+    width: 165px;
+    height: 60px;
+    object-fit: contain;
+
+}
+
+.nav-links {
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    list-style: none;
+
+}
+
+.nav-links a {
+
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+
+    transition: color 0.3s ease;
+
+}
+
+.nav-links a::after {
+
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--pink)
+    );
+
+    transition: width 0.3s ease;
+
+}
+
+.nav-links a:hover {
+
+    color: var(--ocean-blue);
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
+    width: 100%;
+
+}
+
+.menu-toggle {
+
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: var(--navy);
+    font-size: 26px;
+
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 160px 8% 200px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 85% 40%,
+            rgba(0, 174, 239, 0.55),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            125deg,
+            #03143D 0%,
+            #061B59 35%,
+            #0056B3 100%
+        );
+
+    color: white;
+
+}
+
+#networkCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+}
+
+.hero-glow {
+
+    position: absolute;
+
+    right: -10%;
+    top: 5%;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 203, 232, 0.23),
+        transparent 70%
+    );
+
+    filter: blur(35px);
+
+    animation: glowPulse 7s ease-in-out infinite;
+
+    pointer-events: none;
+
+}
+
+.hero-content {
+
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    max-width: 850px;
+
+}
+
+.event-label {
+
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border: 1px solid rgba(0, 203, 232, 0.5);
+    border-radius: 50px;
+
+    background: rgba(0, 203, 232, 0.08);
+
+    color: #A5F4FF;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    margin-bottom: 28px;
+
+    animation: fadeUp 0.9s ease both;
+
+}
+
+.hero-title {
+
+    font-size: clamp(70px, 12vw, 165px);
+    font-weight: 800;
+
+    line-height: 0.95;
+    letter-spacing: -7px;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s 0.15s ease both;
+
+}
+
+.hero-title span {
+
+    background: linear-gradient(
+        120deg,
+        #00CBE8,
+        #7DFFEB
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+.hero h2 {
+
+    font-size: clamp(23px, 3vw, 40px);
+    font-weight: 400;
+    line-height: 1.4;
+
+    animation: fadeUp 1s 0.3s ease both;
+
+}
+
+.theme {
+
+    margin-top: 35px;
+
+    font-size: clamp(17px, 2vw, 24px);
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    animation: fadeUp 1s 0.45s ease both;
+
+}
+
+.theme span {
+
+    color: var(--cyan);
+    padding: 0 8px;
+
+}
+
+.tagline {
+
+    font-size: 20px;
+    font-weight: 300;
+
+    color: #BDEBFF;
+
+    margin-top: 5px;
+
+    animation: fadeUp 1s 0.5s ease both;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 35px;
+
+    animation: fadeUp 1s 0.65s ease both;
+
+}
+
+.btn {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: all 0.35s ease;
+
+}
+
+.btn-primary {
+
+    background: linear-gradient(
+        110deg,
+        #49C9EF,
+        #00DCC8
+    );
+
+    color: var(--deep-navy);
+
+    box-shadow: 0 8px 35px rgba(0, 203, 232, 0.25);
+
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 45px rgba(0, 203, 232, 0.45);
+
+}
+
+.btn-outline {
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    backdrop-filter: blur(10px);
+
+}
+
+.btn-outline:hover {
+
+    background: white;
+    color: var(--navy);
+
+    transform: translateY(-5px);
+
+}
+
+
+/* =========================================
+   ANIMATED HERO WAVES
+   ========================================= */
+
+.hero-waves {
+
+    position: absolute;
+
+    bottom: -2px;
+    left: 0;
+
+    width: 100%;
+    height: 150px;
+
+    z-index: 4;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+.hero-waves svg {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+}
+
+.wave {
+
+    transform-origin: center bottom;
+
+}
+
+.wave-pink {
+
+    animation: waveFlow 8s ease-in-out infinite alternate;
+
+}
+
+.wave-cyan {
+
+    animation: waveFlow 11s ease-in-out infinite alternate-reverse;
+
+}
+
+.wave-blue {
+
+    animation: waveFlow 14s ease-in-out infinite alternate;
+
+}
+
+
+/* =========================================
+   COUNTDOWN
+   ========================================= */
+
+.countdown-section {
+
+    text-align: center;
+
+    padding: 35px 5% 65px;
+
+    background: #F4FAFF;
+
+}
+
+.countdown {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: clamp(15px, 5vw, 65px);
+
+}
+
+.countdown-item {
+
+    position: relative;
+
+    min-width: 95px;
+
+}
+
+.countdown-item span {
+
+    display: block;
+
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 600;
+    line-height: 1.2;
+
+    font-variant-numeric: tabular-nums;
+
+    background: var(--gradient);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+.countdown-item small {
+
+    color: var(--muted);
+
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+
+.countdown-item:not(:last-child)::after {
+
+    content: ':';
+
+    position: absolute;
+
+    top: 10%;
+    right: -25px;
+
+    font-size: 35px;
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================
+   LEARN37 EXPERIENCE
+   ========================================= */
+
+.experience-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 0;
+    padding: 60px 0 85px;
+
+    background: #F4FAFF;
+
+}
+
+.experience-heading {
+
+    position: relative;
+    z-index: 2;
+
+}
+
+.experience-heading h2 {
+
+    font-size: clamp(38px, 5vw, 72px);
+    font-weight: 600;
+
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+
+    color: var(--navy);
+
+    margin-bottom: 25px;
+
+}
+
+.experience-heading h2 span {
+
+    background: linear-gradient(
+        100deg,
+        #0056B3,
+        #009DBB
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+.experience-heading > p:last-child {
+
+    max-width: 650px;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+.experience-orbit {
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    top: -240px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 125, 197, 0.12);
+
+    box-shadow:
+
+        0 0 0 35px rgba(0, 125, 197, 0.025),
+        0 0 0 70px rgba(0, 125, 197, 0.025),
+        0 0 0 105px rgba(0, 125, 197, 0.025);
+
+    animation: experienceFloat 8s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+}
+
+.experience-grid {
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 45px;
+
+    margin-top: 75px;
+
+}
+
+.experience-grid::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 6px;
+    left: 6px;
+    right: 6px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #0056B3,
+        #00CBE8,
+        #00DCC8,
+        #E50087
+    );
+
+}
+
+.experience-item {
+
+    position: relative;
+
+    padding-top: 45px;
+
+    transition: transform 0.4s ease;
+
+}
+
+.experience-item:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.experience-node {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #00B9DC;
+
+    box-shadow: 0 0 0 6px rgba(0, 203, 232, 0.12);
+
+    animation: experiencePulse 3s ease-in-out infinite;
+
+}
+
+.experience-item:nth-child(2) .experience-node {
+
+    animation-delay: 0.5s;
+
+}
+
+.experience-item:nth-child(3) .experience-node {
+
+    animation-delay: 1s;
+
+}
+
+.experience-item:nth-child(4) .experience-node {
+
+    background: #E50087;
+
+    animation-delay: 1.5s;
+
+}
+
+.experience-item svg {
+
+    width: 52px;
+    height: 52px;
+
+    stroke: #007DC5;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    fill: none;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.4s ease;
+
+}
+
+.experience-item:hover svg {
+
+    transform: scale(1.12);
+
+}
+
+.experience-item h3 {
+
+    font-size: 27px;
+    font-weight: 500;
+
+    color: var(--navy);
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 12px;
+
+}
+
+.experience-item p {
+
+    max-width: 240px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================
+   APPROVED PARALLEL AGENDA DESIGN
    ========================================= */
 
 .programme-section {
 
-    --agenda-navy: #070E75;
-    --agenda-blue: #0042A5;
-    --agenda-ocean: #006DC1;
-    --agenda-sky: #0095CA;
-    --agenda-cyan: #00BBC7;
-    --agenda-mint: #00E0BF;
-
     background: linear-gradient(
         180deg,
-        #FFFFFF 0%,
-        #F4FAFF 100%
+        #FFFFFF,
+        #F4FAFF
     );
-
-    padding: 100px 0;
 
 }
 
@@ -30,19 +893,19 @@
 
 .programme-intro {
 
-    font-size: 17px;
-    color: var(--muted);
     max-width: 650px;
+
+    font-size: 17px;
     line-height: 1.8;
+
+    color: var(--muted);
 
 }
 
 
-/* =========================================
-   MODERN DAY SELECTION
-   ========================================= */
+/* DAY SELECTOR */
 
-.programme-section .programme-tabs {
+.programme-tabs {
 
     display: flex;
     gap: 16px;
@@ -51,7 +914,7 @@
 
 }
 
-.programme-section .tab-button {
+.tab-button {
 
     display: flex;
     flex-direction: column;
@@ -60,20 +923,19 @@
     gap: 5px;
 
     min-width: 200px;
+
     padding: 18px 28px;
+
+    background: #FFFFFF;
 
     border: 1px solid #DCE8F5;
     border-radius: 12px;
 
-    background: #FFFFFF;
-    color: var(--agenda-navy);
+    color: var(--palette-1);
 
     text-align: left;
 
-    transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+    transition: all 0.3s ease;
 
 }
 
@@ -82,7 +944,8 @@
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
-    color: var(--agenda-ocean);
+
+    color: var(--palette-3);
 
 }
 
@@ -93,7 +956,7 @@
 
 }
 
-.programme-section .tab-button.active {
+.tab-button.active {
 
     background: linear-gradient(
         120deg,
@@ -105,46 +968,57 @@
 
     border-color: transparent;
 
-    box-shadow:
-        0 10px 30px rgba(7, 14, 117, 0.15);
+    box-shadow: 0 10px 30px rgba(7, 14, 117, 0.15);
 
 }
 
-.programme-section .tab-button.active .tab-day {
+.tab-button.active .tab-day {
 
     color: #7DF4F0;
 
 }
 
-.programme-section .tab-button:hover {
+.tab-button:hover {
 
     transform: translateY(-3px);
 
 }
 
-.programme-section .tab-button:hover:not(.active) {
+.tab-button:hover:not(.active) {
 
     background: #EAF7FC;
     border-color: #00BBC7;
 
 }
 
+.programme-content {
 
-/* =========================================
-   DATE HEADER
-   ========================================= */
+    display: none;
+
+}
+
+.programme-content.active {
+
+    display: block;
+
+    animation: fadeUp 0.5s ease both;
+
+}
+
+
+/* DATE HEADER */
 
 .agenda-date-header {
 
     position: relative;
     overflow: hidden;
 
-    min-height: 165px;
+    min-height: 150px;
 
     display: flex;
     align-items: center;
 
-    padding: 32px 40px;
+    padding: 30px 38px;
 
     border-radius: 16px;
 
@@ -185,8 +1059,8 @@
 .agenda-date-content h3 {
 
     font-size: clamp(26px, 4vw, 42px);
-
     font-weight: 500;
+
     line-height: 1.25;
     letter-spacing: -1px;
 
@@ -197,6 +1071,7 @@
 .agenda-date-content p {
 
     font-size: 15px;
+
     color: #C4E7FF;
 
 }
@@ -246,15 +1121,13 @@
 }
 
 
-/* =========================================
-   AGENDA GRID
-   ========================================= */
+/* AGENDA CONTAINER */
 
 .agenda-scroll {
 
     overflow-x: auto;
 
-    padding: 20px;
+    padding: 12px;
 
     border: 1px solid #E1EDF6;
     border-radius: 18px;
@@ -268,61 +1141,52 @@
 
 }
 
-.agenda-grid {
-
-    display: grid;
-
-    grid-template-columns:
-
-        120px
-        minmax(250px, 1.3fr)
-        minmax(210px, 1fr)
-        minmax(210px, 1fr);
-
-    grid-template-rows:
-
-        auto
-        minmax(66px, auto)
-        minmax(100px, auto)
-        minmax(115px, auto)
-        minmax(60px, auto)
-        minmax(100px, auto)
-        minmax(58px, auto)
-        minmax(100px, auto);
-
-    gap: 12px;
-
-    min-width: 850px;
-
-}
-
 .agenda-scroll-hint {
 
     display: none;
 
 }
 
+.agenda-table {
 
-/* =========================================
-   TIME COLUMN HEADING
-   ========================================= */
+    width: 100%;
+    min-width: 820px;
 
-.agenda-time-heading {
+    border-collapse: separate;
+    border-spacing: 10px;
 
-    grid-column: 1;
-    grid-row: 1;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding-left: 5px;
+    table-layout: fixed;
 
 }
 
-.agenda-time-heading span {
+.time-column {
+
+    width: 12%;
+
+}
+
+.governance-column {
+
+    width: 34%;
+
+}
+
+.working-column {
+
+    width: 27%;
+
+}
+
+
+/* TIME COLUMN HEADING */
+
+.agenda-time-heading {
+
+    padding: 10px 5px;
 
     color: #070E75;
+
+    text-align: left;
 
     font-size: 12px;
     font-weight: 600;
@@ -332,34 +1196,33 @@
 
 .agenda-time-heading small {
 
-    color: #61748B;
+    display: block;
+
     font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    color: var(--muted);
 
     margin-top: 5px;
 
 }
 
 
-/* =========================================
-   GRADIENT PROGRAMME HEADERS
-   ========================================= */
+/* GRADIENT TRACK HEADERS */
 
 .agenda-track {
 
     position: relative;
     overflow: hidden;
 
-    grid-row: 1;
+    height: 125px;
 
-    min-height: 125px;
+    padding: 20px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-radius: 10px;
 
-    padding: 22px 20px;
-
-    border-radius: 12px;
+    text-align: left;
 
     color: #FFFFFF;
 
@@ -378,9 +1241,11 @@
     bottom: -70px;
 
     border: 1px solid rgba(255, 255, 255, 0.2);
+
     border-radius: 50%;
 
     box-shadow:
+
         0 0 0 15px rgba(255, 255, 255, 0.04),
         0 0 0 30px rgba(255, 255, 255, 0.04);
 
@@ -389,8 +1254,6 @@
 }
 
 .track-one {
-
-    grid-column: 2;
 
     background: linear-gradient(
         125deg,
@@ -402,8 +1265,6 @@
 
 .track-two {
 
-    grid-column: 3;
-
     background: linear-gradient(
         125deg,
         #006DC1,
@@ -413,8 +1274,6 @@
 }
 
 .track-three {
-
-    grid-column: 4;
 
     background: linear-gradient(
         125deg,
@@ -427,6 +1286,8 @@
 }
 
 .track-number {
+
+    display: block;
 
     font-size: 10px;
     font-weight: 500;
@@ -457,6 +1318,8 @@
     gap: 7px;
 
     font-size: 12px;
+    font-weight: 400;
+
     line-height: 1.5;
 
 }
@@ -465,8 +1328,8 @@
 
     flex-shrink: 0;
 
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
 
     stroke: currentColor;
     stroke-width: 1.5;
@@ -478,21 +1341,16 @@
 }
 
 
-/* =========================================
-   CONNECTED TIME AXIS
-   ========================================= */
+/* CONNECTED TIME AXIS */
 
 .agenda-time {
 
     position: relative;
 
-    grid-column: 1;
+    padding: 12px 15px 12px 5px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 12px 20px 12px 5px;
+    text-align: left;
+    vertical-align: middle;
 
     font-variant-numeric: tabular-nums;
 
@@ -500,24 +1358,31 @@
 
 .agenda-time strong {
 
+    display: block;
+
     font-size: 13px;
     font-weight: 600;
+
     color: #070E75;
+
+    white-space: nowrap;
 
 }
 
 .agenda-time span {
 
+    display: block;
+
     font-size: 12px;
     font-weight: 400;
-    color: #61748B;
+
+    color: var(--muted);
 
     margin-top: 3px;
 
+    white-space: nowrap;
+
 }
-
-
-/* Timeline nodes */
 
 .agenda-time::before {
 
@@ -545,9 +1410,6 @@
 
 }
 
-
-/* Connecting vertical line */
-
 .agenda-time::after {
 
     content: '';
@@ -555,7 +1417,7 @@
     position: absolute;
 
     top: 0;
-    bottom: -12px;
+    bottom: -10px;
     right: -1px;
 
     width: 2px;
@@ -564,7 +1426,7 @@
 
 }
 
-.agenda-time[style*="grid-row:2"]::after {
+.agenda-time.first-time::after {
 
     top: 50%;
 
@@ -577,20 +1439,15 @@
 }
 
 
-/* =========================================
-   COMMON SESSIONS
-   Registration / Lunch / Tea
-   ========================================= */
+/* COMMON SESSIONS */
+
+.break-row {
+
+    height: 65px;
+
+}
 
 .agenda-common {
-
-    grid-column: 2 / 5;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
 
     padding: 15px 20px;
 
@@ -604,15 +1461,29 @@
 
     color: #0042A5;
 
+    text-align: center;
+
     font-size: 15px;
     font-weight: 500;
 
 }
 
-.agenda-common svg {
+.common-content {
 
-    width: 20px;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+.common-content svg {
+
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
 
     stroke: #006DC1;
     stroke-width: 1.5;
@@ -624,27 +1495,28 @@
 }
 
 
-/* =========================================
-   INDIVIDUAL PROGRAMME SESSIONS
-   ========================================= */
+/* INDIVIDUAL SESSION BLOCKS */
+
+.session-row {
+
+    height: 100px;
+
+}
 
 .agenda-session {
 
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     padding: 22px;
 
     border-radius: 10px;
 
+    vertical-align: middle;
+
     transition:
 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 
 }
 
@@ -661,17 +1533,16 @@
 
 .agenda-session:hover {
 
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 24px rgba(7, 14, 117, 0.07);
+    box-shadow: 0 8px 24px rgba(7, 14, 117, 0.07);
 
 }
 
 
-/* Programme 01 */
+/* PROGRAMME 01 */
 
 .governance-session {
+
+    padding-left: 25px;
 
     background: linear-gradient(
         120deg,
@@ -680,8 +1551,6 @@
     );
 
     color: #070E75;
-
-    padding-left: 25px;
 
 }
 
@@ -704,11 +1573,10 @@
 }
 
 
-/* Programme 02 */
+/* PROGRAMME 02 */
 
 .ai-session {
 
-    align-items: center;
     text-align: center;
 
     background: linear-gradient(
@@ -724,11 +1592,10 @@
 }
 
 
-/* Programme 03 */
+/* PROGRAMME 03 */
 
 .agro-session {
 
-    align-items: center;
     text-align: center;
 
     background: linear-gradient(
@@ -744,13 +1611,31 @@
 }
 
 
-/* =========================================
-   MERGED WORKING GROUP SESSIONS
-   ========================================= */
+/* MERGED WORKING GROUPS */
 
 .merged-session {
 
     overflow: hidden;
+
+}
+
+.merged-session::before {
+
+    content: '';
+
+    position: absolute;
+
+    left: 12px;
+    top: 20px;
+    bottom: 20px;
+
+    width: 2px;
+
+    border-radius: 3px;
+
+    background: currentColor;
+
+    opacity: 0.15;
 
 }
 
@@ -809,45 +1694,26 @@
 
 }
 
-.session-continuation {
 
-    position: absolute;
-
-    left: 12px;
-    top: 20px;
-    bottom: 20px;
-
-    width: 2px;
-
-    border-radius: 3px;
-
-    background: currentColor;
-
-    opacity: 0.15;
-
-}
-
-
-/* Empty Programme 01 session */
+/* EMPTY SESSION */
 
 .agenda-empty {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 
     color: #A0B1C2;
 
     font-size: 20px;
 
     border: 1px dashed #DCE8F1;
+
     border-radius: 10px;
 
 }
 
 
 /* =========================================
-   PREMIUM EVENING PROGRAMME
+   EVENING PROGRAMME
    ========================================= */
 
 .agenda-evening {
@@ -894,10 +1760,9 @@
     position: relative;
     z-index: 2;
 
-    border-right:
-        1px solid rgba(255, 255, 255, 0.2);
-
     padding-right: 25px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
 
 }
 
@@ -919,8 +1784,8 @@
 
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 500;
-    line-height: 1.2;
 
+    line-height: 1.2;
     letter-spacing: -1px;
 
 }
@@ -948,7 +1813,6 @@
     font-weight: 500;
 
     line-height: 1.3;
-
     letter-spacing: -0.6px;
 
 }
@@ -1005,9 +1869,6 @@
 
 }
 
-
-/* Evening link */
-
 .evening-arrow {
 
     position: relative;
@@ -1026,21 +1887,11 @@
 
     background: rgba(255, 255, 255, 0.05);
 
+    color: white;
+
+    font-size: 24px;
+
     transition: all 0.3s ease;
-
-}
-
-.evening-arrow svg {
-
-    width: 22px;
-    height: 22px;
-
-    stroke: #FFFFFF;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    fill: none;
 
 }
 
@@ -1050,18 +1901,11 @@
 
     border-color: #00E0BF;
 
+    color: #070E75;
+
     transform: translateX(4px);
 
 }
-
-.evening-arrow:hover svg {
-
-    stroke: #070E75;
-
-}
-
-
-/* Decorative network rings */
 
 .evening-pattern {
 
@@ -1089,9 +1933,7 @@
 }
 
 
-/* =========================================
-   DAY TWO PLACEHOLDER
-   ========================================= */
+/* DAY TWO PLACEHOLDER */
 
 .agenda-coming-soon {
 
@@ -1102,6 +1944,7 @@
     background: #F4FAFF;
 
     border: 1px solid #E1EDF6;
+
     border-radius: 16px;
 
 }
@@ -1133,7 +1976,7 @@
 
 .agenda-coming-soon p {
 
-    color: #61748B;
+    color: var(--muted);
 
     font-size: 15px;
 
@@ -1143,52 +1986,733 @@
 
 
 /* =========================================
+   LEARN AWARDS SECTION
+   ========================================= */
+
+.awards-section {
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 120px 0;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            ellipse at 80% 20%,
+            rgba(0, 203, 232, 0.22),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            130deg,
+            #03143D,
+            #061B59,
+            #004B91
+        );
+
+}
+
+.awards-section .container {
+
+    position: relative;
+    z-index: 2;
+
+}
+
+.awards-section .section-label {
+
+    color: #7DEBFF;
+
+}
+
+.awards-title {
+
+    font-size: clamp(45px, 7vw, 90px);
+    font-weight: 600;
+
+    letter-spacing: -3px;
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+}
+
+.awards-title span {
+
+    display: block;
+
+    color: #75E8FF;
+
+    font-weight: 300;
+
+}
+
+.awards-theme {
+
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+
+    color: #FFFFFF;
+
+    margin-bottom: 20px;
+
+}
+
+.awards-section p {
+
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: #D0E7FA;
+
+    font-size: 18px;
+
+}
+
+.awards-section p.section-label {
+
+    font-size: 12px;
+
+}
+
+.awards-glow {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    left: -150px;
+
+    background: rgba(229, 0, 135, 0.2);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    animation: glowPulse 8s infinite;
+
+}
+
+.awards-details {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    margin-top: 55px;
+
+}
+
+.awards-details > div {
+
+    padding: 25px 15px;
+
+    border-top: 1px solid rgba(0, 203, 232, 0.4);
+
+}
+
+.awards-details small {
+
+    color: #8BEAFF;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+}
+
+.awards-details h3 {
+
+    font-size: 22px;
+    font-weight: 400;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================
+   EVENT PARTNERS
+   ========================================= */
+
+.partners-section {
+
+    text-align: center;
+
+    background: #FFFFFF;
+
+}
+
+.partner {
+
+    padding: 35px;
+
+    background: linear-gradient(
+        145deg,
+        #FFFFFF,
+        #F5F9FE
+    );
+
+    border: 1px solid #E3EDF5;
+
+    border-radius: 20px;
+
+    transition: all 0.4s ease;
+
+}
+
+.partner:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #9BE7F4;
+
+    box-shadow: var(--shadow);
+
+}
+
+.partner-category {
+
+    text-transform: uppercase;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--ocean-blue);
+
+    margin-bottom: 25px;
+
+}
+
+.partner img {
+
+    width: 100%;
+    max-width: 240px;
+
+    height: 110px;
+
+    object-fit: contain;
+
+    margin: 0 auto 25px;
+
+    transition: transform 0.4s ease;
+
+}
+
+.partner:hover img {
+
+    transform: scale(1.05);
+
+}
+
+.partner h3 {
+
+    color: var(--navy);
+
+    font-size: 17px;
+    font-weight: 500;
+
+}
+
+.technology-partner {
+
+    max-width: 750px;
+
+    margin: 50px auto 25px;
+
+    padding: 45px;
+
+}
+
+.technology-partner img {
+
+    max-width: 280px;
+
+    height: 150px;
+
+}
+
+.partners-grid {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+.registration-partner {
+
+    max-width: 480px;
+
+    margin: 25px auto 0;
+
+}
+
+.registration-partner img {
+
+    height: 75px;
+
+}
+
+
+/* =========================================
+   EVENT VENUES
+   ========================================= */
+
+.venue-section {
+
+    background: linear-gradient(
+        135deg,
+        #F4FAFF,
+        #D9EFFC
+    );
+
+}
+
+.venue-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    margin-top: 45px;
+
+}
+
+.venue-card {
+
+    display: flex;
+    flex-direction: column;
+
+    background: #FFFFFF;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    transition: transform 0.4s ease;
+
+}
+
+.venue-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.venue-image {
+
+    height: 240px;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-color: #B8DFF5;
+
+}
+
+.university-image {
+
+    background-image: url('images/Uni_colombo.jpg');
+
+}
+
+.ramada-image {
+
+    background-image: url('images/Ramada_Hotel.jpg');
+
+}
+
+.hotel-image {
+
+    background-image: url('images/Galleface%20Hotel.jpeg');
+
+}
+
+.venue-info {
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 27px;
+
+}
+
+.venue-label {
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--ocean-blue);
+
+}
+
+.venue-info h3 {
+
+    font-size: 24px;
+    font-weight: 500;
+
+    color: var(--navy);
+
+    line-height: 1.3;
+
+    margin: 10px 0;
+
+}
+
+.venue-info p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+.venue-description {
+
+    border-top: 1px solid #E3EDF5;
+
+    padding-top: 15px;
+
+    margin-top: 5px;
+
+    margin-bottom: 25px !important;
+
+}
+
+.venue-info a {
+
+    color: var(--royal-blue);
+
+    font-weight: 500;
+
+    margin-top: auto;
+
+}
+
+.venue-info a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+
+    position: relative;
+    overflow: hidden;
+
+    padding-top: 130px;
+
+    background: linear-gradient(
+        125deg,
+        #03143D,
+        #061B59,
+        #0056A0
+    );
+
+    color: #FFFFFF;
+
+}
+
+.footer::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: -65px;
+    left: -10%;
+
+    width: 120%;
+    height: 125px;
+
+    background: linear-gradient(
+        90deg,
+        var(--pink),
+        var(--royal-blue),
+        var(--cyan),
+        var(--turquoise)
+    );
+
+    border-radius: 0 0 50% 45%;
+
+    transform: rotate(-3deg);
+
+}
+
+.footer-content {
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 70px;
+
+    padding-bottom: 65px;
+
+}
+
+.footer-brand img {
+
+    width: 200px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    margin-bottom: 25px;
+
+}
+
+.footer h3 {
+
+    font-size: 20px;
+    font-weight: 500;
+
+    margin-bottom: 18px;
+
+}
+
+.footer p,
+.footer a {
+
+    color: #C3DDF4;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+}
+
+.footer a:hover {
+
+    color: var(--cyan);
+
+}
+
+.footer-bottom {
+
+    text-align: center;
+
+    padding: 25px 5%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #B5CDE5;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes glowPulse {
+
+    0%, 100% {
+
+        opacity: 0.6;
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        opacity: 1;
+        transform: scale(1.15);
+
+    }
+
+}
+
+@keyframes waveFlow {
+
+    from {
+
+        transform: scaleX(1.03) translateY(0);
+
+    }
+
+    to {
+
+        transform: scaleX(1.12) translateY(12px);
+
+    }
+
+}
+
+@keyframes experiencePulse {
+
+    0%, 100% {
+
+        box-shadow: 0 0 0 5px rgba(0, 203, 232, 0.15);
+
+    }
+
+    50% {
+
+        box-shadow: 0 0 0 12px rgba(0, 203, 232, 0.02);
+
+    }
+
+}
+
+@keyframes experienceFloat {
+
+    from {
+
+        transform: translate(0, 0);
+
+    }
+
+    to {
+
+        transform: translate(-25px, 35px);
+
+    }
+
+}
+
+
+/* SCROLL REVEAL */
+
+.js-ready .reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+
+        opacity 0.85s ease,
+        transform 0.85s ease;
+
+}
+
+.js-ready .reveal.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* KEYBOARD ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible,
+.agenda-scroll:focus-visible {
+
+    outline: 3px solid var(--cyan);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================
    TABLET RESPONSIVE DESIGN
    ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
+
+    .section {
+
+        padding: 80px 0;
+
+    }
+
+    .navbar {
+
+        padding: 10px 20px;
+
+    }
+
+    .nav-links {
+
+        gap: 16px;
+
+    }
+
+    .nav-links a {
+
+        font-size: 12px;
+
+    }
+
+    .experience-grid {
+
+        gap: 25px;
+
+    }
+
+    .experience-item h3 {
+
+        font-size: 24px;
+
+    }
 
     .agenda-scroll-hint {
 
         display: block;
 
+        color: var(--muted);
+
         font-size: 12px;
-        color: #61748B;
 
         margin: 12px 0;
-
-    }
-
-    .agenda-scroll {
-
-        padding: 15px;
-
-    }
-
-    .agenda-grid {
-
-        grid-template-columns:
-
-            105px
-            minmax(240px, 1.3fr)
-            minmax(200px, 1fr)
-            minmax(200px, 1fr);
-
-        min-width: 800px;
-
-        gap: 10px;
-
-    }
-
-    .agenda-time::after {
-
-        bottom: -10px;
-
-    }
-
-    .agenda-time.last-time::after {
-
-        bottom: 50%;
 
     }
 
@@ -1204,6 +2728,42 @@
 
     }
 
+    .agenda-session {
+
+        padding: 18px;
+
+    }
+
+    .agenda-session h4 {
+
+        font-size: 16px;
+
+    }
+
+    .venue-grid {
+
+        gap: 18px;
+
+    }
+
+    .venue-image {
+
+        height: 200px;
+
+    }
+
+    .venue-info {
+
+        padding: 20px;
+
+    }
+
+    .venue-info h3 {
+
+        font-size: 21px;
+
+    }
+
 }
 
 
@@ -1213,11 +2773,289 @@
 
 @media (max-width: 768px) {
 
-    .programme-section {
+    html {
+
+        scroll-padding-top: 90px;
+
+    }
+
+    .header {
+
+        padding: 10px 4%;
+
+    }
+
+    .navbar {
+
+        min-height: 65px;
+
+        border-radius: 12px;
+
+    }
+
+    .brand img {
+
+        width: 135px;
+        height: 45px;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 90px;
+        left: 4%;
+        right: 4%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        background: white;
+
+        border-radius: 15px;
+
+        padding: 15px 25px;
+
+        box-shadow: var(--shadow);
+
+    }
+
+    .nav-links.active {
+
+        display: flex;
+
+    }
+
+    .nav-links li {
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid #EAF0F6;
+
+    }
+
+    .nav-links a {
+
+        display: block;
+
+        font-size: 15px;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 850px;
+
+        padding: 145px 6% 180px;
+
+        align-items: flex-start;
+
+    }
+
+    .hero-title {
+
+        font-size: clamp(60px, 15vw, 100px);
+
+        letter-spacing: -4px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 25px;
+
+    }
+
+    .event-label {
+
+        font-size: 10px;
+
+        letter-spacing: 1px;
+
+        padding: 10px 15px;
+
+    }
+
+    .theme {
+
+        font-size: 16px;
+
+        letter-spacing: 0;
+
+    }
+
+    .theme span {
+
+        padding: 0 4px;
+
+    }
+
+    .tagline {
+
+        font-size: 17px;
+
+    }
+
+    .hero-buttons {
+
+        gap: 12px;
+
+    }
+
+    .btn {
+
+        padding: 12px 22px;
+
+        font-size: 13px;
+
+    }
+
+    .hero-waves {
+
+        height: 95px;
+
+    }
+
+
+    /* COUNTDOWN */
+
+    .countdown {
+
+        gap: 18px;
+
+    }
+
+    .countdown-item {
+
+        min-width: 55px;
+
+    }
+
+    .countdown-item span {
+
+        font-size: 42px;
+
+    }
+
+    .countdown-item small {
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+
+    }
+
+    .countdown-item:not(:last-child)::after {
+
+        right: -12px;
+
+        font-size: 22px;
+
+    }
+
+
+    /* GLOBAL SECTIONS */
+
+    .section {
 
         padding: 65px 0;
 
     }
+
+    .section-title {
+
+        letter-spacing: -1px;
+
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-section {
+
+        padding: 45px 0 65px;
+
+    }
+
+    .experience-heading h2 {
+
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+
+    }
+
+    .experience-heading > p:last-child {
+
+        font-size: 15px;
+
+    }
+
+    .experience-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px 25px;
+
+        margin-top: 45px;
+
+    }
+
+    .experience-grid::before {
+
+        display: none;
+
+    }
+
+    .experience-item {
+
+        border-top: 1px solid #B5DEEF;
+
+        padding-top: 30px;
+
+    }
+
+    .experience-node {
+
+        top: -6px;
+
+    }
+
+    .experience-item h3 {
+
+        font-size: 23px;
+
+    }
+
+    .experience-item p {
+
+        font-size: 13px;
+
+    }
+
+    .experience-item svg {
+
+        width: 42px;
+        height: 42px;
+
+    }
+
+
+    /* MOBILE AGENDA */
 
     .programme-intro {
 
@@ -1225,7 +3063,7 @@
 
     }
 
-    .programme-section .programme-tabs {
+    .programme-tabs {
 
         gap: 10px;
 
@@ -1233,7 +3071,7 @@
 
     }
 
-    .programme-section .tab-button {
+    .tab-button {
 
         flex: 1;
 
@@ -1295,28 +3133,29 @@
 
     .agenda-scroll {
 
-        padding: 12px;
+        padding: 5px;
 
         border-radius: 12px;
 
     }
 
-    .agenda-grid {
+    .agenda-table {
 
-        min-width: 760px;
+        min-width: 780px;
 
-        grid-template-columns:
-
-            100px
-            230px
-            195px
-            195px;
+        border-spacing: 8px;
 
     }
 
-    .agenda-session h4 {
+    .agenda-track {
 
-        font-size: 15px;
+        padding: 16px;
+
+    }
+
+    .agenda-track h3 {
+
+        font-size: 18px;
 
     }
 
@@ -1332,9 +3171,21 @@
 
     }
 
-    .agenda-track h3 {
+    .agenda-time::after {
 
-        font-size: 18px;
+        bottom: -8px;
+
+    }
+
+    .agenda-time.last-time::after {
+
+        bottom: 50%;
+
+    }
+
+    .agenda-session h4 {
+
+        font-size: 15px;
 
     }
 
@@ -1360,8 +3211,7 @@
 
         border-right: none;
 
-        border-bottom:
-            1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
         padding-right: 0;
         padding-bottom: 20px;
@@ -1419,21 +3269,123 @@
 
     }
 
+
+    /* OTHER SECTIONS */
+
+    .awards-section {
+
+        padding: 80px 0;
+
+    }
+
+    .awards-details,
+    .partners-grid,
+    .venue-grid,
+    .footer-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .partner {
+
+        padding: 25px;
+
+    }
+
+    .technology-partner {
+
+        padding: 30px;
+
+    }
+
+    .venue-image {
+
+        height: 240px;
+
+    }
+
+    .footer-content {
+
+        gap: 35px;
+
+    }
+
 }
 
 
 /* =========================================
-   REDUCED MOTION
+   SMALL MOBILE SCREENS
+   ========================================= */
+
+@media (max-width: 360px) {
+
+    .hero-title {
+
+        font-size: 58px;
+
+    }
+
+    .experience-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+    .experience-item h3 {
+
+        font-size: 20px;
+
+    }
+
+    .countdown {
+
+        gap: 12px;
+
+    }
+
+    .countdown-item {
+
+        min-width: 48px;
+
+    }
+
+    .countdown-item span {
+
+        font-size: 34px;
+
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-    .agenda-session,
-    .wg-icon,
-    .evening-arrow,
-    .programme-section .tab-button {
+    html {
 
-        transition: none;
+        scroll-behavior: auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+
+    }
+
+    .js-ready .reveal {
+
+        opacity: 1;
+
+        transform: none;
 
     }
 
